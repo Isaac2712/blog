@@ -1,4 +1,4 @@
 @extends('layout')
 @section('contenido')
-	<h1> Saludo </h1>
+	<h1> Página de Saludo </h1>
 @stop

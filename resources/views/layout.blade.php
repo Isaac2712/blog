@@ -7,11 +7,22 @@
 </head>
 <body>
 	<header>
-		<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-			<ul>
-				<li><a class="nav-link" href="{{ route('home') }}"> Home </a></li>
-				<li><a class="nav-link" href="{{ route('contacto') }}"> Contacto </a></li>
-				<li><a class="nav-link" href="{{ route('saludo') }}"> Saludo</a></li>
+		<?php
+			function activeMenu($url){
+				return request()->is($url) ? 'active' : '';
+			}
+		?>
+		<nav>
+			<ul class="nav navbar nav-pills justify-content-end">
+				<li class="nav-item">
+					<a class="nav-link {{ activeMenu('/') }}" href="{{ route('home') }}"> Home </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {{ activeMenu('contacto') }}" href="{{ route('contacto') }}"> Contacto </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {{ activeMenu('saludo') }}" href="{{ route('saludo') }}"> Saludo</a>
+				</li>
 			</ul>
 		</nav>
 	</header>

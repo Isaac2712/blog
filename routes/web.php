@@ -11,14 +11,10 @@
 |
 */
 
-Route::get('/', ['as' => 'home', function () {
-    return view('home');
-}]);
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@RouteHome']);
 
-Route::get('contacto', ['as' => 'contacto', function(){
-	return view('contacto');
-}]);
+Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
 
-Route::get('saludo', ['as' => 'saludo', function(){
-	return view('contacto');
-}]);
+Route::POST('contacto', 'PagesController@Form');
+
+Route::get('saludo', ['as' => 'saludo', 'uses' => 'PagesController@RouteSaludo']);
