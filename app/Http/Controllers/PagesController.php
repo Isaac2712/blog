@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
@@ -18,7 +18,12 @@ class PagesController extends Controller
     	return view('saludo');
     }
 
-    public function Form(Request $request){
+    public function Form(App\Http\Requests\ValidateContact $request){
+    	$this->validate($request, [
+    		'email_contacto' => 'required|email',
+    		'password_contacto' => 'required'
+    	]);
+
     	return $request->all();
     }
 }

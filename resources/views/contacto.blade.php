@@ -9,13 +9,15 @@
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		  	<div class="form-col">
 		    	<div class="form-group">
-			      	<label for="inputEmail4">Email</label>
-			      	<input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+			      	<label for="email_contacto">Email</label>
+			      	<input type="text" class="form-control" name="email_contacto" id="email_contacto" placeholder="Email" value="{{ old('email_contacto') }}">
 			    </div>
+			    {!! $errors->first('email_contacto', '<div class="alert alert-danger" role="alert"> :message </div>') !!}
 			    <div class="form-group">
-			      	<label for="inputPassword4">Password</label>
-			      	<input type="password" class="form-control" name="password" id="inputPassword4" placeholder="Password">
+			      	<label for="password_contacto">Password</label>
+			      	<input type="password" class="form-control" name="password_contacto" id="password_contacto" placeholder="Password" value="{{ old('password_contacto') }}">
 			    </div>
+			    {!! $errors->first('password_contacto', '<div class="alert alert-danger" role="alert"> :message </div>') !!}
 		  	</div>
 			  <button type="submit" class="btn btn-primary">Sign in</button>
 			</form>

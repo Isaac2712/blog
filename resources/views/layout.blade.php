@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Layout</title>
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	<link rel="stylesheet" href="{{ asset('js/app.js') }}">
 </head>
 <body>
 	<header>
