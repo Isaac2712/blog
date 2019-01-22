@@ -15,8 +15,6 @@
     	$tipoUsuario = "";
 
     }
-    $_SESSION['tipo'] = 'Admin';
-    $_SESSION['nick'] = 'Isaac';
     if(isset($_SESSION['nick'])){
         $nombreUsuario = $_SESSION['nick'];
     }else{
@@ -25,7 +23,8 @@
     
     if(isset($_POST['desconectar'])){
         session_destroy();
-        header('Location: home.blade.php');
+        //comprobar bien lo de las sesiones
+     //   header("Location: home.blade.php");
     }
 ?>
 <body id="contenedor"> 
@@ -69,11 +68,11 @@
                         <a class="nav-link" href="{{ route('home') }}">ADMINISTRADOR</a>
                     </li>
               <?php } if(isset($_SESSION['nick'])){ ?> <!-- Si hay session -->
-                    <form action='index.php' method='POST'>
+                    <form action='contacto' method='POST'>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button class='btn btn-danger' name='desconectar' type="submit"> DESCONECTAR </button>
                     </form>
-              <?php  } ?>
-              <
+              <?php } ?>
             </ul>
           </div> 
         </nav>
