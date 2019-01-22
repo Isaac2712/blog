@@ -6,6 +6,7 @@
 	<title>LGTBCREVILLENT</title>
 	<link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 </head> 
 <?php
@@ -26,6 +27,9 @@
         //comprobar bien lo de las sesiones
      //   header("Location: home.blade.php");
     }
+    function activeMenu($url){
+        return request()->is($url) ? 'link-menu-principal' : '';
+    }
 ?>
 <body id="contenedor"> 
     <header> <!-- sticky-top hace que el header vaya hacia abajo -->
@@ -43,29 +47,29 @@
           <!-- Navbar links -->
           <div class="collapse navbar-collapse d-flex justify-content-lg-end" id="collapsibleNavbar">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">INICIO</a>
+              <li class="nav-item li-menu-principal">
+                <a class="nav-link {{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">MANIFIESTOS</a>
+              <li class="nav-item li-menu-principal">
+                <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">MANIFIESTOS</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('home') }}">QUIENES SOMOS</a>
+              <li class="nav-item li-menu-principal">
+                <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">QUIENES SOMOS</a>
               </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="{{ route('contacto') }}">CONTACTO</a>
+              <li class="nav-item li-menu-principal">
+                <a class="nav-link {{ activeMenu('contacto') }}" href="{{ route('contacto') }}">CONTACTO</a>
               </li>
               <?php if(!isset($_SESSION['nick'])){ ?> <!-- Si no hay session -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">REGISTRARSE</a>
+                        <a class="btn btn-dark bg-primary" role="button" href="{{ route('home') }}">REGISTRARSE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">ACCEDER</a>
+                        <a class="btn btn-dark bg-primary" role="button" href="{{ route('home') }}">ACCEDER</a>
                     </li>
               <?php } if(($tipoUsuario) && $tipoUsuario == 'Admin'){ ?> 
               <!-- Si la session es de tipo usuario -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">ADMINISTRADOR</a>
+                        <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">ADMINISTRADOR</a>
                     </li>
               <?php } if(isset($_SESSION['nick'])){ ?> <!-- Si hay session -->
                     <form action='contacto' method='POST'>

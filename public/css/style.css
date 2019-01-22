@@ -1,0 +1,13 @@
+.link-menu-principal{
+	background-color: #4B088A;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.li-menu-principal:hover{
+	background-color: #380B61;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+    
