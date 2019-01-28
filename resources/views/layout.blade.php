@@ -9,16 +9,16 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head> 
 <?php
-	if(isset($_SESSION['tipo'])){
-        $tipoUsuario = $_SESSION['tipo'];
+	if(isset($_SESSION['nick_usuario'])){
+      $nick_usuario = $_SESSION['nick_usuario'];
     } else {
-    	$tipoUsuario = "";
+    	$nick_usuario = "";
 
     }
-    if(isset($_SESSION['nick'])){
-        $nombreUsuario = $_SESSION['nick'];
+    if(isset($_SESSION['tipo_usuario'])){
+      $tipo_usuario = $_SESSION['tipo_usuario'];
     }else{
-    	$nombreUsuario = "";
+    	$tipo_usuario = "";
     }
     
     if(isset($_POST['desconectar'])){
@@ -58,19 +58,19 @@
               <li class="nav-item li-menu-principal">
                 <a class="nav-link {{ activeMenu('contacto') }}" href="{{ route('contacto') }}">CONTACTO</a>
               </li>
-              <?php if(!isset($_SESSION['nick'])){ ?> <!-- Si no hay session -->
+              <?php if(!isset($_SESSION['nick_usuario'])){ ?> <!-- Si no hay session -->
                     <li class="nav-item">
                         <a class="btn btn-dark bg-primary" role="button" href="{{ route('home') }}">REGISTRARSE</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-dark bg-primary" role="button" href="{{ route('acceder') }}">ACCEDER</a>
                     </li>
-              <?php } if(($tipoUsuario) && $tipoUsuario == 'Admin'){ ?> 
+              <?php } if(($tipo_usuario) && $tipo_usuario == 'Admin'){ ?> 
               <!-- Si la session es de tipo usuario -->
                     <li class="nav-item">
                         <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">ADMINISTRADOR</a>
                     </li>
-              <?php } if(isset($_SESSION['nick'])){ ?> <!-- Si hay session -->
+              <?php } if(isset($_SESSION['nick_usuario'])){ ?> <!-- Si hay session -->
                     <form action='contacto' method='POST'>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button class='btn btn-danger' name='desconectar' type="submit"> DESCONECTAR </button>

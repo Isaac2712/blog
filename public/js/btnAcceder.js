@@ -3,9 +3,11 @@ function btnAcceder(){
   var pass=jQuery("[name=pass]").val();
   var _token = jQuery("[name=_token]").val();
 
-  var datos = { 'nick':nick, 'pass':pass, '_token':_token };
+  var datos = {'nick':nick, 'pass':pass, '_token':_token };
 
-  jQuery.ajax({
+  console.log(datos);
+
+  $.ajax({
     async: true,
     type: "POST",
     dataType: "json",
@@ -17,24 +19,21 @@ function btnAcceder(){
     },
     success:function(respuesta)
     {
-      console.log(respuesta)
-      if(respuesta.ok==2) //Si se añade el comentario
+      console.log(respuesta);
+      if(respuesta.ok==1)
       {
-        jQuery('#resultado_añadir_comentario').html("<br><div id='resultado_añadir_comentario' class='sc_infobox sc_infobox_style_success'> ¡Has añadido el comentario! </div>");
+        location.reload();
       }
-      else if(respuesta.ok==1)
+      else
       {
-        jQuery('#resultado_añadir_comentario').html("<br><div id='resultado_añadir_comentario' class='sc_infobox sc_infobox_style_error'> Tienes que registrarte para comentar. </div>");
-      }
-      else if(respuesta.ok==3)
-      {
-        jQuery("#resultado_añadir_comentario").html("<br><div id='resultado_añadir_comentario' class='sc_infobox sc_infobox_style_error'> Rellena los campos </div>");
+        jQuery('#resultado').html("<br><div id='resultado' class=''> Ese usuario no existe </div>");
       }
     },
     timeout:3000,
     error:function(error)
     {
-      jQuery('#resultado_añadir_comentario').html("<br><div id='resultado_añadir_comentario' class='sc_infobox sc_infobox_style_error'> Internal Server Error </div>");
+      alert(error);
+      jQuery('#resultado').html("<br><div id='resultado' class=''> Internal Server Error </div>");
     }
   });
 

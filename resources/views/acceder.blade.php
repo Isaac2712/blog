@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body class="container bg-dark text-white mt-3">
+    <?php if(!isset($_SESSION['nick_usuario'])){ ?>
         <section class="col-md-7 col-lg-5 m-auto">
             <header class="mb-3">
                 <img class="card-img-top" src="imagenes/LOGO.jpg" title="Inicio"/>
@@ -25,6 +26,7 @@
                         <input type="password" id="pass" name="pass" class="form-control">
                     </div>
                     <button onclick="return btnAcceder()" name="acceder" class="btn btn-primary btn-block"> Acceder </button>
+                    <div id="resultado"></div>
                 </form>   
             </main> 
         </section>
@@ -53,6 +55,7 @@
                 </div> 
             </nav>
         </footer>
+    <?php } ?>
     </body>  
 </html>
 <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
