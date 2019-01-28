@@ -11,7 +11,14 @@
 |
 */
 
+//PagesController es el controlador principal
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@RouteHome']);
+
+//Mandamos a la pagina de inicio los eventos
+Route::get('/', ['as' => 'home', 'uses' => 'Eventos\ControllerEvento@Eventos']);
+
+//Pagina para acceder
+Route::get('/acceder', ['as' => 'acceder', 'uses' => 'Usuarios\ControllerUsuario@RouteAcceder']);
 
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
 

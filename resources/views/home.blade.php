@@ -1,10 +1,11 @@
 @extends('layout')
 @section('contenido')
-	<main>
-<!--    <form class="navbar-search pull-left">
-             <input type="text" class="search-query" placeholder="Search">
-        </form>-->
-
+<main>
+<!-- 
+<form class="navbar-search pull-left">
+     <input type="text" class="search-query" placeholder="Search">
+</form>
+-->
 <section id="secEven">
     <header class="container-fluid">
         <main class="row">
@@ -17,56 +18,61 @@
     <main class="container-fluid">
         <article id="artEven" class="row">       
             <?php  
-            	/*$totalLineas2 = "";
+            	$totalEventos = "";
                 if(isset($_GET['comienzo'])){
                     $comienzo=$_GET['comienzo'];
                 }else{
                     $comienzo=0;
                 }  
-                $num = 4;*/
+                $num = 4;
                 /* RECOGEMOS DATOS DE LA BASE DE DATOS PARA MOSTRARLOS EN LA PÁGINA */
-                //$totalLineas2 = controller_evento::getAll(); //Necesitamos saber cuantas lineas hay
-                //$todos = controller_evento::getAllLimit($comienzo, $num);
-                //$eventos = count($todos)-1 ; //Se le resta uno porque empieza desde el final
-                //for($i = 0; $i <=  $eventos; $i++){
+                for($i = 0; $i < count($eventos); $i++){
+                    $id_evento = $eventos[$i]['id'];
+                    $titulo_evento = $eventos[$i]['titulo'];
+                    $texto_evento = $eventos[$i]['texto'];
             ?>
                 <!-- MOSTRAMOS DATOS EN LA PAGINA WEB -->
                 <main class="col-lg-3 col-md-6 col-sm-6 text-center">  
-                    <div class="even-box">
+                    <section class="card bg-light">
                         <form action="info-eventos.php" method="POST">
-                            <input type='hidden' name='id' value='<?php /*echo $todos[$i]['id'];*/ ?>'>
-                            <span> 
+                            <input type='hidden' name='id' value='<?= $id_evento ?>'>
+                            <header class="card-header"> 
                                 <?php 
                                     //Abrimos la carpeta imgEventos
-                                    //$directory="../img/imgEventos/";
-                                    //$dirint = dir($directory);
-                                    /*while (($archivo = $dirint->read()) !== false) {
-                                        if($archivo == $todos[$i]['imagen']){ ?>
-                                            <div class="thumbnail">
-                                              <a href="<?php $directory."/".$archivo?>" target="_blank">
-                                                <img class="imagen-even" src="<?php echo $directory."/".$archivo?>" title="<?php echo $archivo ?>">
-                                              </a>
-                                            </div>
-                                <?php   }
+                                    $directory="imagenes/Eventos/";
+                                    $dirint = dir($directory);
+                                    echo $eventos[$i]['imagen'];
+                                    while (($archivo = $dirint->read()) !== false) 
+                                    {
+
+                                        if($archivo == $eventos[$i]['imagen'])
+                                        { 
+                                    ?>
+                                        <a href="<?= $directory."/".$archivo?>" target="_blank">
+                                        <img class="card-img-top" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>">
+                                        </a>
+                                <?php
+                                       }
                                     }
-                                    $dirint->close();*/
+                                    $dirint->close();
                                 ?> 
-                            </span>   
-                            <div class="titulo-texto">
-                                <p class="card-text titulo"> <?php /*echo $todos[$i]['titulo']; */?> </p>
-                                <p class="card-text texto-enlace"> 
-                                    <?php /*$textoEventoCorto = substr($todos[$i]['texto'], 0, 50);
-                                        echo $textoEventoCorto; */
+                            </header>   
+                            <section class="card-body">
+                                <p class="card-title"> <?= $titulo_evento ?> </p>
+                                <p class="card-text"> 
+                                    <?php 
+                                        $textoEventoCorto = substr($texto_evento, 0, 50);
+                                        echo $textoEventoCorto;
                                     ?> 
                                 </p>
-                            </div>
-                            <button class='boton-even btn btn-primary' type="submit" name='verMas'>Ver más</button>
+                                <button class='boton-even btn btn-primary' type="submit" name='verMas'>Ver más</button>
+                            </section>       
                         </form>
-                    </div>
+                    </section>
                 </main>
                 <!-- FIN -->
         <?php 
-               /* }  */ 
+                }
             /* FIN RECOGER DATOS DE LA BBDD*/  
         ?>
         </article>

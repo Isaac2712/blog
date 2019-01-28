@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>LGTBCREVILLENT</title>
 	<link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+  <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 </head> 
 <?php
 	if(isset($_SESSION['tipo'])){
@@ -48,7 +48,7 @@
           <div class="collapse navbar-collapse d-flex justify-content-lg-end" id="collapsibleNavbar">
             <ul class="navbar-nav">
               <li class="nav-item li-menu-principal">
-                <a class="nav-link {{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
+                <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">INICIO</a>
               </li>
               <li class="nav-item li-menu-principal">
                 <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">MANIFIESTOS</a>
@@ -64,7 +64,7 @@
                         <a class="btn btn-dark bg-primary" role="button" href="{{ route('home') }}">REGISTRARSE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-dark bg-primary" role="button" href="{{ route('home') }}">ACCEDER</a>
+                        <a class="btn btn-dark bg-primary" role="button" href="{{ route('acceder') }}">ACCEDER</a>
                     </li>
               <?php } if(($tipoUsuario) && $tipoUsuario == 'Admin'){ ?> 
               <!-- Si la session es de tipo usuario -->
