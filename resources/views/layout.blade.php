@@ -7,7 +7,6 @@
 	<link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
 </head> 
 <?php
 	if(isset($_SESSION['tipo'])){
@@ -81,4 +80,13 @@
           </div> 
         </nav>
 	</header>
-	@yield('contenido')
+  <main>
+	 @yield('contenido')
+  </main>
+
+  <footer>
+    <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+  </footer>
+
+</body>
+</html>

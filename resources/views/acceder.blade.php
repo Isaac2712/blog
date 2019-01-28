@@ -7,7 +7,6 @@
         <link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <script type="text/javascript" src="{{asset('js/app.js')}}"></script>  
     </head>
     <body class="container bg-dark text-white mt-3">
         <section class="col-md-7 col-lg-5 m-auto">
@@ -15,7 +14,8 @@
                 <img class="card-img-top" src="imagenes/LOGO.jpg" title="Inicio"/>
             </header>
             <main>
-                <form method="POST" action="/">
+                <form method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                         <label> Usuario </label>
                         <input type="text" id="nick" name="nick" class="form-control">
@@ -24,7 +24,7 @@
                         <label> Contraseña </label>
                         <input type="password" id="pass" name="pass" class="form-control">
                     </div>
-                    <button type="submit" name="acceder" class="btn btn-primary btn-block"> Acceder </button>
+                    <button onclick="return btnAcceder()" name="acceder" class="btn btn-primary btn-block"> Acceder </button>
                 </form>   
             </main> 
         </section>
@@ -53,5 +53,7 @@
                 </div> 
             </nav>
         </footer>
-    </body>
+    </body>  
 </html>
+<script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/btnAcceder.js')}}"></script>

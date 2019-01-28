@@ -1,6 +1,5 @@
 @extends('layout')
 @section('contenido')
-<main>
 <!-- 
 <form class="navbar-search pull-left">
      <input type="text" class="search-query" placeholder="Search">
@@ -181,5 +180,4 @@
         </article>
     </main>
 </section>
-</main>
 @stop

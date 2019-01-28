@@ -14,4 +14,10 @@ class ControllerUsuario extends Controller
     	$usuarios = ModelUsuario::all();
 		return view('acceder', ['usuarios' => $usuarios]);
     }
+
+    public function Acceder(){
+    	$devuelve['ok']=0;
+    	//AQUI COMPROBAMOS DATOS INTRODUCIDOS EN ACCEDER
+    	return $devuelve;
+    }
 }

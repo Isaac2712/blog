@@ -19,6 +19,8 @@ Route::get('/', ['as' => 'home', 'uses' => 'Eventos\ControllerEvento@Eventos']);
 
 //Pagina para acceder
 Route::get('/acceder', ['as' => 'acceder', 'uses' => 'Usuarios\ControllerUsuario@RouteAcceder']);
+//Ajax acceder
+Route::post('/ajax/acceder', 'Usuarios\ControllerUsuario@Acceder');
 
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
 
