@@ -11,5 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
+mix.scripts([
+    'resources/js/jquery.js',
+    'resources/js/popper.js',
+    'resources/js/bootstrap.min.js',
+    'resources/js/app.js',
+    ],'public/js/app.js').version();
+mix.sass('resources/sass/app.scss', 'public/css').version();
+
+/* VERSION ANTIGUA
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
+*/

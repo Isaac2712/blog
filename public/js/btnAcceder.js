@@ -5,7 +5,17 @@ function btnAcceder(){
 
   var datos = {'nick':nick, 'pass':pass, '_token':_token };
 
-  console.log(datos);
+  //console.log(datos);
+
+  if(nick == '')
+  {
+    $('#div_nick_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_nick_vacio'> El nick no puede estar vacio </div>");
+  }
+
+  if(pass == '')
+  {
+    $('#div_pass_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_pass_vacio'> La contraseña no puede estar vacia </div>");
+  }
 
   $.ajax({
     async: true,
@@ -19,21 +29,20 @@ function btnAcceder(){
     },
     success:function(respuesta)
     {
-      console.log(respuesta);
+      //console.log(respuesta);
       if(respuesta.ok==1)
       {
-        location.reload();
+        window.location.href = '/';
       }
       else
       {
-        jQuery('#resultado').html("<br><div id='resultado' class=''> Ese usuario no existe </div>");
+        $('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado'> Ese usuario no existe </div>");
       }
     },
     timeout:3000,
     error:function(error)
     {
-      alert(error);
-      jQuery('#resultado').html("<br><div id='resultado' class=''> Internal Server Error </div>");
+      $('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado' > Internal Server Error </div>");
     }
   });
 

@@ -34,4 +34,10 @@ class ControllerUsuario extends Controller
 		}
 		return $devuelve;
     }
+
+    public function Desconectar()
+	{
+    	session_destroy();
+    	return redirect('/');
+    }
 }

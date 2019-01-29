@@ -10,12 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 //PagesController es el controlador principal
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@RouteHome']);
 
 //Mandamos a la pagina de inicio los eventos
 Route::get('/', ['as' => 'home', 'uses' => 'Eventos\ControllerEvento@Eventos']);
+
+//Desconectar
+Route::post('/desconectar', ['as' => 'desconectar' , 'uses' => 'Usuarios\ControllerUsuario@Desconectar']);
 
 //Pagina para acceder
 Route::get('/acceder', ['as' => 'acceder', 'uses' => 'Usuarios\ControllerUsuario@RouteAcceder']);
