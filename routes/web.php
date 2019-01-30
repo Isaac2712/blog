@@ -16,6 +16,9 @@ Route::get('/', ['as' => 'home', 'uses' => 'PagesController@RouteHome']);
 //Mandamos a la pagina de inicio los eventos
 Route::get('/', ['as' => 'home', 'uses' => 'Eventos\ControllerEvento@Eventos']);
 
+//Mandamos a la pagina de inicio las noticias
+//Route::get('/', ['as' => 'home', 'uses' => 'Noticias\ControllerNoticia@Noticias']);
+
 //Desconectar
 Route::post('/desconectar', ['as' => 'desconectar' , 'uses' => 'Usuarios\ControllerUsuario@Desconectar']);
 
