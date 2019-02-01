@@ -10,4 +10,13 @@
 	border-radius: 10px;
 }
 
-    
+/*HR y H2 de los titulos evento y noticias*/
+.h2-title{
+	color: #4B088A;
+	font-weight: bold;
+}
+
+.hr-title{
+	width: 5%;
+	border: 1px solid #4B088A;
+}

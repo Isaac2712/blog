@@ -13,12 +13,6 @@
 //PagesController es el controlador principal
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@RouteHome']);
 
-//Mandamos a la pagina de inicio los eventos
-Route::get('/', ['as' => 'home', 'uses' => 'Eventos\ControllerEvento@Eventos']);
-
-//Mandamos a la pagina de inicio las noticias
-//Route::get('/', ['as' => 'home', 'uses' => 'Noticias\ControllerNoticia@Noticias']);
-
 //Desconectar
 Route::post('/desconectar', ['as' => 'desconectar' , 'uses' => 'Usuarios\ControllerUsuario@Desconectar']);
 
@@ -28,8 +22,13 @@ Route::get('/acceder', ['as' => 'acceder', 'uses' => 'Usuarios\ControllerUsuario
 //Ajax acceder
 Route::post('/ajax/acceder', 'Usuarios\ControllerUsuario@Acceder');
 
+//Ruta del menu -> contacto
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
 
 Route::POST('contacto', 'PagesController@Form');
+
+//Ruta del menu -> manifiestos
+
+Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'PagesController@RouteManifiestos']);
 
 Route::get('saludo', ['as' => 'saludo', 'uses' => 'PagesController@RouteSaludo']);

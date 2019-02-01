@@ -47,7 +47,7 @@
                 <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">INICIO</a>
               </li>
               <li class="nav-item li-menu-principal">
-                <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">MANIFIESTOS</a>
+                <a class="nav-link {{ activeMenu('home') }}" href="{{ route('manifiestos') }}">MANIFIESTOS</a>
               </li>
               <li class="nav-item li-menu-principal">
                 <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">QUIENES SOMOS</a>

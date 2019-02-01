@@ -4,10 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//Eventos
+
+use App\Http\Controllers\Eventos;
+
+use App\Http\Models\Eventos\ModelEvento;
+
+//Noticias
+
+use App\Http\Controllers\Noticias;
+
+use App\Http\Models\Noticias\ModelNoticia;
+
+//Manifiestos
+
+use App\Http\Controllers\Manifiestos;
+
+use App\Http\Models\Manifiestos\ModelManifiesto;
+
 class PagesController extends Controller
 {
     public function RouteHome(){
-    	return view('home');
+        //Esta funcion manda los eventos y noticias a la pagina home (que es la principal)
+        $eventos = ModelEvento::all();
+        $noticias = ModelNoticia::all();
+        return view('home', ['eventos' => $eventos,
+                             'noticias' => $noticias
+                            ]);
+    }
+
+    public function RouteManifiestos(){
+        $manifiestos = ModelManifiesto::all();
+        return view('manifiestos', ['manifiestos' => $manifiestos]);
     }
 
     public function RouteContacto(){

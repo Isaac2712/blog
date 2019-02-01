@@ -10,8 +10,4 @@ use App\Http\Models\Noticias\ModelNoticia;
 
 class ControllerNoticia extends Controller
 {
-    public function Noticias(){
-    	$noticias = ModelNoticia::all();
-		return view('home', ['noticias' => $noticias]);
-    }
 }
