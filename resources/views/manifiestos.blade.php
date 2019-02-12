@@ -2,16 +2,16 @@
 @section('contenido')
 <body>
 <section class="container mt-3">
-    <header class="col-12 col-md-11 col-lg-11">
+    <header class="container-fluid">
         <main class="row">
-            <div class="col-lg-12">
-                <h2 class="h2-reivin"> MANIFIESTOS </h2>
-                <hr>
+            <div class="col-lg-12 text-center">
+                <h2 class="h2-title"> MANIFIESTOS </h2>
+                <hr class="hr-title">
             </div>
         </main>
     </header>
-    <main class="col-12 col-md-11 col-lg-10">
-        <article id="artReivi">       
+    <main class="container-fluid">
+        <article>       
             <?php 
             	for ($i = 0; $i < count($manifiestos); $i++ ){ 
             		$id_manifiesto = $manifiestos[$i]['id'];

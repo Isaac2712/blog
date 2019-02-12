@@ -19,8 +19,14 @@ Route::post('/desconectar', ['as' => 'desconectar' , 'uses' => 'Usuarios\Control
 //Pagina para acceder
 Route::get('/acceder', ['as' => 'acceder', 'uses' => 'Usuarios\ControllerUsuario@RouteAcceder']);
 
+//Pagina para acceder
+Route::get('/registrarse', ['as' => 'registrarse', 'uses' => 'Usuarios\ControllerUsuario@RouteRegistrarse']);
+
 //Ajax acceder
 Route::post('/ajax/acceder', 'Usuarios\ControllerUsuario@Acceder');
+
+//Ajax provincia
+Route::match(['get', 'post'], '/ajax/provincia', 'Usuarios\ControllerUsuario@Provincia');
 
 //Ruta del menu -> contacto
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);

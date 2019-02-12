@@ -30,8 +30,8 @@
                     </div>
                     <button onclick="return btnAcceder()" name="acceder" class="btn btn-primary btn-block"> Acceder </button>
                     <div id="resultado"></div>
+                    <button onclick="return btnRegistrarse()" name="registrarse" class="mt-3 btn btn-success btn-block"> Registrarse </button>
                 </form> 
-                <a href=""> ¿Todavía no te has registrado? </a>   
             </main> 
         </section>
         <footer style="margin-top:100px;">
@@ -65,4 +65,6 @@
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <!-- BOTON ACCEDER A LA WEB -->
 <script type="text/javascript" src="{{ asset('js/btnAcceder.js') }}"></script>
+<!-- BOTON REGISTRARSE EN LA WEB -->
+<script type="text/javascript" src="{{ asset('js/btnRegistrarse.js') }}"></script>
 

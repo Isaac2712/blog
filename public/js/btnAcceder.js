@@ -1,4 +1,5 @@
-function btnAcceder(){
+function btnAcceder()
+{
   var nick=jQuery("[name=nick]").val();
   var pass=jQuery("[name=pass]").val();
   var _token = jQuery("[name=_token]").val();
