@@ -59,7 +59,6 @@
                 <label class="control-label" for="fechaNaci"> Fecha de nacimiento </label> <br>
                 <input type="date" id="fechaNaci" value="" class="form-control" name="fechaNaci">
             </div>   
-            
             <div class="col-md-12 col-lg-6">
                 <input type="hidden" id="sexo" name="sexo" value="">
                 <div class="form-check radio-regi">
@@ -69,16 +68,10 @@
                     <label><input class="form-check-input" name="sexo" value="Hombre" type="radio"> Hombre </label>
                 </div>
             </div>
-            <div class="checkbox politica">
-                <div class="col-md-12">
+            <div class="checkbox">
+                <div class="col-md-12 mt-2 mb-3">
                     <input type="checkbox" class="" name="politica" id="politica" autocomplete="" checked />
-                    <div class="btn-group">
-                        <label for="politica" class="btn btn-default">
-                            <span class="fa fa-check-square-o fa-lg"></span>
-                            <span class="fa fa-square-o fa-lg"></span>
-                            <span class="content"> Sí, acepto la <a href="politicaPrivacidad.php"> política de privacidad </a> de lgtbCrevillent </span>
-                        </label>
-                    </div>
+                    <span class="text-justify"> Sí, acepto la <a href="politicaPrivacidad.php"> política de privacidad </a> de lgtbCrevillent </span>
                 </div>
             </div>
             <button type="submit" name="registrarse" class="btn btn-primary btn-block"> Registrarse </button>
