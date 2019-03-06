@@ -1,9 +1,15 @@
+/* COLORES
+	lila oscuro --> #4B088A;
+	lila menos oscuro --> #380B61;
+	lila claro --> #9E5CDC;
+*/
 .link-menu-principal{
-	background-color: #4B088A;
-	font-weight: bold;
-	border-radius: 5px;
+	background-color: #4B088A; /*Color de fondo lila*/
+	font-weight: bold; /*En negrita*/
+	border-radius: 5px; /*Un borde redondo*/
 }
 
+/*Cuando pasamos por encima de los itemos del menu, se le añade este estilo*/
 .li-menu-principal:hover{
 	background-color: #380B61;
 	font-weight: bold;
@@ -19,4 +25,23 @@
 .hr-title{
 	width: 5%;
 	border: 1px solid #4B088A;
+}
+
+/*Boton de los eventos de página de inicio*/
+.boton-even{
+	background-color: #380B61;
+}
+
+.boton-even:hover{
+	background-color: #9E5CDC;
+}
+
+/*Input de la página registro cuando esta vacio*/
+.input-registro-vacio{
+	border: 2px solid red;
+}
+
+/*Input de la página registro cuando no esta vacio*/
+.input-registro-ok{
+	border: 2px solid green;
 }

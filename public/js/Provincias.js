@@ -20,7 +20,7 @@ function Provincia()
             console.log(respuesta);
             $('municipios').html("<select class='form-control'>");
             for (var i = 0; i < respuesta.length; i++) {
-                $('#municipios').append("<option>" + respuesta[i]['municipio'] + "</option>");
+                $('#municipios').append("<option value="+respuesta[i]['id']+">" + respuesta[i]['municipio'] + "</option>");
             }
             $('municipios').html("</select>");
         },

@@ -17,6 +17,7 @@
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="nick"> Nick del usuario </label>
                 <input type="text" value="" class="form-control" id="nick" name="nick" placeholder="lgtb_usuario">
+                <aside id="div_nick"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="nombre_apellidos"> Nombre y Apellidos </label>
@@ -51,30 +52,21 @@
             </div>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="municipio"> Municipio </label> <br>
-                <select class='form-control' id="municipios">
+                <select class='form-control' id="municipios" name="municipios">
                     <option value="" disabled selected> Selecciona un municipio </option>
                 </select>
             </div>
-            <div class="form-group col-md-12 col-lg-6">
+            <div class="form-group col-md-12 col-lg-12">
                 <label class="control-label" for="fechaNaci"> Fecha de nacimiento </label> <br>
                 <input type="date" id="fechaNaci" value="" class="form-control" name="fechaNaci">
             </div>   
-            <div class="col-md-12 col-lg-6">
-                <input type="hidden" id="sexo" name="sexo" value="">
-                <div class="form-check radio-regi">
-                    <label><input class="form-check-input" name="sexo" value="Mujer" type="radio">Mujer </label>
-                </div> 
-                <div class="form-check radio-regi">
-                    <label><input class="form-check-input" name="sexo" value="Hombre" type="radio"> Hombre </label>
-                </div>
-            </div>
             <div class="checkbox">
                 <div class="col-md-12 mt-2 mb-3">
                     <input type="checkbox" class="" name="politica" id="politica" autocomplete="" checked />
                     <span class="text-justify"> Sí, acepto la <a href="politicaPrivacidad.php"> política de privacidad </a> de lgtbCrevillent </span>
                 </div>
             </div>
-            <button type="submit" name="registrarse" class="btn btn-primary btn-block"> Registrarse </button>
+            <button onclick="return Registrarse()" type="submit" name="registrarse" class="btn btn-primary btn-block"> Registrarse </button>
         </form>
     </section>
     <footer style="margin-top:100px;">
@@ -107,3 +99,5 @@
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <!-- MOSTRAR PROVINCIAS -->
 <script type="text/javascript" src="{{ asset('js/Provincias.js') }}"></script>
+<!-- VALIDACION DE REGISTRO -->
+<script type="text/javascript" src="{{ asset('js/Registrarse.js') }}"></script>

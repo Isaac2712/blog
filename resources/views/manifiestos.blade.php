@@ -1,7 +1,7 @@
 @extends('layout')
 @section('contenido')
 <body>
-<section class="container mt-3">
+<section class="container mt-5">
     <header class="container-fluid">
         <main class="row">
             <div class="col-lg-12 text-center">

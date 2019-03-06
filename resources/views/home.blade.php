@@ -1,12 +1,12 @@
 @extends('layout')
 @section('contenido')
 <!-- SECCION DE EVENTOS -->
-<section class="container-fluid mt-3 mb-5">
+<section class="container-fluid mt-5">
     <header class="container-fluid">
         <main class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="h2-title">Eventos</h2>
-                <hr class="hr-title">
+                <hr class="hr-title mb-3">
             </div>
         </main>
     </header>
@@ -29,7 +29,7 @@
                 $texto_evento = $eventos[$i]['texto'];
         ?>
         <!-- MOSTRAMOS DATOS EN LA PAGINA WEB -->
-        <main class="col-lg-3 col-md-6 col-sm-6 text-center">  
+        <main class="col-lg-3 col-md-6 col-sm-6 text-center mb-3">  
             <section class="card bg-light">
                 <form action="info-eventos.php" method="POST">
                     <input type='hidden' name='id' value='<?= $id_evento ?>'>
@@ -38,10 +38,8 @@
                             //Abrimos la carpeta Eventos
                             $directory="imagenes/Eventos/";
                             $dirint = dir($directory);
-                            echo $eventos[$i]['imagen'];
                             while (($archivo = $dirint->read()) !== false) 
                             {
-
                                 if($archivo == $eventos[$i]['imagen'])
                                 { 
                             ?>
@@ -58,11 +56,11 @@
                         <p class="card-title"> <?= $titulo_evento ?> </p>
                         <p class="card-text"> 
                             <?php 
-                                $textoEventoCorto = substr($texto_evento, 0, 50);
-                                echo $textoEventoCorto;
+                                $textoEventoCorto = substr($texto_evento, 0, 20);
+                                echo $textoEventoCorto." ...";
                             ?> 
                         </p>
-                        <button class='boton-even btn btn-primary' type="submit" name='verMas'>Ver más</button>
+                        <button class='boton-even btn btn-primary float-right mb-2' type="submit" name='verMas'>Ver más</button>
                     </section>       
                 </form>
             </section>
@@ -89,12 +87,12 @@
 <!-- FIN SECCION DE EVENTOS -->
 
 <!-- SECCION DE NOTICIAS -->
-<section class="container-fluid mt-3 mb-5">
+<section class="container-fluid mt-5">
     <header class="container-fluid">
         <main class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="h2-title">Noticias</h2>
-                <hr class="hr-title">
+                <hr class="hr-title mb-3">
             </div>
         </main>
     </header>
@@ -115,29 +113,35 @@
             $titulo_noticia = $noticias[$i]['titulo'];
             $enlace_noticia = $noticias[$i]['enlace'];
     ?>
-        <main class="container-fluid mt-4">  
+        <main class="container-fluid mb-3">  
             <section class="card"> 
-            <article class="card-body">
-                <p class="card-title"> <?= $titulo_noticia ?> </p>
-                <p class="card-text"> <?= $enlace_noticia ?> </p>
-            </article>      
-            <?php 
-                //Abrimos la carpeta Noticias
-                $directory="imagenes/Noticias/";
-                $dirint = dir($directory);
-                while (($archivo = $dirint->read()) !== false) 
-                {
-                    if($archivo == $noticias[$i]['imagen'])
-                    { 
-                ?>
-                    <a href="<?= $directory."/".$archivo?>" target="_blank">
-                    <img class="card-img-bottom" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>">
-                    </a>
-            <?php
-                    }
-                }
-                $dirint->close();
-            ?> 
+                <section class="row no-gutters">
+                    <section class="col-md-2">
+                        <?php 
+                        //Abrimos la carpeta Noticias
+                        $directory="imagenes/Noticias/";
+                        $dirint = dir($directory);
+                        while (($archivo = $dirint->read()) !== false) 
+                        {
+                            if($archivo == $noticias[$i]['imagen'])
+                            { 
+                        ?>
+                            <a href="<?= $directory."/".$archivo?>" target="_blank">
+                            <img class="card-img-bottom" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>">
+                            </a>
+                        <?php
+                                }
+                            }
+                            $dirint->close();
+                        ?> 
+                    </section>
+                    <section class="col-md-10">
+                        <article class="card-body">
+                            <p class="card-title"> <?= $titulo_noticia ?> </p>
+                            <a href="<?= $enlace_noticia ?>" class="stretched-link"> <?= $enlace_noticia ?> </a>
+                        </article>
+                    </section>
+                </section>
             </section>
         </main>
     <?php 

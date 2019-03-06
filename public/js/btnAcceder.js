@@ -12,10 +12,18 @@ function btnAcceder()
   {
     $('#div_nick_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_nick_vacio'> El nick no puede estar vacio </div>");
   }
+  else
+  {
+     $('#div_nick_vacio').html("");
+  }
 
   if(pass == '')
   {
     $('#div_pass_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_pass_vacio'> La contraseña no puede estar vacia </div>");
+  }
+  else
+  {
+    $('#div_pass_vacio').html("");
   }
 
   $.ajax({
