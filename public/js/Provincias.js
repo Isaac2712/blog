@@ -17,7 +17,7 @@ function Provincia()
         },
         success:function(respuesta)
         {
-            console.log(respuesta);
+            //console.log(respuesta);
             $('municipios').html("<select class='form-control'>");
             for (var i = 0; i < respuesta.length; i++) {
                 $('#municipios').append("<option value="+respuesta[i]['id']+">" + respuesta[i]['municipio'] + "</option>");

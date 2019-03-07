@@ -8,37 +8,199 @@ function Registrarse()
 	var provincia = jQuery("[name=provincia]").val();
 	var municipios = jQuery("[name=municipios]").val();
 	var fechaNaci = jQuery("[name=fechaNaci]").val();
+	var politica = jQuery("[name=politica]").val();
 	var _token = jQuery("[name=_token]").val();
 	var vacio = false;
 
+
+	//Validar email
+	var regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	var validar_email = regex.test(email) ? true : false;
+  	//Validamos contraseña
+    var regex_pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+	var validar_pass = regex_pass.test(pass) ? true : false;
+	var validar_pass2 = regex_pass.test(pass2) ? true : false;
+
+	// NICK //
 	if(nick == ""){
-		$('#nick').addClass("input-registro-vacio");
-		$('#div_nick').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Rellena el input del nick </aside>");
+		$('#nick').removeClass("input-registro-ok"); //Quitamos la clase del input relleno
+		$('#nick').addClass("input-registro-vacio"); //Añadimos clase de input vacio
+		$('#div_nick').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade el nick al campo de Nick del usuario. </aside>");
+		vacio = true;
+	} 
+	else
+	{ //Si el input contiene algo
+		$('#nick').addClass("input-registro-ok"); //Añadimos la clase del input relleno
+		$('#div_nick').html(""); //Quitamos el div de input vacio
+	}
+	// - FIN - //
+
+	// NOMBRE Y APELLIDOS //
+	if(nombre_apellidos == ""){
+		$('#nombre_apellidos').removeClass("input-registro-ok"); 
+		$('#nombre_apellidos').addClass("input-registro-vacio");
+		$('#div_nombre_apellidos').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade nombre y apellidos al campo nombre y apellidos. </aside>");
+		vacio = true;
+	} 
+	else
+	{ 
+		$('#nombre_apellidos').addClass("input-registro-ok"); 
+		$('#div_nombre_apellidos').html("");
+	}
+	// - FIN - //
+
+	// EMAIL //
+	if(email == ""){
+		$('#email').removeClass("input-registro-ok"); 
+		$('#email').addClass("input-registro-vacio");
+		$('#div_email').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade un correo al campo de dirección de correo electrónico. </aside>");
+		vacio = true;
+	} 
+	else if (!validar_email) //Email no valido
+	{ 
+		$('#email').removeClass("input-registro-ok"); 
+		$('#email').addClass("input-registro-vacio");
+		$('#div_email').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Ese email no es valido. </aside>");
 		vacio = true;
 	} 
 	else
 	{
-		$('#nick').addClass("input-registro-ok");
-		$('#div_nick').html("");
-		vacio = false;
+		$('#email').addClass("input-registro-ok"); 
+		$('#div_email').html("");
 	}
+	// - FIN - //
+
+	// CONTRASEÑA //
+	if(pass == ""){
+		$('#pass').removeClass("input-registro-ok"); 
+		$('#pass').addClass("input-registro-vacio");
+		$('#div_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade la contraseña al campo contraseña. </aside>");
+		vacio = true;
+	} 
+	else
+	{ 
+		$('#pass').addClass("input-registro-ok"); 
+		$('#div_pass').html("");
+	}
+	// - FIN - //
+
+	// CONTRASEÑA2 //
+	if(pass == ""){
+		$('#pass2').removeClass("input-registro-ok"); 
+		$('#pass2').addClass("input-registro-vacio");
+		$('#div_pass2').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade la contraseña al campo repetir contraseña. </aside>");
+		vacio = true;
+	} 
+	else
+	{ 
+		$('#pass2').addClass("input-registro-ok"); 
+		$('#div_pass2').html("");
+	}
+	// - FIN - //
+
+	// COMPROBAMOS LAS DOS CONTRASEÑAS //
+	if (pass != pass2)
+	{
+		$('#pass').removeClass("input-registro-ok"); 
+		$('#pass2').removeClass("input-registro-ok"); 
+		$('#pass').addClass("input-registro-vacio");
+		$('#pass2').addClass("input-registro-vacio");
+		$('#div_comprobar_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Las contraseñas no son iguales </aside>");
+		vacio = true;
+	} 
+	else
+	{
+		$('#div_comprobar_pass').html("");
+	}
+	// - FIN - //
+
+	
+	// PROVICIA //
+	if(provincia == null){
+		$('#selectProvincia').removeClass("input-registro-ok"); 
+		$('#selectProvincia').addClass("input-registro-vacio");
+		$('#div_provincia').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Selecciona una provincia. </aside>");
+		vacio = true;
+	} 
+	else
+	{ 
+		$('#selectProvincia').addClass("input-registro-ok"); 
+		$('#div_provincia').html("");
+	}
+	// - FIN - //
+
+	// MUNICIPIOS //
+	if(municipios == null){
+		$('#municipios').removeClass("input-registro-ok"); 
+		$('#municipios').addClass("input-registro-vacio");
+		$('#div_municipio').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Selecciona un municipio. </aside>");
+		vacio = true;
+	} 
+	else
+	{ 
+		$('#municipios').addClass("input-registro-ok"); 
+		$('#div_municipio').html("");
+	}
+	// - FIN - //
+
+	// FECHA DE NACIMIENTO //
+	if(fechaNaci == ""){
+		$('#fechaNaci').removeClass("input-registro-ok"); 
+		$('#fechaNaci').addClass("input-registro-vacio");
+		$('#div_fechaNaci').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Selecciona tu fecha de nacimiento en el campo fecha de nacimiento. </aside>");
+		vacio = true;
+	} 
+	else
+	{ 
+		$('#fechaNaci').addClass("input-registro-ok"); 
+		$('#div_fechaNaci').html("");
+	}
+	// - FIN - //
 
 	var datos = {
-					'nick':nick, 
-					'nombre_apellidos':nombre_apellidos, 
-					'email':email,
-					'pass':pass,
-					'pass2':pass2,
-					'provincia':provincia,
-					'municipios':municipios,
-					'fechaNaci':fechaNaci, 
-					'_token':_token 
+				'nick':nick, 
+				'nombre_apellidos':nombre_apellidos, 
+				'email':email,
+				'pass':pass,
+				'pass2':pass2,
+				'provincia':provincia,
+				'municipios':municipios,
+				'fechaNaci':fechaNaci, 
+				'_token':_token 
 				};
 
-	console.log(datos);
-
-
-
+	console.log(vacio);
+	if(!vacio){
+		$.ajax({
+			async: true,
+	        type: "POST",
+	        dataType: "json",
+	        contentType: "application/x-www-form-urlencoded",
+	        url: "/ajax/registrarse",
+	        data: datos,
+	        beforeSend:function()
+	        {
+	        },
+	        success:function(respuesta)
+	        {
+             	if(respuesta.ok==1)
+			    {
+			    	window.location.href = '/';
+			    }
+			    else if(respuesta.ok == 0)
+			    {
+			        $('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado'> Ya existe un usuario con ese correo. </div>");
+			    }
+			    else
+			    {
+			    	$('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado'> Errores en los campos del formulario. </div>");
+			    }
+	        },
+	        error:function(error)
+	        {
+	        }
+	    });
+	}
 
 	return false;
 }

@@ -26,7 +26,10 @@ Route::get('/registrarse', ['as' => 'registrarse', 'uses' => 'Usuarios\Controlle
 Route::post('/ajax/acceder', 'Usuarios\ControllerUsuario@Acceder');
 
 //Ajax provincia
-Route::match(['get', 'post'], '/ajax/provincia', 'Usuarios\ControllerUsuario@Provincia');
+Route::post('/ajax/provincia', 'Usuarios\ControllerUsuario@Provincia');
+
+//Ajax registro
+Route::match(['get', 'post'], '/ajax/registrarse', 'Usuarios\ControllerUsuario@Registrarse');
 
 //Ruta del menu -> contacto
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);

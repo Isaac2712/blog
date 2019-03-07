@@ -12,7 +12,7 @@
 <body class="container bg-dark text-white mt-3">
     <section id="app" class="col-lg-10 m-auto">
         <h1 class="text-center mb-4"> Registrate para lgtbCrevillent </h1>
-        <form method="POST" action="" class="form-registro row">
+        <form method="POST" action="" class="row">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="nick"> Nick del usuario </label>
@@ -22,23 +22,28 @@
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="nombre_apellidos"> Nombre y Apellidos </label>
                 <input type="text" value="" class="form-control" id="nombre_apellidos" name="nombre_apellidos" placeholder="Nombre y apellidos">
+                <aside id="div_nombre_apellidos"></aside>
             </div>
             <div class="form-group col-md-12">
                 <label class="control-label" for="email"> Dirección de Correo Electrónico </label>
                 <input type="email" value="" class="form-control" id="email" name="email" placeholder="Email">
+                <aside id="div_email"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="pass"> Contraseña </label>
                 <input type="password"  value="" class="form-control" id="pass" name="pass" placeholder="Contraseña">
+                <aside id="div_pass"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="pass2"> Repetir contraseña </label>
                 <input type="password"  value="" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña">
+                <aside id="div_pass2"></aside>
             </div>
+            <aside class="col-md-12" id="div_comprobar_pass"></aside>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="prov"> Provincia </label>
                 <select onchange="return Provincia()" class='form-control' name='provincia' id='selectProvincia'>
-                    <option value="" disabled selected>Selecciona una provincia </option>
+                    <option  value="" disabled selected>Selecciona una provincia </option>
                 <?php for($i=0;$i<count($provincias);$i++)
                         { 
                             $idprov = $provincias[$i]['id'];
@@ -49,23 +54,28 @@
                         } 
                 ?>
                 </select>
+                <aside id="div_provincia"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="municipio"> Municipio </label> <br>
                 <select class='form-control' id="municipios" name="municipios">
                     <option value="" disabled selected> Selecciona un municipio </option>
                 </select>
+                <aside id="div_municipio"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-12">
                 <label class="control-label" for="fechaNaci"> Fecha de nacimiento </label> <br>
                 <input type="date" id="fechaNaci" value="" class="form-control" name="fechaNaci">
+                <aside id="div_fechaNaci"></aside>
             </div>   
             <div class="checkbox">
                 <div class="col-md-12 mt-2 mb-3">
-                    <input type="checkbox" class="" name="politica" id="politica" autocomplete="" checked />
+                    <input type="checkbox" name="politica" id="politica" autocomplete checked required />
                     <span class="text-justify"> Sí, acepto la <a href="politicaPrivacidad.php"> política de privacidad </a> de lgtbCrevillent </span>
+                    <aside id="div_politica"></aside>
                 </div>
             </div>
+            <aside class="col-md-12" id="resultado"></aside>
             <button onclick="return Registrarse()" type="submit" name="registrarse" class="btn btn-primary btn-block"> Registrarse </button>
         </form>
     </section>

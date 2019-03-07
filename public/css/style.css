@@ -45,3 +45,8 @@
 .input-registro-ok{
 	border: 2px solid green;
 }
+
+/*Input de la página registro*/
+.input-registro{
+	border: none;
+}

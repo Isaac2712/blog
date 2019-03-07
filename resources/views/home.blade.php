@@ -31,7 +31,7 @@
         <!-- MOSTRAMOS DATOS EN LA PAGINA WEB -->
         <main class="col-lg-3 col-md-6 col-sm-6 text-center mb-3">  
             <section class="card bg-light">
-                <form action="info-eventos.php" method="POST">
+                <form action="" method="POST">
                     <input type='hidden' name='id' value='<?= $id_evento ?>'>
                     <header class="card-header"> 
                         <?php 
