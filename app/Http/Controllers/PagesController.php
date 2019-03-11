@@ -51,12 +51,12 @@ class PagesController extends Controller
         return view('quienes_somos');
     }
 
-    public function Form(Request $request){
+    /*public function Form(Request $request){
     	$this->validate($request, [
     		'email_contacto' => 'required|email',
     		'password_contacto' => 'required'
     	]);
 
     	return $request->all();
-    }
+    }*/
 }

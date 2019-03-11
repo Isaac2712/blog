@@ -1,14 +1,16 @@
 @extends('layout')
 @section('contenido')
 <!-- SECCION DE EVENTOS -->
-<section class="container-fluid mt-5">
-    <header class="container-fluid">
-        <main class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="h2-title">Eventos</h2>
-                <hr class="hr-title mb-3">
-            </div>
-        </main>
+<section class="container-fluid">
+    <header class="container-fluid hover-titulo">
+    <hr class="mt-5">
+    <main class="row">
+        <aside class="col-lg-12 text-center">
+            <h2 class="h2-title"> eventos </h2>
+            <hr class="hr-title">
+        </aside>
+    </main>
+    <hr class="mb-5">
     </header>
     <main class="container-fluid">
         <article id="artEven" class="row">       
@@ -87,14 +89,16 @@
 <!-- FIN SECCION DE EVENTOS -->
 
 <!-- SECCION DE NOTICIAS -->
-<section class="container-fluid mt-5">
-    <header class="container-fluid">
-        <main class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="h2-title">Noticias</h2>
-                <hr class="hr-title mb-3">
-            </div>
-        </main>
+<section class="container-fluid">
+    <header class="container-fluid hover-titulo">
+    <hr class="mt-5">
+    <main class="row">
+        <aside class="col-lg-12 text-center">
+            <h2 class="h2-title">noticias</h2>
+            <hr class="hr-title">
+        </aside>
+    </main>
+    <hr class="mb-5">
     </header>
     <?php  
         $totalNoticias = "";

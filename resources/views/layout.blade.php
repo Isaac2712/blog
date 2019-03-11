@@ -51,7 +51,7 @@
                 <a class="nav-link {{ activeMenu('manifiestos') }}" href="{{ route('manifiestos') }}">MANIFIESTOS</a>
               </li>
               <li class="nav-item li-menu-principal">
-                <a class="nav-link {{ activeMenu('quienes_somos') }}" href="{{ route('quienes_somos') }}">QUIENES SOMOS</a>
+                <a class="nav-link {{ activeMenu('quienesSomos') }}" href="{{ route('quienes_somos') }}">QUIENES SOMOS</a>
               </li> 
               <li class="nav-item li-menu-principal">
                 <a class="nav-link {{ activeMenu('contacto') }}" href="{{ route('contacto') }}">CONTACTO</a>

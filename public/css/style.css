@@ -20,11 +20,24 @@
 .h2-title{
 	color: #4B088A;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .hr-title{
 	width: 5%;
 	border: 1px solid #4B088A;
+}
+
+.hover-titulo:hover{
+	background-color: #FFF1CC;
+}
+
+.hover-titulo:hover .h2-title{
+	/*color: white;*/
+}
+
+.hover-titulo:hover .hr-title{
+	/*border: 1px solid white;*/
 }
 
 /*Boton de los eventos de página de inicio*/

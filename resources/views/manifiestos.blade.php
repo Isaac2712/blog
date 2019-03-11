@@ -1,14 +1,16 @@
 @extends('layout')
 @section('contenido')
 <body>
-<section class="container mt-5">
-    <header class="container-fluid">
-        <main class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="h2-title"> MANIFIESTOS </h2>
-                <hr class="hr-title">
-            </div>
-        </main>
+<section class="container mb-5">
+    <header class="container hover-titulo">
+    <hr class="mt-5">
+    <main class="row">
+        <aside class="col-lg-12 text-center">
+            <h2 class="h2-title"> manifiestos </h2>
+            <hr class="hr-title">
+        </aside>
+    </main>
+    <hr class="mb-5">
     </header>
     <main class="container-fluid">
         <article>       
