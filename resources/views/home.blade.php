@@ -60,7 +60,7 @@
                                 echo $textoEventoCorto." ...";
                             ?> 
                         </p>
-                        <button class='boton-even btn btn-primary float-right mb-2' type="submit" name='verMas'>Ver más</button>
+                        <button class='boton-even btn btn-primary float-right mb-2' type="submit" name='verMas'><a class="text-white p-2" href="{{ url($titulo_evento) }}"> Ver más </a> </button> </a>
                     </section>       
                 </form>
             </section>

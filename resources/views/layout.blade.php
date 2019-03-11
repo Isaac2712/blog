@@ -33,7 +33,7 @@
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <a class="navbar-brand" href="{{ route('home') }}">
                 <img class='imagen-index' src="imagenes/LOGO.jpg" width="100px" height="50px" title="Inicio"/>
-                <span class="title-nav"> LGTB Crevillent </span>
+                <span class="title-nav ml-3"> LGTB Crevillent </span>
             </a>
 
           <!-- Toggler/collapsibe Button -->
@@ -45,7 +45,7 @@
           <div class="collapse navbar-collapse d-flex-lg justify-content-lg-end" id="navbarTogglerDemo01">
             <ul class="navbar-nav">
               <li class="nav-item li-menu-principal">
-                <a class="nav-link {{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
+                <a class="nav-link{{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
               </li>
               <li class="nav-item li-menu-principal">
                 <a class="nav-link {{ activeMenu('manifiestos') }}" href="{{ route('manifiestos') }}">MANIFIESTOS</a>

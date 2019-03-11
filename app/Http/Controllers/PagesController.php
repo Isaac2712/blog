@@ -42,8 +42,9 @@ class PagesController extends Controller
     	return view('contacto');
     }
 
-    public function RouteSaludo(){
-    	return view('saludo');
+    public function RouteInfoEventos($titulo_evento){
+        $info_evento = ModelEvento::where('titulo', $titulo_evento)->get();
+    	return view('info_eventos', ['info_evento' => $info_evento]);
     }
 
     public function Form(Request $request){

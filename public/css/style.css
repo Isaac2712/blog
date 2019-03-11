@@ -50,3 +50,8 @@
 .input-registro{
 	border: none;
 }
+
+/* Pagina de información de eventos, texto sacado de bdd */
+.texto-info-eventos{
+	word-wrap: break-word;
+}

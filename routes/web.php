@@ -29,7 +29,7 @@ Route::post('/ajax/acceder', 'Usuarios\ControllerUsuario@Acceder');
 Route::post('/ajax/provincia', 'Usuarios\ControllerUsuario@Provincia');
 
 //Ajax registro
-Route::match(['get', 'post'], '/ajax/registrarse', 'Usuarios\ControllerUsuario@Registrarse');
+Route::post('/ajax/registrarse', 'Usuarios\ControllerUsuario@Registrarse');
 
 //Ruta del menu -> contacto
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
@@ -40,4 +40,4 @@ Route::POST('contacto', 'PagesController@Form');
 
 Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'PagesController@RouteManifiestos']);
 
-Route::get('saludo', ['as' => 'saludo', 'uses' => 'PagesController@RouteSaludo']);
+Route::get('/{evento}', 'PagesController@RouteInfoEventos');
