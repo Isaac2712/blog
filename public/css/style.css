@@ -68,3 +68,21 @@
 .texto-info-eventos{
 	word-wrap: break-word;
 }
+
+/* PIE DE PAGINA */
+.header-footer{
+	background-color: #4B088A; 
+	color:white;
+}
+
+#icono-redes-sociales-footer{
+	color: white;
+}
+
+#icono-redes-sociales-footer:hover ~ .header-footer{
+	background-color: white;
+}
+
+#icono-redes-sociales-footer:hover{
+	color: #4B088A;
+}
