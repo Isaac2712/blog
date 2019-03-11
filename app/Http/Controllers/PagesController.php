@@ -47,6 +47,10 @@ class PagesController extends Controller
     	return view('info_eventos', ['info_evento' => $info_evento]);
     }
 
+    public function RouteQuienesSomos(){
+        return view('quienes_somos');
+    }
+
     public function Form(Request $request){
     	$this->validate($request, [
     		'email_contacto' => 'required|email',

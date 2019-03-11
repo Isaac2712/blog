@@ -40,4 +40,10 @@ Route::POST('contacto', 'PagesController@Form');
 
 Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'PagesController@RouteManifiestos']);
 
+//Ruta del menu -> quienes somos
+
+Route::get('quienesSomos', ['as' => 'quienes_somos', 'uses' => 'PagesController@RouteQuienesSomos']);
+
+//Ruta a la información del evento
+
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');

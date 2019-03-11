@@ -45,13 +45,13 @@
           <div class="collapse navbar-collapse d-flex-lg justify-content-lg-end" id="navbarTogglerDemo01">
             <ul class="navbar-nav">
               <li class="nav-item li-menu-principal">
-                <a class="nav-link{{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
+                <a class="nav-link {{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
               </li>
               <li class="nav-item li-menu-principal">
                 <a class="nav-link {{ activeMenu('manifiestos') }}" href="{{ route('manifiestos') }}">MANIFIESTOS</a>
               </li>
               <li class="nav-item li-menu-principal">
-                <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">QUIENES SOMOS</a>
+                <a class="nav-link {{ activeMenu('quienes_somos') }}" href="{{ route('quienes_somos') }}">QUIENES SOMOS</a>
               </li> 
               <li class="nav-item li-menu-principal">
                 <a class="nav-link {{ activeMenu('contacto') }}" href="{{ route('contacto') }}">CONTACTO</a>
