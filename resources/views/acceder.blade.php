@@ -33,7 +33,7 @@
                     <button onclick="return btnRegistrarse()" name="registrarse" class="mt-3 btn btn-success btn-block"> Registrarse </button>
                 </form> 
             </main> 
-        </section>
+        
         <footer style="margin-top:100px;">
             <nav class="navbar navbar-expand-sm fixed-bottom navbar-light bg-light">
                 <a class="navbar-brand" href="{{ route('home') }}">LGTBCREVILLENT</a>
@@ -59,6 +59,7 @@
                 </div> 
             </nav>
         </footer>
+        </section>
     <?php } ?>
     </body>  
 </html>

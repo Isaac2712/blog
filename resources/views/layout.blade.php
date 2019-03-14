@@ -79,7 +79,7 @@
 </main>
 
 <footer class="page-footer font-small unique-color-dark">
-  <header class="header-footer">
+  <header id="header-footer">
     <section class="container">
       <article class="row py-4 d-flex align-items-center">
         <aside class="col-md-7 col-lg-6 text-center text-md-left mb-4 mb-md-0">
@@ -152,5 +152,17 @@
 </section>
 <!-- SCRIPT PAR APP -->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+<script>
+  $('#header-footer').addClass('header-footer'); //Header en lila
+
+  $("#icono-redes-sociales-footer").hover( //Si hacemos hover en un icono de redes sociales
+    function(){ // Mouse Over
+      $('#header-footer').removeClass("header-footer"); //quitamos clase header lila
+    },
+    function(){ // Mouse Out
+      $('#header-footer').addClass("header-footer"); //añadimos clase header lila (como al principio)
+    }
+  );
+</script>
 </body>
 </html>

@@ -72,15 +72,11 @@
 /* PIE DE PAGINA */
 .header-footer{
 	background-color: #4B088A; 
-	color:white;
+	color: white;
 }
 
 #icono-redes-sociales-footer{
 	color: white;
-}
-
-#icono-redes-sociales-footer:hover ~ .header-footer{
-	background-color: white;
 }
 
 #icono-redes-sociales-footer:hover{
