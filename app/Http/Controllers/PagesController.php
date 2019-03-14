@@ -51,6 +51,10 @@ class PagesController extends Controller
         return view('quienes_somos');
     }
 
+    public function RouteAdministrador(){
+        return view('administrador');
+    }
+
     /*public function Form(Request $request){
     	$this->validate($request, [
     		'email_contacto' => 'required|email',

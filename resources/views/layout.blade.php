@@ -15,8 +15,8 @@
       $nick_usuario = $_SESSION['nick_usuario'];
     } else {
     	$nick_usuario = "";
-
     }
+    
     if(isset($_SESSION['tipo_usuario'])){
       $tipo_usuario = $_SESSION['tipo_usuario'];
     }else{
@@ -61,7 +61,7 @@
           <?php } if(($tipo_usuario) && $tipo_usuario == 'Admin'){ ?> 
           <!-- Si la session es de tipo usuario -->
                 <li class="nav-item">
-                    <a class="nav-link {{ activeMenu('home') }}" href="{{ route('home') }}">ADMINISTRADOR</a>
+                    <a class="nav-link {{ activeMenu('administrador') }}" href="{{ route('administrador') }}">ADMINISTRADOR</a>
                 </li>
           <?php } if(isset($_SESSION['nick_usuario'])){ ?> <!-- Si hay session -->
                 <form method='POST' action='{{ route('desconectar') }}' >
