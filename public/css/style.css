@@ -82,3 +82,49 @@
 #icono-redes-sociales-footer:hover{
 	color: #4B088A;
 }
+
+/* Pagina Administrador */
+.hover-menu-administrador a:hover{
+	background-color: #FF9D3A;
+}
+
+#nav-pag-admin{
+	width: 25%;
+	background-color: #ff8000; /* COLOR NARANJA OSCURO */
+	color: black;
+}
+
+#formulario-pag-admin{
+	width: 75%;
+	float: right;
+}
+
+#aside-pag-admin{
+	float: left;
+	width: 25%;
+}
+
+/* Titulo de los formularios Ej: eliminar eventos*/
+.titulo-formulario{
+	color: #ff8000;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+@media (max-width: 800px) {
+	#nav-pag-admin, #aside-pag-admin{
+		width: 100%;
+		float: none;
+	}
+
+	#formulario-pag-admin{
+		width: 100%;
+		float: none;
+	}
+
+	.titulo-formulario{
+		font-size: 20px;
+		
+	}
+}

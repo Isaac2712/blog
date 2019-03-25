@@ -55,6 +55,10 @@ class PagesController extends Controller
         return view('administrador');
     }
 
+    public function RouteAñadirEvento(){
+        return view('añadir_evento');
+    }
+
     /*public function Form(Request $request){
     	$this->validate($request, [
     		'email_contacto' => 'required|email',

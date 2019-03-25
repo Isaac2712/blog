@@ -48,6 +48,10 @@ Route::get('quienesSomos', ['as' => 'quienes_somos', 'uses' => 'PagesController@
 
 Route::get('/administrador', ['as' => 'administrador', 'uses' => 'PagesController@RouteAdministrador']);
 
+//Ruta para añadir eventos
+
+Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteAñadirEvento'] );
+
 //Ruta a la información del evento
 
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');

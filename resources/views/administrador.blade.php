@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>LGTBCREVILLENT</title>
 	<link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -12,48 +12,54 @@
 </head> 
 <body>
 	<section id="app">
-		<nav class="navbar bg-dark navbar-dark w-25">
+		<nav id="nav-pag-admin" class="navbar navbar-dark font-weight-bold">
 		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucompleto" aria-controls="menucompleto">
 		        <span class="navbar-toggler-icon"></span>
 		    </button>
 
-		    <section class="collapse navbar-collapse" id="menucompleto">
+		    <section class=" navbar-collapse" id="menucompleto">
 		        <ul class="navbar-nav">
 		        	<!-- EVENTOS -->
-			        <li class="nav-item">
-			          	<a class="nav-link" href="#eventos" data-toggle="collapse" >Eventos
-				          <ul class="collapse show" id="eventos">
-				          	<li class="dropdown-item"> Añadir evento </li> 
-				          	<li class="dropdown-item"> Modificar evento </li> 
-				          	<li class="dropdown-item"> Eliminar evento </li> 
+			        <li class="nav-item dropdown">
+			          	<a class="nav-link dropdown-toggle" data-toggle="dropdown" data-toggle="collapse">Eventos </a>
+				          <ul class="dropdown-menu">
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('añadir_evento') }}"> Añadir evento  </a> </li>
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar evento </a> </li>
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Eliminar evento </a> </li>
 				          </ul>
-				      	</a>
 			        </li>
 		          	<!-- NOTICIAS -->
 			        <li class="nav-item">
-			          	<a class="nav-link" href="#noticias" data-toggle="collapse" >Noticias
-				          <ul class="collapse show" id="noticias">
-				          	<li class="dropdown-item"> Añadir noticias </li> 
-				          	<li class="dropdown-item"> Modificar noticias </li> 
-				          	<li class="dropdown-item"> Eliminar noticias </li> 
+			          	<a class="nav-link dropdown-toggle" data-toggle="dropdown" data-toggle="collapse">Noticias </a>
+				          <ul class="dropdown-menu">
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Añadir noticias </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar noticias </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Eliminar noticias </a> </li> 
 				          </ul>
-				      	</a>
 			        </li>
 					<!-- MANIFIESTOS -->
 		            <li class="nav-item">
-			          	<a class="nav-link" href="#manifiestos" data-toggle="collapse" >Manifiestos
-				          <ul class="collapse show" id="manifiestos">
-				          	<li class="dropdown-item"> Añadir manifiestos </li> 
-				          	<li class="dropdown-item"> Modificar manifiestos </li> 
-				          	<li class="dropdown-item"> Eliminar manifiestos </li> 
+			          	<a class="nav-link dropdown-toggle" data-toggle="dropdown" data-toggle="collapse">Manifiestos </a>
+				          <ul class="dropdown-menu">
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Añadir manifiestos </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar manifiestos </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Eliminar manifiestos </a> </li> 
 				          </ul>
-				      	</a>
 		            </li>
 		        </ul>
 		    </section> 
-			<hr class="mt-2 bg-light w-75">
-			<a class="text-white" href="{{ route('home') }}"> Volver a pagina </a>
 		</nav>
+		<aside id="aside-pag-admin" class="bg-dark p-3">
+			<a class="text-white" href="{{ route('home') }}"> Volver a pagina </a>
+		</aside>
+
+		<!-- SECCION PARA LOS FORMULARIOS -->
+		<section id="formulario-pag-admin" class="mt-2 container-fluid">
+			@yield('formularios')
+		</section>
+		<!-- FIN SECCION PARA LOS FORMULARIOS -->
+		
+
 	</section> <!-- SECCION APP -->
 <!-- SCRIPT PAR APP -->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
