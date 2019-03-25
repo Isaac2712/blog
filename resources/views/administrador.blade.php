@@ -12,7 +12,8 @@
 </head> 
 <body>
 	<section id="app">
-		<nav id="nav-pag-admin" class="navbar navbar-dark font-weight-bold">
+		<section id="menu-pag-admin">
+		<nav class="navbar navbar-dark font-weight-bold">
 		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucompleto" aria-controls="menucompleto">
 		        <span class="navbar-toggler-icon"></span>
 		    </button>
@@ -49,10 +50,10 @@
 		        </ul>
 		    </section> 
 		</nav>
-		<aside id="aside-pag-admin" class="bg-dark p-3">
+		<aside class="bg-dark p-3">
 			<a class="text-white" href="{{ route('home') }}"> Volver a pagina </a>
 		</aside>
-
+		</section>
 		<!-- SECCION PARA LOS FORMULARIOS -->
 		<section id="formulario-pag-admin" class="mt-2 container-fluid">
 			@yield('formularios')

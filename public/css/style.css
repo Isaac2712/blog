@@ -88,10 +88,11 @@
 	background-color: #FF9D3A;
 }
 
-#nav-pag-admin{
-	width: 25%;
+#menu-pag-admin{
 	background-color: #ff8000; /* COLOR NARANJA OSCURO */
+	width: 25%;
 	color: black;
+	float: left;
 }
 
 #formulario-pag-admin{
@@ -99,10 +100,6 @@
 	float: right;
 }
 
-#aside-pag-admin{
-	float: left;
-	width: 25%;
-}
 
 /* Titulo de los formularios Ej: eliminar eventos*/
 .titulo-formulario{
@@ -113,7 +110,7 @@
 }
 
 @media (max-width: 800px) {
-	#nav-pag-admin, #aside-pag-admin{
+	#menu-pag-admin{
 		width: 100%;
 		float: none;
 	}
@@ -127,4 +124,39 @@
 		font-size: 20px;
 		
 	}
+}
+
+/* Margen izquierdo y derecho para pantallas grandes*/
+@media (min-width: 1400px){
+    #app{
+        width: 90%;
+        margin: auto;
+    }
+}
+
+
+
+@media (min-width: 1500px){
+    #app{
+        width: 80%;
+        margin: auto;
+    }
+}
+
+
+
+@media (min-width: 1700px){
+    #app{
+        width: 70%;
+        margin: auto;
+    }
+}
+
+
+
+@media(min-width: 1900px){
+    #app{
+        width: 40%;
+        margin: auto;
+    }
 }
