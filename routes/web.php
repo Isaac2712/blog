@@ -52,6 +52,9 @@ Route::get('/administrador', ['as' => 'administrador', 'uses' => 'PagesControlle
 
 Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteAñadirEvento'] );
 
+//Ajax Añadir eventos
+Route::match(['get','post'],'/ajax/anadirEventos', 'Eventos\ControllerEvento@AnadirEventos');
+
 //Ruta a la información del evento
 
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');

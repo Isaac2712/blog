@@ -69,7 +69,7 @@
                 <aside id="div_fechaNaci"></aside>
             </div>   
             <div class="checkbox">
-                <div class="col-md-12 mt-2 mb-3">
+                <div class="col-md-12 mt-2 mb-1">
                     <input type="checkbox" name="politica" id="politica" autocomplete checked required />
                     <span class="text-justify"> Sí, acepto la <a href="politicaPrivacidad.php"> política de privacidad </a> de lgtbCrevillent </span>
                     <aside id="div_politica"></aside>

@@ -66,3 +66,5 @@
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+<!-- BOTON AÑADIR EVENTOS -->
+<script type="text/javascript" src="{{ asset('js/btnAnadirEventos.js') }}"></script>

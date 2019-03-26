@@ -60,7 +60,7 @@ class ControllerUsuario extends Controller
 
     public function Registrarse(Request $request){
         $devuelve['ok']=0;
-        if(trim($request->input('nick')) != '' && trim($request->input('nombre_apellidos')) != ''&& trim($request->input('email')) != '' && trim($request->input('pass')) != "" && trim($request->input('pass2')) != '' && trim($request->input('provincia')) != '' && trim($request->input('municipios')) != '' && trim($request->input('fechaNaci')) != '' )
+        if(trim($request->input('nick')) != '' && trim($request->input('nombre_apellidos')) != ''&& trim($request->input('email')) != '' && trim($request->input('pass')) != "" && trim($request->input('pass2')) != '' && trim($request->input('provincia')) != '' && trim($request->input('municipios')) != '' && trim($request->input('fechaNaci')) != '')
         {
             if($request->input('pass') == $request->input('pass2'))
             {

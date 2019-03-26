@@ -13,43 +13,49 @@
 ?>
 <form enctype="multipart/form-data" action="#" name="form-añadir-eventos" method="POST">
     <h3 class="titulo-formulario p-3"> Insertar eventos</h3>
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group">
-      <input type="text" class="form-control" id="tituloEven" name="tituloEven" placeholder="Titulo del evento" value="<?php echo $titulo; ?>" required>
-    </div>
-
-    <div class="form-group">
-      <input type="text" class="form-control" id="localidadEven" name="localidadEven" placeholder="Localidad. Ej. Crevillente" value="<?php echo $localidad; ?>" required>
+      <input type="text" class="form-control" id="titulo_evento" name="titulo_evento" placeholder="Titulo del evento" value="<?php echo $titulo; ?>" required>
     </div>
 
     <div class="form-group">
-      <textarea class="form-control" rows="5" name="textoEven" id="textoEven" placeholder="Texto del evento" required><?php echo $texto; ?></textarea>
+      <input type="text" class="form-control" id="localidad_evento" name="localidad_evento" placeholder="Localidad. Ej. Crevillente" value="<?php echo $localidad; ?>" required>
     </div>
 
     <div class="form-group">
-      <input type="text" class="form-control" id="lugarEven" name="lugarEven" placeholder="Lugar del evento. Ej. Casa de cultura" value="<?php echo $lugar; ?>" required>
+      <textarea class="form-control" rows="5" name="texto_evento" id="texto_evento" placeholder="Texto del evento" required><?php echo $texto; ?></textarea>
     </div>
 
     <div class="form-group">
-      <input type="text" class="form-control" id="dirEven" name="dirEven" placeholder="Direccion del evento. Ej. C/ Blasco Ibañez nº2" value="<?php echo $direccion; ?>" required>
+      <input type="text" class="form-control" id="lugar_evento" name="lugar_evento" placeholder="Lugar del evento. Ej. Casa de cultura" value="<?php echo $lugar; ?>" required>
     </div>
 
     <div class="form-group">
-      <input type="tel" class="form-control" id="telefonoEven" name="telefonoEven" placeholder="Telefono. Ej. 617423859" value="<?php echo $telefono; ?>" required>
+      <input type="text" class="form-control" id="direccion_evento" name="direccion_evento" placeholder="Direccion del evento. Ej. C/ Blasco Ibañez nº2" value="<?php echo $direccion; ?>" required>
     </div>
 
     <div class="form-group">
-      <input type="text" class="form-control" id="horarioEven" name="horarioEven" placeholder="Horario. Ej. 16:00 a 20:00" value="<?php echo $horario; ?>" required>
+      <input type="tel" class="form-control" id="telefono_evento" name="telefono_evento" placeholder="Telefono. Ej. 617423859" value="<?php echo $telefono; ?>" required>
     </div>
 
     <div class="form-group">
-      <input type="datetime-local" class="form-control" id="fechaEven" name="fechaEven" placeholder="Fecha" value="<?php echo $fecha; ?>" required>
+      <input type="text" class="form-control" id="horario_evento" name="horario_evento" placeholder="Horario. Ej. 16:00 a 20:00" value="<?php echo $horario; ?>" required>
     </div>
 
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="customFile" name="imagenEven" required>
-      <label class="custom-file-label" for="customFile">Selecciona la imagen</label>
+    <div class="form-group">
+      <input type="datetime-local" class="form-control" id="fecha_evento" name="fecha_evento" placeholder="Fecha" value="<?php echo $fecha; ?>" required>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3 mb-2 float-right" name="enviarEven"> Guardar evento</button>
+    <div id="imagen_evento">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="imagen_evento" name="imagen_evento" required>
+        <label class="custom-file-label" for="imagen_evento">Selecciona la imagen</label>
+      </div>
+    </div>
+
+    <div class="mt-3 w-100">
+      <button onclick="return btnAnadirEvento()" type="submit" class="btn btn-primary float-right mb-3" name="enviarEven"> Guardar evento</button>
+    </div>
+    <div class="" id="resultado_anadir_evento"></div>
 </form>
 @stop

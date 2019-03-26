@@ -10,7 +10,7 @@ function btnAcceder()
 
   if(nick == '')
   {
-    $('#div_nick_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_nick_vacio'> El nick no puede estar vacio </div>");
+    $('#div_nick_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_nick_vacio'> El nick no puede estar vacio </div>").show().delay(2000).fadeOut("fast");
   }
   else
   {
@@ -19,7 +19,7 @@ function btnAcceder()
 
   if(pass == '')
   {
-    $('#div_pass_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_pass_vacio'> La contraseña no puede estar vacia </div>");
+    $('#div_pass_vacio').html("<br><div class='alert alert-danger' role='alert' id='div_pass_vacio'> La contraseña no puede estar vacia </div>").show().delay(2000).fadeOut("fast");
   }
   else
   {
@@ -45,13 +45,13 @@ function btnAcceder()
       }
       else
       {
-        $('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado'> Ese usuario no existe </div>");
+        $('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado'> Ese usuario no existe </div>").show().delay(2000).fadeOut("fast");
       }
     },
-    timeout:3000,
+    timeout:2000,
     error:function(error)
     {
-      $('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado' > Internal Server Error </div>");
+      $('#resultado').html("<br><div class='alert alert-danger' role='alert' id='resultado' > Internal Server Error </div>").show().delay(2000).fadeOut("fast");
     }
   });
 
