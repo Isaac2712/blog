@@ -12,21 +12,6 @@ function btnAnadirEvento()
   var _token = jQuery("[name=_token]").val();
   var vacio = false;
 
-  var datos = {
-                'titulo_evento':titulo_evento,
-                'localidad_evento':localidad_evento,
-                'texto_evento':texto_evento,
-                'lugar_evento':lugar_evento,
-                'direccion_evento':direccion_evento,
-                'telefono_evento':telefono_evento,
-                'horario_evento':horario_evento,
-                'fecha_evento':fecha_evento,
-                'imagen_evento':imagen_evento,
-                '_token':_token 
-              };
-
-  console.log(datos);
-
   /* TITULO DEL EVENTO */
 
   if(titulo_evento == '')
@@ -147,7 +132,7 @@ function btnAnadirEvento()
 
   /* FIN FECHA DEL EVENTO */
 
-  /* FECHA DEL EVENTO */
+  /* IMAGEN DEL EVENTO */
   
   if(imagen_evento == '')
   {
@@ -160,34 +145,42 @@ function btnAnadirEvento()
     $('#imagen_evento').addClass("input-registro-ok"); //Añadimos la clase del input relleno
   }
 
-  /* FIN FECHA DEL EVENTO */
-  
-  $.ajax({
-    async: true,
-    type: "POST",
-    dataType: "json",
-    contentType: "application/x-www-form-urlencoded",
-    url: "/ajax/anadirEventos",
-    data: datos,
-    beforeSend:function()
-    {
-    },
-    success:function(respuesta)
-    {
-      //console.log(respuesta);
-      if(respuesta.ok==1)
-      {
-        $('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
+  /* FIN IMAGEN DEL EVENTO */
+
+  var formData = new FormData();
+  formData.append('_token', _token);
+  formData.append('titulo_evento', titulo_evento);
+  formData.append('localidad_evento', localidad_evento);
+  formData.append('texto_evento', texto_evento);
+  formData.append('lugar_evento', lugar_evento);
+  formData.append('telefono_evento', telefono_evento);
+  formData.append('horario_evento', horario_evento);
+  formData.append('fecha_evento', fecha_evento);
+  formData.append('direccion_evento', direccion_evento);
+  var file = jQuery('.custom-file-input');
+  formData.append("file", file[0].files[0]);
+
+  //console.log(formData);
+  jQuery.ajax({
+      type: "POST",
+      url: "/ajax/anadirEvento",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function(respuesta) {
+        //console.log(respuesta);
+        if(respuesta.ok == 1)
+        {
+          $('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
+        }
+        else
+        {
+          $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado'> No se ha podido añadir el evento, comprueba que no haya ningun input vacio. </div>").show().delay(5000).fadeOut("fast");
+        }
+      },
+      error: function() {
+        $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado' > Internal Server Error </div>").show().delay(5000).fadeOut("fast");
       }
-      else
-      {
-        $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado'> No se ha podido añadir el evento, comprueba que no haya ningun input vacio. </div>").show().delay(5000).fadeOut("fast");
-      }
-    },
-    error:function(error)
-    {
-      $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado' > Internal Server Error </div>").show().delay(5000).fadeOut("fast");
-    }
   });
 
   return false; //siempre

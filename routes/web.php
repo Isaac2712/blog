@@ -33,27 +33,22 @@ Route::post('/ajax/registrarse', 'Usuarios\ControllerUsuario@Registrarse');
 
 //Ruta del menu -> contacto
 Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
-
 Route::POST('contacto', 'PagesController@Form');
 
 //Ruta del menu -> manifiestos
-
 Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'PagesController@RouteManifiestos']);
 
 //Ruta del menu -> quienes somos
-
 Route::get('quienesSomos', ['as' => 'quienes_somos', 'uses' => 'PagesController@RouteQuienesSomos']);
 
 //Ruta a la parte ADMINISTRADOR de la web
-
 Route::get('/administrador', ['as' => 'administrador', 'uses' => 'PagesController@RouteAdministrador']);
 
 //Ruta para añadir eventos
-
 Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteAñadirEvento'] );
 
 //Ajax Añadir eventos
-Route::match(['get','post'],'/ajax/anadirEventos', 'Eventos\ControllerEvento@AnadirEventos');
+Route::post('/ajax/anadirEvento', 'Eventos\ControllerEvento@anadirEvento');
 
 //Ruta a la información del evento
 

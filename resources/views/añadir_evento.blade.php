@@ -11,7 +11,7 @@
 	$horario = "";  
 	$fecha = ""; 
 ?>
-<form enctype="multipart/form-data" action="#" name="form-añadir-eventos" method="POST">
+<form enctype="multipart/form-data" action="#" id="upload_form" name="form-añadir-eventos" method="POST">
     <h3 class="titulo-formulario p-3"> Insertar eventos</h3>
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group">

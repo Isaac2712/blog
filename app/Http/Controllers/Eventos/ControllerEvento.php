@@ -11,11 +11,12 @@ use App\Http\Models\Eventos\ModelEvento;
 class ControllerEvento extends Controller
 {
 
-	public function AnadirEventos(Request $request){
+	public function anadirEvento(Request $request)
+	{
 		$devuelve['ok'] = 0;
 
 		//Si ningun input esta vacio
-		if(trim($request->input('titulo_evento')) != '' && trim($request->input('localidad_evento')) != ''&& trim($request->input('texto_evento')) != '' && trim($request->input('lugar_evento')) != "" && trim($request->input('direccion_evento')) != '' && trim($request->input('telefono_evento')) != '' && trim($request->input('horario_evento')) != '' && trim($request->input('fecha_evento')) != '' && trim($request->input('imagen_evento')) != '')
+		if(trim($request->input('titulo_evento')) != '' && trim($request->input('localidad_evento')) != ''&& trim($request->input('texto_evento')) != '' && trim($request->input('lugar_evento')) != "" && trim($request->input('direccion_evento')) != '' && trim($request->input('telefono_evento')) != '' && trim($request->input('horario_evento')) != '' && trim($request->input('fecha_evento')) != '')
         {
         	//Guardamos en la bdd el evento
         	$nuevo_evento = new ModelEvento();
@@ -27,11 +28,19 @@ class ControllerEvento extends Controller
             $nuevo_evento->telefono=$request->input('telefono_evento');
             $nuevo_evento->horario=$request->input('horario_evento');
             $nuevo_evento->fecha=$request->input('fecha_evento');
-            $nuevo_evento->imagen=$request->input('imagen_evento');
+            if ($request->hasFile('file')) //Si recibimos el file que es de la imagen
+		    {
+		      $file = $request->file('file');
+		      $nombre = $file->getClientOriginalName();
+		      $nuevo_evento->imagen=$file->getClientOriginalName();
+		      $path = public_path('imagenes/Eventos/');
+		      $file->move($path, $nombre);
+		    }
+            
             $nuevo_evento->save(); //guardamos en la base de datos
             $devuelve['ok'] = 1; //Devuelve 1 cuando no hay ningun input vacio y se guarda en la bdd
         }
 
-		return $devuelve;
+	    return $devuelve;
 	}
 }
