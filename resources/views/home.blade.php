@@ -31,7 +31,7 @@
                 $texto_evento = $eventos[$i]['texto'];
         ?>
         <!-- MOSTRAMOS DATOS EN LA PAGINA WEB -->
-        <main class="col-lg-3 col-md-6 col-sm-6 text-center mb-3">  
+        <main class="col-lg-3 col-md-6 col-sm-6 text-center mb-3 d-flex flex-wrap">  
             <section class="card bg-light">
                 <form action="" method="POST">
                     <input type='hidden' name='id' value='<?= $id_evento ?>'>
@@ -46,7 +46,7 @@
                                 { 
                             ?>
                                 <a href="<?= $directory."/".$archivo?>" target="_blank">
-                                <img class="card-img-top" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>">
+                                <img id="imagenes-eventos" class="card-img-top" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>" width="484">
                                 </a>
                         <?php
                                }

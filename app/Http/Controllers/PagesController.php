@@ -59,6 +59,11 @@ class PagesController extends Controller
         return view('añadir_evento');
     }
 
+    public function RouteEliminarEvento(){
+        $eventos = ModelEvento::all();
+        return view('eliminar_evento', ['eventos' => $eventos]);
+    }
+
     /*public function Form(Request $request){
     	$this->validate($request, [
     		'email_contacto' => 'required|email',

@@ -26,7 +26,7 @@
 				          <ul class="dropdown-menu">
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('añadir_evento') }}"> Añadir evento  </a> </li>
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar evento </a> </li>
-				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Eliminar evento </a> </li>
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('eliminar_evento') }}"> Eliminar evento </a> </li>
 				          </ul>
 			        </li>
 		          	<!-- NOTICIAS -->
@@ -68,3 +68,5 @@
 </html>
 <!-- BOTON AÑADIR EVENTOS -->
 <script type="text/javascript" src="{{ asset('js/btnAnadirEventos.js') }}"></script>
+<!-- BOTON ELIMINAR EVENTOS -->
+<script type="text/javascript" src="{{ asset('js/btnEliminarEventos.js') }}"></script>

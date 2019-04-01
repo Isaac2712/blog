@@ -52,10 +52,9 @@
         <label class="custom-file-label" for="imagen_evento">Selecciona la imagen</label>
       </div>
     </div>
-
+    <div class="" id="resultado_anadir_evento"></div>
     <div class="mt-3 w-100">
       <button onclick="return btnAnadirEvento()" type="submit" class="btn btn-primary float-right mb-3" name="enviarEven"> Guardar evento</button>
     </div>
-    <div class="" id="resultado_anadir_evento"></div>
 </form>
 @stop

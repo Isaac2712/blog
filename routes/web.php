@@ -44,13 +44,18 @@ Route::get('quienesSomos', ['as' => 'quienes_somos', 'uses' => 'PagesController@
 //Ruta a la parte ADMINISTRADOR de la web
 Route::get('/administrador', ['as' => 'administrador', 'uses' => 'PagesController@RouteAdministrador']);
 
-//Ruta para añadir eventos
-Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteAñadirEvento'] );
+//Ruta para formulario añadir eventos
+Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteAñadirEvento']);
+
+//Ruta para formulario eliminar eventos
+Route::get('/administrador/eliminar_evento', ['as' => 'eliminar_evento', 'uses' => 'PagesController@RouteEliminarEvento']);
 
 //Ajax Añadir eventos
-Route::post('/ajax/anadirEvento', 'Eventos\ControllerEvento@anadirEvento');
+Route::match(['get', 'post'], '/ajax/anadirEvento', 'Eventos\ControllerEvento@anadirEvento');
+
+//Ajax Eliminar eventos
+Route::match(['get', 'post'], '/ajax/eliminarEvento', 'Eventos\ControllerEvento@eliminarEvento');
 
 //Ruta a la información del evento
-
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');
 

@@ -161,7 +161,7 @@ function btnAnadirEvento()
   formData.append("file", file[0].files[0]);
 
   //console.log(formData);
-  jQuery.ajax({
+  $.ajax({
       type: "POST",
       url: "/ajax/anadirEvento",
       data: formData,
@@ -171,15 +171,20 @@ function btnAnadirEvento()
         //console.log(respuesta);
         if(respuesta.ok == 1)
         {
-          $('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
+          $('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
+          location.reload();
+        }
+        else if(respuesta.ok == 2)
+        {
+          $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> No se ha podido añadir el evento, ese titulo ya existe. </div>").show().delay(5000).fadeOut("fast");
         }
         else
         {
-          $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado'> No se ha podido añadir el evento, comprueba que no haya ningun input vacio. </div>").show().delay(5000).fadeOut("fast");
+          $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> No se ha podido añadir el evento, comprueba que no hayan campos vacios. </div>").show().delay(5000).fadeOut("fast");
         }
       },
       error: function() {
-        $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado' > Internal Server Error </div>").show().delay(5000).fadeOut("fast");
+        $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento' > Internal Server Error </div>").show().delay(5000).fadeOut("fast");
       }
   });
 

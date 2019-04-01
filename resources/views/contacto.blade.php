@@ -24,7 +24,7 @@
         </section>
     </header>
     <main class="container mb-5">
-        <section class="secContacto">
+        <section>
             <form role="form" id="Formulario" action="contacto" method="POST">
             	<input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">

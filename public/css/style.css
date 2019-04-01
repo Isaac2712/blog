@@ -49,6 +49,14 @@
 	background-color: #9E5CDC;
 }
 
+/*Imagenes de los eventos en la pagina principal*/
+#imagenes-eventos{
+	width: 100%;
+	height: 200px;
+	max-height: 200px;
+	max-width: 300px;
+}
+
 /*Input de la página registro cuando esta vacio*/
 .input-registro-vacio{
 	border: 2px solid red;
@@ -107,6 +115,11 @@
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: center;
+}
+
+/*Div de resultado_definitivo_eliminar*/
+.definitivo_eliminar{
+	display: none;
 }
 
 @media (max-width: 800px) {
