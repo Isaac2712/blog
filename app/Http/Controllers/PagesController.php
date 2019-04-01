@@ -51,6 +51,10 @@ class PagesController extends Controller
         return view('quienes_somos');
     }
 
+    public function RouteError(){
+        return view('error'); //Uso cuando no queremos que un usuario acceda ahí
+    }
+
     public function RouteAdministrador(){
         return view('administrador');
     }

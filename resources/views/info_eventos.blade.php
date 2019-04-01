@@ -1,6 +1,10 @@
 @extends('layout')
 @section('contenido')
 	<?php
+		$titulo_evento = ""; $horario_evento = ""; $lugar_evento = ""; $direccion_evento = "";
+		$imagen_evento = ""; $localidad_evento = ""; $fecha_evento = ""; $texto_evento = "";
+		$telefono_evento = "";
+		
 		for ($i=0; $i <count($info_evento) ; $i++) { 
 			$titulo_evento = $info_evento[$i]['titulo']; //OK
 			$horario_evento = $info_evento[$i]['horario']; //OK
@@ -15,7 +19,7 @@
 	?>
 	<section class="container mt-5 mb-5">
 		<header class="shadow-lg mt-2 p-2 mb-2 bg-white rounded">
-			<h1 class="text-uppercase"> {{ $titulo_evento }} </h1>
+			<h1 class="text-uppercase"> <?= $titulo_evento ?> </h1>
 	    </header>
 	    <main class="container">
 	    	<?php 

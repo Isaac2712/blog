@@ -12,6 +12,15 @@
 </head> 
 <body>
 	<section id="app">
+		<?php 
+			if(isset($_SESSION['tipo_usuario'])){
+		      	$tipo_usuario = $_SESSION['tipo_usuario'];
+		    }else{
+		    	$tipo_usuario = "";
+		    }
+
+			if(($tipo_usuario) && $tipo_usuario == 'Admin'){ 
+		?>
 		<section id="menu-pag-admin">
 		<nav class="navbar navbar-dark font-weight-bold">
 		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menucompleto" aria-controls="menucompleto">
@@ -70,3 +79,10 @@
 <script type="text/javascript" src="{{ asset('js/btnAnadirEventos.js') }}"></script>
 <!-- BOTON ELIMINAR EVENTOS -->
 <script type="text/javascript" src="{{ asset('js/btnEliminarEventos.js') }}"></script>
+<?php }
+		else
+		{
+			header("Location: /error");
+			exit;
+		}
+?>
