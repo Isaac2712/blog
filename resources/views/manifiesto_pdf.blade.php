@@ -36,7 +36,7 @@
     	</section>
     	<!-- Fin seccion para el titulo -->
     	<!-- Seccion para la imagen -->
-    	<section class="pt-3">
+    	<section class="pt-5">
 		<?php 
             //Abrimos la carpeta Manifiestos
             $directory="imagenes/Manifiestos/";
@@ -47,7 +47,7 @@
                 { 
             ?>
                 <a href="<?= $directory."/".$archivo?>" target="_blank">
-                <img src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>" width="300">
+                <img src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>" width="500">
                 </a>
         <?php
                }
