@@ -38,6 +38,9 @@ Route::POST('contacto', 'PagesController@Form');
 //Ruta del menu -> manifiestos
 Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'PagesController@RouteManifiestos']);
 
+//Ruta al pdf de los manifiestos
+Route::get('manifiesto/{manifiesto}', 'Manifiestos\ControllerManifiesto@GenerarPDF');	
+
 //Ruta del menu -> quienes somos
 Route::get('quienesSomos', ['as' => 'quienes_somos', 'uses' => 'PagesController@RouteQuienesSomos']);
 
@@ -61,4 +64,3 @@ Route::match(['get', 'post'], '/ajax/eliminarEvento', 'Eventos\ControllerEvento@
 
 //Ruta a la información del evento
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');
-

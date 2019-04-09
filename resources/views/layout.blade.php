@@ -60,7 +60,7 @@
                 </li>
           <?php } if(($tipo_usuario) && $tipo_usuario == 'Admin'){ ?> 
           <!-- Si la session es de tipo usuario -->
-                <li class="nav-item">
+                <li class="nav-item li-menu-principal">
                     <a class="nav-link {{ activeMenu('administrador') }}" href="{{ route('administrador') }}">ADMINISTRADOR</a>
                 </li>
           <?php } if(isset($_SESSION['nick_usuario'])){ ?> <!-- Si hay session -->

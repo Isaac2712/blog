@@ -22,7 +22,7 @@
             ?>
                 <main class="col-12">                              
                     <?php ?>
-                    <p class="card-text"> <a href="definitivopdf.php?id=<?= $id_manifiesto ?>" target="_blank"> <?= $titulo_manifiesto ?> </a> </p>
+                    <p class="card-text"> <a href="manifiesto/<?=$titulo_manifiesto?>" target="_blank"> <?= $titulo_manifiesto ?> </a> </p>
                     <p class="card-text fecha-reivi">  <i> <?= "<i>".$fecha_manifiesto."</i>"; ?>  </i> </p>
                 </main>
         <?php 

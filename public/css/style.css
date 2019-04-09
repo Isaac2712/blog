@@ -3,6 +3,9 @@
 	lila menos oscuro --> #380B61;
 	lila claro --> #9E5CDC;
 */
+*{
+	box-sizing: border-box;
+}
 .link-menu-principal{
 	background-color: #4B088A; /*Color de fondo lila*/
 	font-weight: bold; /*En negrita*/
@@ -93,11 +96,11 @@
 
 /* Pagina Administrador */
 .hover-menu-administrador a:hover{
-	background-color: #FF9D3A;
+	background-color: #4169E1;
 }
 
 #menu-pag-admin{
-	background-color: #ff8000; /* COLOR NARANJA OSCURO */
+	background-color: #0000FF; /* COLOR NARANJA OSCURO */
 	width: 25%;
 	color: black;
 	float: left;

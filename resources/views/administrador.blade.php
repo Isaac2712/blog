@@ -7,8 +7,8 @@
 	<title>LGTBCREVILLENT</title>
 	<link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-  <link href="{{ asset('favicon/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="{{ asset('favicon/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
 </head> 
 <body>
 	<section id="app">
@@ -27,11 +27,11 @@
 		        <span class="navbar-toggler-icon"></span>
 		    </button>
 
-		    <section class=" navbar-collapse" id="menucompleto">
+		    <section class="navbar-collapse" id="menucompleto">
 		        <ul class="navbar-nav">
 		        	<!-- EVENTOS -->
-			        <li class="nav-item dropdown">
-			          	<a class="nav-link dropdown-toggle" data-toggle="dropdown" data-toggle="collapse">Eventos </a>
+			        <li class="nav-item p-2">
+			          	<a class="nav-link dropdown-toggle border-bottom border-light" data-toggle="dropdown" data-toggle="collapse">Eventos </a>
 				          <ul class="dropdown-menu">
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('añadir_evento') }}"> Añadir evento  </a> </li>
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar evento </a> </li>
@@ -39,8 +39,8 @@
 				          </ul>
 			        </li>
 		          	<!-- NOTICIAS -->
-			        <li class="nav-item">
-			          	<a class="nav-link dropdown-toggle" data-toggle="dropdown" data-toggle="collapse">Noticias </a>
+			        <li class="nav-item p-2">
+			          	<a class="nav-link dropdown-toggle border-bottom border-light" data-toggle="dropdown" data-toggle="collapse">Noticias </a>
 				          <ul class="dropdown-menu">
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Añadir noticias </a> </li> 
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar noticias </a> </li> 
@@ -48,8 +48,8 @@
 				          </ul>
 			        </li>
 					<!-- MANIFIESTOS -->
-		            <li class="nav-item">
-			          	<a class="nav-link dropdown-toggle" data-toggle="dropdown" data-toggle="collapse">Manifiestos </a>
+		            <li class="nav-item p-2">
+			          	<a class="nav-link dropdown-toggle border-bottom border-light" data-toggle="dropdown" data-toggle="collapse">Manifiestos </a>
 				          <ul class="dropdown-menu">
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Añadir manifiestos </a> </li> 
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar manifiestos </a> </li> 
