@@ -21,7 +21,7 @@
 		<header class="shadow-lg mt-2 p-2 mb-2 bg-white rounded">
 			<h1 class="text-uppercase"> <?= $titulo_evento ?> </h1>
 	    </header>
-	    <main class="container">
+	    <main class="">
 	    	<?php 
 	            //Abrimos la carpeta Eventos
 	            $directory="imagenes/Eventos/";

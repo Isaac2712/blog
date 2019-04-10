@@ -56,11 +56,20 @@ Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' =>
 //Ruta para formulario eliminar eventos
 Route::get('/administrador/eliminar_evento', ['as' => 'eliminar_evento', 'uses' => 'PagesController@RouteEliminarEvento']);
 
+//Ruta para formulario modificar eventos
+Route::get('/administrador/modificar_evento', ['as' => 'modificar_evento', 'uses' => 'PagesController@RouteModificarEvento']);
+
 //Ajax Añadir eventos
 Route::match(['get', 'post'], '/ajax/anadirEvento', 'Eventos\ControllerEvento@anadirEvento');
 
 //Ajax Eliminar eventos
 Route::match(['get', 'post'], '/ajax/eliminarEvento', 'Eventos\ControllerEvento@eliminarEvento');
+
+//Ajax Seleccionar evento
+Route::match(['get', 'post'], '/ajax/seleccionarEvento', 'Eventos\ControllerEvento@seleccionarEvento');
+
+//Ajax Modificar evento
+Route::match(['get', 'post'], '/ajax/modificarEvento', 'Eventos\ControllerEvento@modificarEvento');
 
 //Ruta a la información del evento
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');

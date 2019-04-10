@@ -6,6 +6,7 @@
 *{
 	box-sizing: border-box;
 }
+
 .link-menu-principal{
 	background-color: #4B088A; /*Color de fondo lila*/
 	font-weight: bold; /*En negrita*/
@@ -54,10 +55,10 @@
 
 /*Imagenes de los eventos en la pagina principal*/
 #imagenes-eventos{
-	width: 100%;
-	height: 200px;
-	max-height: 200px;
-	max-width: 300px;
+	max-width: 100%;
+	height: 150px;
+    max-height: 160px;
+
 }
 
 /*Input de la página registro cuando esta vacio*/
@@ -99,22 +100,23 @@
 	background-color: #4169E1;
 }
 
+/*Boton del menu de la pagina administrador donde añadimos, eliminamos y modificamos eventos,
+noticias, manifiestos y usuarios. */
+#boton-menu-pag-admin{
+	display: none;
+}
+
 #menu-pag-admin{
-	background-color: #0000FF; /* COLOR NARANJA OSCURO */
 	width: 25%;
-	color: black;
-	float: left;
 }
 
 #formulario-pag-admin{
 	width: 75%;
-	float: right;
 }
-
 
 /* Titulo de los formularios Ej: eliminar eventos*/
 .titulo-formulario{
-	color: #ff8000;
+	color: #4169E1;
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: center;
@@ -125,20 +127,30 @@
 	display: none;
 }
 
-@media (max-width: 800px) {
-	#menu-pag-admin{
+/*FORMULARIOS PARA MODIFICAR*/
+#form_modificar_evento{
+	display: none;
+}
+
+@media (max-width: 765px){
+	/*Boton del menu de la pagina administrador donde añadimos, eliminamos y modificamos eventos,
+	noticias, manifiestos y usuarios. */
+	#boton-menu-pag-admin{
+		display: block;
+	}
+}
+
+@media (max-width: 1000px) { /*Cuando la resolucion de la pantalla es de 1000 o menos*/
+	#menu-pag-admin{ /*El menu ocupa toda la pantalla*/
 		width: 100%;
-		float: none;
 	}
 
-	#formulario-pag-admin{
+	#formulario-pag-admin{ /*El formulario ocupa toda la pantalla, debajo del menu*/
 		width: 100%;
-		float: none;
 	}
 
-	.titulo-formulario{
+	.titulo-formulario{ /*El titulo del formulario contiene una letra mas pequeña*/
 		font-size: 20px;
-		
 	}
 }
 

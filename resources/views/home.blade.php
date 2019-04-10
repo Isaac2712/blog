@@ -35,7 +35,7 @@
             <section class="card bg-light">
                 <form action="" method="POST">
                     <input type='hidden' name='id' value='<?= $id_evento ?>'>
-                    <header class="card-header"> 
+                    <header class="card-header" > 
                         <?php 
                             //Abrimos la carpeta Eventos
                             $directory="imagenes/Eventos/";
@@ -46,7 +46,7 @@
                                 { 
                             ?>
                                 <a href="<?= $directory."/".$archivo?>" target="_blank">
-                                <img id="imagenes-eventos" class="card-img-top" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>" width="484">
+                                <img id="imagenes-eventos" class="img-responsive" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>">
                                 </a>
                         <?php
                                }
