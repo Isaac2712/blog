@@ -64,13 +64,8 @@ class ControllerEvento extends Controller
     }
 
     public function seleccionarEvento(Request $request){
-        $devuelve['ok'] = 0;
-
-        if(trim($request->input('evento_seleccionado')) != ''){
-            $evento_seleccionado = ModelEvento::where('titulo', $request->input('evento_seleccionado'))->get();
-            $devuelve['ok'] = $evento_seleccionado;
-        }
-        return $devuelve;
+        $evento = ModelEvento::where('titulo', $request->input('select_modificar_evento'))->get();
+        return view('modificar_evento', ['evento' => $evento]);
     }
 
     public function modificarEvento(Request $request){
@@ -78,36 +73,26 @@ class ControllerEvento extends Controller
         //Si ningun input esta vacio
         /*if(trim($request->input('titulo_evento')) != '' && trim($request->input('localidad_evento')) != ''&& trim($request->input('texto_evento')) != '' && trim($request->input('lugar_evento')) != "" && trim($request->input('direccion_evento')) != '' && trim($request->input('telefono_evento')) != '' && trim($request->input('horario_evento')) != '' && trim($request->input('fecha_evento')) != '' && trim($request->input('id_evento')) != '')
         {*/
-            //Comprobamos que el titulo que añaidmos nuevo sea distinto a otros titulos de la bdd
-            $evento_bdd = ModelEvento::where('titulo', $request->input('titulo_evento'))->get();
+            //Comprobamos que el titulo que añadimos nuevo sea distinto a otros titulos de la bdd
+            /*$evento_bdd = ModelEvento::where('titulo', $request->input('titulo_evento'))->get();
             if($evento_bdd->count()==0) //Si el array es igual a 0, no hay titulos y se modifica el evento
-            {
-            if ($request->hasFile('file')) //Si recibimos el file que es de la imagen
-            {
-              $file = $request->file('file');
-              $nombre = $file->getClientOriginalName();
-              $path = public_path('imagenes/Eventos/');
-              $file->move($path, $nombre);
-            
+            {*/
+                /*if ($request->hasFile('file')) //Si recibimos el file que es de la imagen
+                {
+                    $devuelve['ok'] = 3;
+                    $file = $request->file('file');
+                    $nombre = $file->getClientOriginalName();
+                    $path = public_path('imagenes/Eventos/');
+                    $file->move($path, $nombre);*/
 
-                //Modificamos en la bdd el evento
-                ModelEvento::where('id', $request->input('id_evento'))->update(
-                    [
-                        'titulo' => $request->input('titulo_evento'),
-                        'localidad' =>$request->input('localidad_evento'),
-                        'lugar' =>$request->input('lugar_evento'),
-                        'direccion' =>$request->input('direccion_evento'),
-                        'telefono' =>$request->input('telefono_evento'),
-                        'horario' =>$request->input('horario_evento'),
-                        'fecha' =>$request->input('fecha_evento'),
-                        'texto' =>$request->input('texto_evento'),
-                        'imagen' => $file->getClientOriginalName()
-                    ]); 
-                }
-            }
-            
-            //$nuevo_evento->save(); //guardamos en la base de datos
-            $devuelve['ok'] = 1; //Devuelve 1 cuando no hay ningun input vacio y se guarda en la bdd 
+                    //Modificamos en la bdd el evento
+
+                ModelEvento::where('id', $id_evento)->update($request->all());
+
+               //}
+
+                $devuelve['ok'] = 1; //Devuelve 1 cuando no hay ningun input vacio y se guarda en la bdd 
+           // }
         /*}*/
         return $devuelve;
     }

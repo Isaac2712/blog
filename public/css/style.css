@@ -127,11 +127,6 @@ noticias, manifiestos y usuarios. */
 	display: none;
 }
 
-/*FORMULARIOS PARA MODIFICAR*/
-#form_modificar_evento{
-	display: none;
-}
-
 @media (max-width: 765px){
 	/*Boton del menu de la pagina administrador donde añadimos, eliminamos y modificamos eventos,
 	noticias, manifiestos y usuarios. */

@@ -65,11 +65,10 @@ Route::match(['get', 'post'], '/ajax/anadirEvento', 'Eventos\ControllerEvento@an
 //Ajax Eliminar eventos
 Route::match(['get', 'post'], '/ajax/eliminarEvento', 'Eventos\ControllerEvento@eliminarEvento');
 
-//Ajax Seleccionar evento
-Route::match(['get', 'post'], '/ajax/seleccionarEvento', 'Eventos\ControllerEvento@seleccionarEvento');
+Route::post('/administrador/modificar_evento', 'Eventos\ControllerEvento@seleccionarEvento')->name('modificar');
 
 //Ajax Modificar evento
-Route::match(['get', 'post'], '/ajax/modificarEvento', 'Eventos\ControllerEvento@modificarEvento');
+Route::patch('/ajax/modificarEvento/', 'Eventos\ControllerEvento@modificarEvento');
 
 //Ruta a la información del evento
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');
