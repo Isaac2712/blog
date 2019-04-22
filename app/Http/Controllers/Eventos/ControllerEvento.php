@@ -69,34 +69,32 @@ class ControllerEvento extends Controller
     }
 
     public function modificarEvento(Request $request){
+        $devuelve['ok'] = 0;
         //Si ningun input esta vacio
-       /* if(trim($request->input('titulo_evento')) != '' && trim($request->input('localidad_evento')) != ''&& trim($request->input('texto_evento')) != '' && trim($request->input('lugar_evento')) != "" && trim($request->input('direccion_evento')) != '' && trim($request->input('telefono_evento')) != '' && trim($request->input('horario_evento')) != '' && trim($request->input('fecha_evento')) != '' && trim($request->input('id_evento')) != '')
-        {*/
-            //Comprobamos que el titulo que añadimos nuevo sea distinto a otros titulos de la bdd
-            $evento_bdd = ModelEvento::where('titulo', $request->input('titulo_evento'))->first();
-            if($evento_bdd['titulo'] != $request->input('titulo_evento'))
+        if(trim($request->input('titulo_evento')) != '' && trim($request->input('localidad_evento')) != ''&& trim($request->input('texto_evento')) != '' && trim($request->input('lugar_evento')) != "" && trim($request->input('direccion_evento')) != '' && trim($request->input('telefono_evento')) != '' && trim($request->input('horario_evento')) != '' && trim($request->input('fecha_evento')) != '' && trim($request->input('id_evento')) != '')
+        {
+            $evento_bdd = ModelEvento::where('titulo', $request->input('titulo_evento'))->get();
+            if($evento_bdd->count()==0) //Si el array es igual a 0, no hay titulos y se añade nuevo evento
             {
-                if ($request->input('imagen')) //Si recibimos el file que es de la imagen
+                $modificar_evento = ModelEvento::find($request->input('id_evento'));
+                $modificar_evento->titulo=$request->input('titulo_evento');
+                if ($request->hasFile('file')) //Si recibimos el file que es de la imagen
                 {
-                   /* $file = $request->file('imagen');
-                    $nombre = $request->input('imagen');
+                    $file = $request->file('file');
+                    $nombre = $file->getClientOriginalName();
+                    $modificar_evento->imagen=$file->getClientOriginalName();
                     $path = public_path('imagenes/Eventos/');
-                    $file->move($path, $nombre);*/
-
-                    //Modificamos en la bdd el evento
-
-                    ModelEvento::where('id', $request->input('id_evento'))->update(
-                    [
-                            'titulo' => $request->input('titulo_evento'),
-                            'imagen' => $request->input('imagen')
-                    ]);
-
-                } 
-                else
-                {
-                    echo "no llega";
+                    $file->move($path, $nombre);
                 }
-        /*}*/
+                
+                $modificar_evento->save();
+                $devuelve['ok'] = 1;
+            }
+            else
+            {
+                $devuelve['ok'] = 2;
+            }
         }
+        return $devuelve;
     }
 }

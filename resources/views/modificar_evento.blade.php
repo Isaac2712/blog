@@ -2,7 +2,7 @@
 @section('formularios')
 <div class="" id="resultado_seleccionar_evento"></div>
 <div class="" id="prueba"></div>
-<form enctype=”multipart/form-data” action="{{ url('/administrador/evento_modificado') }}" id="form_modificar_evento" name="form_modificar_evento" method="POST">
+<form enctype=”multipart/form-data” action="#" id="form_modificar_evento" name="form_modificar_evento" method="POST">
     <h3 class="titulo-formulario p-3"> Modificar eventos</h3>
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id_evento" value="{{ $evento->id }}">
@@ -40,14 +40,13 @@
 
     <div id="imagen_evento">
       <div class="custom-file">
-        <input type="file" class="custom-file-input" id="imagen" name="imagen">
-        <!--<input type="hidden" name="imagen_evento" value="">-->
-        <label id="label_imagen_evento" class="custom-file-label" for="imagen_evento">{{ $evento->imagen }}</label>
+        <input type="file" class="custom-file-input" id="imagen_evento" name="imagen_evento" required>
+        <label class="custom-file-label" for="imagen_evento">Selecciona la imagen</label>
       </div>
     </div>
     <div class="" id="resultado_modificar_evento"></div>
     <div class="mt-3 w-100">
-      <button type="submit" class="btn btn-primary float-right mb-3"> Modificar evento</button>
+      <button type="button" onclick="return btnModificarEvento()" class="btn btn-primary float-right mb-3"> Modificar evento</button>
     </div>
 </form>
 @stop

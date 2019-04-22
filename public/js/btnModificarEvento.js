@@ -13,6 +13,7 @@ function btnModificarEvento(){
 
 	var formData = new FormData();
 	formData.append('_token', _token);
+	formData.append('id_evento', id_evento);
 	formData.append('titulo_evento', titulo_evento);
 	formData.append('localidad_evento', localidad_evento);
 	formData.append('texto_evento', texto_evento);
@@ -31,17 +32,15 @@ function btnModificarEvento(){
 	    processData: false,
 	    contentType: false,
 	    success: function(respuesta) {
+	     console.log(respuesta.ok);
         if(respuesta.ok == 1)
         {
-        	$('#resultado_modificar_evento').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_modificar_evento'> Se ha modificado el evento. </div>").show().delay(5000).fadeOut("fast");
+        	//$('#resultado_modificar_evento').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_modificar_evento'> Se ha modificado el evento. </div>").show().delay(5000).fadeOut("fast");
+        	window.location.href = '/administrador/modificar_evento'
         }
         else if(respuesta.ok == 2)
         {
-        	$('#resultado_modificar_evento').html("<br><div class='alert alert-danger mt-0 w-100' role='alert' id='resultado_seleccionar_evento'> Imagen vacia </div>").show().delay(5000).fadeOut("fast");
-        }
-        else if(respuesta.ok == 3)
-        {
-        	$('#prueba').html("<p> Si llega la imagen </p>");
+        	$('#resultado_modificar_evento').html("<br><div class='alert alert-danger mt-0 w-100' role='alert' id='resultado_seleccionar_evento'> Ese titulo ya existe </div>").show().delay(5000).fadeOut("fast");
         }
       },
       error: function() {
