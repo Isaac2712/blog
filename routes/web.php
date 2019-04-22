@@ -63,7 +63,7 @@ Route::get('/administrador/modificar_evento', ['as' => 'modificar_evento', 'uses
 Route::get('/administrador/modificar_evento/{id}', 'Eventos\ControllerEvento@seleccionarEvento');
 
 //Ruta para modificar el evento seleccionado
-Route::match(['get', 'post'],'/ajax/modificarEvento', 'Eventos\ControllerEvento@modificarEvento');
+Route::post('/ajax/modificarEvento', 'Eventos\ControllerEvento@modificarEvento');
 
 //Ajax Añadir eventos
 Route::post('/ajax/anadirEvento', 'Eventos\ControllerEvento@anadirEvento');

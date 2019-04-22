@@ -70,7 +70,7 @@ class PagesController extends Controller
 
     public function RouteModificarEvento(){
         $eventos = ModelEvento::all();
-        return view('select_modificar_evento', ['eventos' => $eventos]);
+        return view('tabla_eventos', ['eventos' => $eventos]);
     }
 
     /*public function Form(Request $request){
