@@ -56,11 +56,7 @@ class PagesController extends Controller
     }
 
     public function RouteAdministrador(){
-        return view('administrador');
-    }
-
-    public function RouteAñadirEvento(){
-        return view('añadir_evento');
+        return view('main_admin');
     }
 
     public function RouteEliminarEvento(){
@@ -68,7 +64,7 @@ class PagesController extends Controller
         return view('eliminar_evento', ['eventos' => $eventos]);
     }
 
-    public function RouteModificarEvento(){
+    public function RouteTablaEventos(){
         $eventos = ModelEvento::all();
         return view('tabla_eventos', ['eventos' => $eventos]);
     }

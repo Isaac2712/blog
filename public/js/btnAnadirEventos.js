@@ -171,8 +171,8 @@ function btnAnadirEvento()
         //console.log(respuesta);
         if(respuesta.ok == 1)
         {
-          $('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
-          location.reload();
+          //$('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
+          window.location.href = '/administrador/añadir_evento';
         }
         else if(respuesta.ok == 2)
         {

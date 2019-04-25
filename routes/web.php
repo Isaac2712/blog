@@ -50,14 +50,17 @@ Route::get('/error', ['as' => 'error', 'uses' => 'PagesController@RouteError']);
 //Ruta a la parte ADMINISTRADOR de la web
 Route::get('/administrador', ['as' => 'administrador', 'uses' => 'PagesController@RouteAdministrador']);
 
-//Ruta para formulario añadir eventos
-Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteAñadirEvento']);
+//Ruta para tabla de eventos
+Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteTablaEventos']);
 
-//Ruta para formulario eliminar eventos
+//Ruta formulario para añadir eventos
+Route::get('/administrador/nuevo_evento', ['as' => 'nuevo_evento', 'uses' => 'Eventos\ControllerEvento@RouteNuevoEvento']);
+
+//Ruta para eliminar eventos
 Route::get('/administrador/eliminar_evento', ['as' => 'eliminar_evento', 'uses' => 'PagesController@RouteEliminarEvento']);
 
-//Ruta para formulario modificar eventos
-Route::get('/administrador/modificar_evento', ['as' => 'modificar_evento', 'uses' => 'PagesController@RouteModificarEvento']);
+//Ruta para tabla de eventos
+Route::get('/administrador/modificar_evento', ['as' => 'modificar_evento', 'uses' => 'PagesController@RouteTablaEventos']);
 
 //Ruta para seleccionar evento
 Route::get('/administrador/modificar_evento/{id}', 'Eventos\ControllerEvento@seleccionarEvento');

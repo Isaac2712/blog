@@ -10,6 +10,9 @@ use App\Http\Models\Eventos\ModelEvento;
 
 class ControllerEvento extends Controller
 {
+    public function RouteNuevoEvento(){
+        return view('añadir_evento');
+    }
 
 	public function anadirEvento(Request $request)
 	{
