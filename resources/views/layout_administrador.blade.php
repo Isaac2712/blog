@@ -50,9 +50,9 @@
 			          		<span class="float-right dropdown-toggle mr-1"></span>
 			          	</a>
 				        <ul class="dropdown-menu">
-				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Añadir noticias </a> </li> 
-				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar noticias </a> </li> 
-				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Eliminar noticias </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('añadir_noticia') }}"> Añadir noticias </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('modificar_noticia') }}"> Modificar noticias </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('eliminar_noticia') }}"> Eliminar noticias </a> </li> 
 				        </ul>
 			        </li>
 					<!-- MANIFIESTOS -->
@@ -85,6 +85,7 @@
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+<!-- EVENTOS -->
 <!-- BOTON AÑADIR EVENTOS -->
 <script type="text/javascript" src="{{ asset('js/btnAnadirEventos.js') }}"></script>
 <!-- BOTON ELIMINAR EVENTOS -->
@@ -92,6 +93,15 @@
 <!-- BOTON MODIFICAR EVENTOS -->
 <script type="text/javascript" src="{{ asset('js/btnSeleccionarEvento.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/btnModificarEvento.js') }}"></script>
+
+<!-- NOTICIAS -->
+<!-- BOTON AÑADIR NOTICIAS -->
+<script type="text/javascript" src="{{ asset('js/btnAnadirNoticias.js') }}"></script>
+<!-- BOTON ELIMINAR NOTICIAS -->
+<script type="text/javascript" src="{{ asset('js/btnEliminarNoticias.js') }}"></script>
+<!-- BOTON MODIFICAR NOTICIAS -->
+<script type="text/javascript" src="{{ asset('js/btnSeleccionarNoticia.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/btnModificarNoticias.js') }}"></script>
 <?php }
 		else
 		{

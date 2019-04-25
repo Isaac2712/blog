@@ -1,4 +1,4 @@
-@extends('administrador')
+@extends('layout_administrador')
 @section('formularios')
 <?php 
   //Hay que modificar este parametro para que la hora sea la correcta

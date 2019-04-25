@@ -50,17 +50,20 @@ Route::get('/error', ['as' => 'error', 'uses' => 'PagesController@RouteError']);
 //Ruta a la parte ADMINISTRADOR de la web
 Route::get('/administrador', ['as' => 'administrador', 'uses' => 'PagesController@RouteAdministrador']);
 
+/* ---------- */
+/*   EVENTOS  */
+/* ---------- */
 //Ruta para tabla de eventos
-Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'PagesController@RouteTablaEventos']);
+Route::get('/administrador/añadir_evento', ['as' => 'añadir_evento', 'uses' => 'Eventos\ControllerEvento@RouteTablaEventos']);
 
 //Ruta formulario para añadir eventos
 Route::get('/administrador/nuevo_evento', ['as' => 'nuevo_evento', 'uses' => 'Eventos\ControllerEvento@RouteNuevoEvento']);
 
 //Ruta para eliminar eventos
-Route::get('/administrador/eliminar_evento', ['as' => 'eliminar_evento', 'uses' => 'PagesController@RouteEliminarEvento']);
+Route::get('/administrador/eliminar_evento', ['as' => 'eliminar_evento', 'uses' => 'Eventos\ControllerEvento@RouteEliminarEvento']);
 
 //Ruta para tabla de eventos
-Route::get('/administrador/modificar_evento', ['as' => 'modificar_evento', 'uses' => 'PagesController@RouteTablaEventos']);
+Route::get('/administrador/modificar_evento', ['as' => 'modificar_evento', 'uses' => 'Eventos\ControllerEvento@RouteTablaEventos']);
 
 //Ruta para seleccionar evento
 Route::get('/administrador/modificar_evento/{id}', 'Eventos\ControllerEvento@seleccionarEvento');
@@ -74,5 +77,37 @@ Route::post('/ajax/anadirEvento', 'Eventos\ControllerEvento@anadirEvento');
 //Ajax Eliminar eventos
 Route::post('/ajax/eliminarEvento', 'Eventos\ControllerEvento@eliminarEvento');
 
+
+/* ---------- */
+/*  NOTICIAS  */
+/* ---------- */
+//Ruta para tabla de noticias
+Route::get('/administrador/añadir_noticia', ['as' => 'añadir_noticia', 'uses' => 'Noticias\ControllerNoticia@RouteTablaNoticias']);
+
+//Ruta formulario para añadir noticias
+Route::get('/administrador/nueva_noticia', ['as' => 'nueva_noticia', 'uses' => 'Noticias\ControllerNoticia@RouteNuevaNoticia']);
+
+//Ruta para eliminar noticias
+Route::get('/administrador/eliminar_noticia', ['as' => 'eliminar_noticia', 'uses' => 'Noticias\ControllerNoticia@RouteEliminarNoticia']);
+
+//Ruta para tabla de noticias
+Route::get('/administrador/modificar_noticia', ['as' => 'modificar_noticia', 'uses' => 'Noticias\ControllerNoticia@RouteTablaNoticias']);
+
+//Ruta para seleccionar evento
+Route::get('/administrador/modificar_noticia/{id}', 'Noticias\ControllerNoticia@seleccionarNoticia');
+
+//Ruta para modificar el evento seleccionado
+Route::post('/ajax/modificarNoticia', 'Noticias\ControllerNoticia@modificarNoticia');
+
+//Ajax Añadir noticias
+Route::post('/ajax/anadirNoticia', 'Noticias\ControllerNoticia@anadirNoticia');
+
+//Ajax Eliminar noticias
+Route::post('/ajax/eliminarNoticia', 'Noticias\ControllerNoticia@eliminarNoticia');
+
+
+/* -------------- */
+/*  INFO-EVENTOS  */
+/* -------------- */
 //Ruta a la información del evento
 Route::get('/{evento}', 'PagesController@RouteInfoEventos');

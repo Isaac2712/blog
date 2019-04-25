@@ -59,16 +59,6 @@ class PagesController extends Controller
         return view('main_admin');
     }
 
-    public function RouteEliminarEvento(){
-        $eventos = ModelEvento::all();
-        return view('eliminar_evento', ['eventos' => $eventos]);
-    }
-
-    public function RouteTablaEventos(){
-        $eventos = ModelEvento::all();
-        return view('tabla_eventos', ['eventos' => $eventos]);
-    }
-
     /*public function Form(Request $request){
     	$this->validate($request, [
     		'email_contacto' => 'required|email',

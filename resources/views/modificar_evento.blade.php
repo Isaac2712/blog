@@ -1,4 +1,4 @@
-@extends('administrador')
+@extends('layout_administrador')
 @section('formularios')
 <div class="" id="resultado_seleccionar_evento"></div>
 <div class="" id="prueba"></div>
@@ -7,7 +7,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="hidden" name="id_evento" value="{{ $evento->id }}">
     <div class="form-group">
-      <input type="text" class="form-control" id="titulo_evento" name="titulo_evento" placeholder="Titulo del evento" value="{{ $evento->titulo }}" required>
+      <input type="text" class="form-control" id="titulo_evento" name="titulo_evento" placeholder="Titulo del evento" value="{{ $evento->titulo }}" required disabled>
     </div>
 
     <div class="form-group">

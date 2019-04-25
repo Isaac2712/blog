@@ -38,10 +38,6 @@ function btnModificarEvento(){
         	//$('#resultado_modificar_evento').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_modificar_evento'> Se ha modificado el evento. </div>").show().delay(5000).fadeOut("fast");
         	window.location.href = '/administrador/modificar_evento'
         }
-        else if(respuesta.ok == 2)
-        {
-        	$('#resultado_modificar_evento').html("<br><div class='alert alert-danger mt-0 w-100' role='alert' id='resultado_seleccionar_evento'> Ese titulo ya existe </div>").show().delay(5000).fadeOut("fast");
-        }
       },
       error: function() {
       }
