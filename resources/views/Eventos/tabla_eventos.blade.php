@@ -42,7 +42,7 @@
             {
           ?>
           <td> 
-          <a href="{{ url('/administrador/modificar_evento/'.$eventos[$i]['id']) }}" class="btn btn-outline-primary" role="button">editar</a> 
+          <a href="{{ url('/administrador/modificar_evento/'.$eventos[$i]['id']) }}" class="btn btn-outline-primary mb-5" role="button">editar</a> 
           </td>
           <?php
             } //Cerramos if comprobando url

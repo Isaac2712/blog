@@ -33,18 +33,8 @@ class PagesController extends Controller
                             ]);
     }
 
-    public function RouteManifiestos(){
-        $manifiestos = ModelManifiesto::all();
-        return view('manifiestos', ['manifiestos' => $manifiestos]);
-    }
-
     public function RouteContacto(){
     	return view('contacto');
-    }
-
-    public function RouteInfoEventos($titulo_evento){
-        $info_evento = ModelEvento::where('titulo', $titulo_evento)->get();
-    	return view('info_eventos', ['info_evento' => $info_evento]);
     }
 
     public function RouteQuienesSomos(){

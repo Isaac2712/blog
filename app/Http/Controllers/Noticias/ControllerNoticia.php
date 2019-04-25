@@ -13,24 +13,24 @@ class ControllerNoticia extends Controller
 	public function RouteTablaNoticias()
 	{
         $noticias = ModelNoticia::all();
-        return view('tabla_noticias', ['noticias' => $noticias]);
+        return view('Noticias\tabla_noticias', ['noticias' => $noticias]);
     }
 
 	public function RouteNuevaNoticia()
 	{
-		return view('añadir_noticia');
+		return view('Noticias\añadir_noticia');
 	}
 
 	public function RouteEliminarNoticia()
 	{
 		$noticias = ModelNoticia::all();
-        return view('eliminar_noticia', ['noticias' => $noticias]);
+        return view('Noticias\eliminar_noticia', ['noticias' => $noticias]);
 	}
 
 	public function seleccionarNoticia($id)
 	{
 		$noticia = ModelNoticia::where('id', $id)->first();
-        return view('modificar_noticia', ['noticia' => $noticia]);
+        return view('Noticias\modificar_noticia', ['noticia' => $noticia]);
 	}
 
 	public function anadirNoticia(Request $request)

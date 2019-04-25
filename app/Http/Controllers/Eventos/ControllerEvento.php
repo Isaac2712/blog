@@ -10,21 +10,28 @@ use App\Http\Models\Eventos\ModelEvento;
 
 class ControllerEvento extends Controller
 {
+
+    public function RouteInfoEventos($titulo_evento)
+    {
+        $info_evento = ModelEvento::where('titulo', $titulo_evento)->get();
+        return view('Eventos\info_eventos', ['info_evento' => $info_evento]);
+    }
+
     public function RouteEliminarEvento()
     {
         $eventos = ModelEvento::all();
-        return view('eliminar_evento', ['eventos' => $eventos]);
+        return view('Eventos\eliminar_evento', ['eventos' => $eventos]);
     }
 
     public function RouteTablaEventos()
     {
         $eventos = ModelEvento::all();
-        return view('tabla_eventos', ['eventos' => $eventos]);
+        return view('Eventos\tabla_eventos', ['eventos' => $eventos]);
     }
 
     public function RouteNuevoEvento()
     {
-        return view('añadir_evento');
+        return view('Eventos\añadir_evento');
     }
 
 	public function anadirEvento(Request $request)
@@ -81,7 +88,7 @@ class ControllerEvento extends Controller
     public function seleccionarEvento($id)
     {
         $evento = ModelEvento::where('id', $id)->first();
-        return view('modificar_evento', ['evento' => $evento]);
+        return view('Eventos\modificar_evento', ['evento' => $evento]);
     }
 
     public function modificarEvento(Request $request)

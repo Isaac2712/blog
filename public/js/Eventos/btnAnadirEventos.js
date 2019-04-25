@@ -136,9 +136,11 @@ function btnAnadirEvento()
   
   if(imagen_evento == '')
   {
+
     $('#imagen_evento').removeClass("input-registro-ok"); //Quitamos la clase del input relleno
     $('#imagen_evento').addClass("input-registro-vacio"); //Añadimos clase de input vacio
     vacio = true;
+
   }
   else
   {
@@ -161,32 +163,35 @@ function btnAnadirEvento()
   formData.append("file", file[0].files[0]);
 
   //console.log(formData);
-  $.ajax({
-      type: "POST",
-      url: "/ajax/anadirEvento",
-      data: formData,
-      processData: false,
-      contentType: false,
-      success: function(respuesta) {
-        //console.log(respuesta);
-        if(respuesta.ok == 1)
-        {
-          //$('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
-          window.location.href = '/administrador/añadir_evento';
+  if(vacio == false)
+  {
+    $.ajax({
+        type: "POST",
+        url: "/ajax/anadirEvento",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(respuesta) {
+          //console.log(respuesta);
+          if(respuesta.ok == 1)
+          {
+            //$('#resultado_anadir_evento').html("<br><div class='alert alert-success mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> ¡Has añadido el evento! </div>").show().delay(5000).fadeOut("fast");
+            window.location.href = '/administrador/añadir_evento';
+          }
+          else if(respuesta.ok == 2)
+          {
+            $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> No se ha podido añadir el evento, ese titulo ya existe. </div>").show().delay(5000).fadeOut("fast");
+          }
+          else
+          {
+            $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> No se ha podido añadir el evento, comprueba que no hayan campos vacios. </div>").show().delay(5000).fadeOut("fast");
+          }
+        },
+        error: function() {
+          $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento' > Internal Server Error </div>").show().delay(5000).fadeOut("fast");
         }
-        else if(respuesta.ok == 2)
-        {
-          $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> No se ha podido añadir el evento, ese titulo ya existe. </div>").show().delay(5000).fadeOut("fast");
-        }
-        else
-        {
-          $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> No se ha podido añadir el evento, comprueba que no hayan campos vacios. </div>").show().delay(5000).fadeOut("fast");
-        }
-      },
-      error: function() {
-        $('#resultado_anadir_evento').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento' > Internal Server Error </div>").show().delay(5000).fadeOut("fast");
-      }
-  });
+    });
+  }
 
   return false; //siempre
 }

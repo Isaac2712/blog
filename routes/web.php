@@ -36,7 +36,7 @@ Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteCont
 Route::POST('contacto', 'PagesController@Form');
 
 //Ruta del menu -> manifiestos
-Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'PagesController@RouteManifiestos']);
+Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'Manifiestos\ControllerManifiesto@RouteManifiestos']);
 
 //Ruta al pdf de los manifiestos
 Route::get('manifiesto/{manifiesto}', 'Manifiestos\ControllerManifiesto@GenerarPDF');	
@@ -106,8 +106,36 @@ Route::post('/ajax/anadirNoticia', 'Noticias\ControllerNoticia@anadirNoticia');
 Route::post('/ajax/eliminarNoticia', 'Noticias\ControllerNoticia@eliminarNoticia');
 
 
+/* ---------- */
+/*  NOTICIAS  */
+/* ---------- */
+//Ruta para tabla de noticias
+Route::get('/administrador/añadir_manifiesto', ['as' => 'añadir_manifiesto', 'uses' => 'Manifiestos\ControllerManifiesto@RouteTablaManifiestos']);
+
+//Ruta formulario para añadir noticias
+Route::get('/administrador/nuevo_manifiesto', ['as' => 'nuevo_manifiesto', 'uses' => 'Manifiestos\ControllerManifiesto@RouteNuevoManifiesto']);
+
+//Ruta para eliminar noticias
+Route::get('/administrador/eliminar_manifiesto', ['as' => 'eliminar_manifiesto', 'uses' => 'Manifiestos\ControllerManifiesto@RouteEliminarManifiesto']);
+
+//Ruta para tabla de noticias
+Route::get('/administrador/modificar_manifiesto', ['as' => 'modificar_manifiesto', 'uses' => 'Manifiestos\ControllerManifiesto@RouteTablaManifiestos']);
+
+//Ruta para seleccionar evento
+Route::get('/administrador/modificar_manifiesto/{id}', 'Manifiestos\ControllerManifiesto@seleccionarManifiesto');
+
+//Ruta para modificar el evento seleccionado
+Route::post('/ajax/modificarManifiesto', 'Manifiestos\ControllerManifiesto@modificarManifiesto');
+
+//Ajax Añadir noticias
+Route::post('/ajax/anadirManifiesto', 'Manifiestos\ControllerManifiesto@anadirManifiesto');
+
+//Ajax Eliminar noticias
+Route::post('/ajax/eliminarManifiesto', 'Manifiestos\ControllerManifiesto@eliminarManifiesto');
+
+
 /* -------------- */
 /*  INFO-EVENTOS  */
 /* -------------- */
 //Ruta a la información del evento
-Route::get('/{evento}', 'PagesController@RouteInfoEventos');
+Route::get('/{evento}', 'Eventos\ControllerEvento@RouteInfoEventos');

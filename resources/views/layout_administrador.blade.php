@@ -63,9 +63,9 @@
 			          		<span class="float-right dropdown-toggle mr-1"></span>
 			          	</a>
 				        <ul class="dropdown-menu">
-				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Añadir manifiestos </a> </li> 
-				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Modificar manifiestos </a> </li> 
-				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="#"> Eliminar manifiestos </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('añadir_manifiesto') }}"> Añadir manifiestos </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('modificar_manifiesto') }}"> Modificar manifiestos </a> </li> 
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('eliminar_manifiesto') }}"> Eliminar manifiestos </a> </li> 
 				        </ul>
 		            </li>
 		        </ul>
@@ -87,21 +87,30 @@
 </html>
 <!-- EVENTOS -->
 <!-- BOTON AÑADIR EVENTOS -->
-<script type="text/javascript" src="{{ asset('js/btnAnadirEventos.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Eventos/btnAnadirEventos.js') }}"></script>
 <!-- BOTON ELIMINAR EVENTOS -->
-<script type="text/javascript" src="{{ asset('js/btnEliminarEventos.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Eventos/btnEliminarEventos.js') }}"></script>
 <!-- BOTON MODIFICAR EVENTOS -->
-<script type="text/javascript" src="{{ asset('js/btnSeleccionarEvento.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/btnModificarEvento.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Eventos/btnSeleccionarEvento.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Eventos/btnModificarEvento.js') }}"></script>
 
 <!-- NOTICIAS -->
 <!-- BOTON AÑADIR NOTICIAS -->
-<script type="text/javascript" src="{{ asset('js/btnAnadirNoticias.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Noticias/btnAnadirNoticias.js') }}"></script>
 <!-- BOTON ELIMINAR NOTICIAS -->
-<script type="text/javascript" src="{{ asset('js/btnEliminarNoticias.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Noticias/btnEliminarNoticias.js') }}"></script>
 <!-- BOTON MODIFICAR NOTICIAS -->
-<script type="text/javascript" src="{{ asset('js/btnSeleccionarNoticia.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/btnModificarNoticias.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Noticias/btnSeleccionarNoticia.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Noticias/btnModificarNoticias.js') }}"></script>
+
+<!-- MANIFIESTOS -->
+<!-- BOTON AÑADIR MANIFIESTOS -->
+<script type="text/javascript" src="{{ asset('js/Manifiestos/btnAnadirManifiesto.js') }}"></script>
+<!-- BOTON ELIMINAR MANIFIESTOS -->
+<script type="text/javascript" src="{{ asset('js/Manifiestos/btnEliminarManifiesto.js') }}"></script>
+<!-- BOTON MODIFICAR MANIFIESTOS -->
+<script type="text/javascript" src="{{ asset('js/Manifiestos/btnSeleccionarManifiesto.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/Manifiestos/btnModificarManifiesto.js') }}"></script>
 <?php }
 		else
 		{
