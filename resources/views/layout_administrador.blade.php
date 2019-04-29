@@ -68,6 +68,17 @@
 				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('eliminar_manifiesto') }}"> Eliminar manifiestos </a> </li> 
 				        </ul>
 		            </li>
+		            <!-- USUARIOS -->
+		            <li class="nav-item p-2">
+			          	<a class="nav-link border-bottom border-light" data-toggle="dropdown" data-toggle="collapse">
+			          		<i class="fas fa-user pr-3"></i>
+			          		<span class="pr-1"> Usuarios </span> 
+			          		<span class="float-right dropdown-toggle mr-1"></span>
+			          	</a>
+				        <ul class="dropdown-menu">
+				          	<li class="nav-item hover-menu-administrador"> <a class="dropdown-item" href="{{ route('tabla_usuarios') }}"> Ver todos los usuarios </a> </li> 
+				        </ul>
+		            </li>
 		        </ul>
 		    </section> 
 		</nav>
@@ -111,6 +122,10 @@
 <!-- BOTON MODIFICAR MANIFIESTOS -->
 <script type="text/javascript" src="{{ asset('js/Manifiestos/btnSeleccionarManifiesto.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/Manifiestos/btnModificarManifiesto.js') }}"></script>
+
+<!-- USUARIOS -->
+<!-- BOTON MODIFICAR TIPO DE USUARIO -->
+<script type="text/javascript" src="{{ asset('js/Usuarios/btnModificarTipoUsuario.js') }}"></script>
 <?php }
 		else
 		{

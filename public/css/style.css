@@ -127,11 +127,26 @@ noticias, manifiestos y usuarios. */
 	display: none;
 }
 
+
+/*Tabla de usuarios con fuente mas pequeña*/
+#tabla_usuarios{
+	font-size: 13px;
+}
+
 @media (max-width: 765px){
 	/*Boton del menu de la pagina administrador donde añadimos, eliminamos y modificamos eventos,
 	noticias, manifiestos y usuarios. */
 	#boton-menu-pag-admin{
 		display: block;
+	}
+
+	#formulario_usuarios input, #formulario_usuarios span, #select_user, #boton_user {
+		font-size: 13px;
+	}
+
+	/*Ocultamos el input que dice que tipo de usuario eres cuando la pantalla se hace mas pequeña*/
+	#input_tipo_usuario{
+		display: none;
 	}
 }
 

@@ -139,3 +139,16 @@ Route::post('/ajax/eliminarManifiesto', 'Manifiestos\ControllerManifiesto@elimin
 /* -------------- */
 //Ruta a la información del evento
 Route::get('/{evento}', 'Eventos\ControllerEvento@RouteInfoEventos');
+
+/* ---------------- */
+/*  TABLA USUARIOS  */
+/* ---------------- */
+//Ruta para mostrar tabla con todos los usuarios de la bdd
+Route::get('/administrador/tabla_usuarios',['as' => 'tabla_usuarios', 'uses' => 'Usuarios\ControllerUsuario@RouteTablaUsuarios'] );
+
+//Ruta para mostrar datos de un usuario concreto seleccionado en la tabla
+Route::get('/administrador/modificar_usuario/{id}', 'Usuarios\ControllerUsuario@modificarUsuario');
+
+//Ruta para modificar el tipo de usuario
+Route::post('/ajax/modificar_tipo_usuario', 'Usuarios\ControllerUsuario@modificarTipoUsuario');
+

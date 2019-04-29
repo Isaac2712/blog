@@ -99,4 +99,37 @@ class ControllerUsuario extends Controller
         }
         return $devuelve; 
     }
+
+    public function RouteTablaUsuarios()
+    {
+        $usuarios = ModelUsuario::all();
+        return view('Usuarios\tabla_usuarios', ['usuarios' => $usuarios]);
+    }
+
+    public function modificarUsuario($id)
+    {
+        $usuario = ModelUsuario::where('id', $id)->first(); 
+        $provincia = ModelProvincia::where('id', $usuario->provincia)->get();
+        $municipio = ModelMunicipio::where('id', $usuario->municipio)->where('provincia_id', $usuario->provincia)->get();
+        return view('Usuarios\form_modif_usu', [
+                                                'usuario' => $usuario,
+                                                'provincia' => $provincia,
+                                                'municipio' => $municipio
+                                               ]);
+    }
+
+    public function modificarTipoUsuario(Request $request)
+    {
+        $devuelve['ok'] = 0;
+
+        if(trim($request->input('id_usuario')) != '' && trim($request->input('tipo_usuario')) != '')
+        {
+            //Modificamos en la base de datos
+            $modificar_tipo_usuario = ModelUsuario::find($request->input('id_usuario'));
+            $modificar_tipo_usuario->tipo=$request->input('tipo_usuario');
+            $modificar_tipo_usuario->save();
+            $devuelve['ok'] = 1; //Devuelve 1 cuando guarda en la bdd
+        }
+        return $devuelve;
+    }
 }

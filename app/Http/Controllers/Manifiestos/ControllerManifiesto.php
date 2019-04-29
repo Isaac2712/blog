@@ -95,12 +95,12 @@ class ControllerManifiesto extends Controller
 	{
 		$devuelve['ok'] = 0;
         //Si ningun input esta vacio
-        if(trim($request->input('titulo_manifiesto')) != '' && trim($request->input('enlace_manifiesto')) != '' && trim($request->input('id_manifiesto')) != '' && trim($request->input('fecha_manifiesto')) != '')
+        if(trim($request->input('titulo_manifiesto')) != '' && trim($request->input('texto_manifiesto')) != '' && trim($request->input('id_manifiesto')) != '' && trim($request->input('fecha_manifiesto')) != '')
         {
             //Modificamos en la base de datos
             $modificar_manifiesto = ModelManifiesto::find($request->input('id_manifiesto'));
             $modificar_manifiesto->titulo=$request->input('titulo_manifiesto');
-            $modificar_manifiesto->enlace=$request->input('enlace_manifiesto');
+            $modificar_manifiesto->texto=$request->input('texto_manifiesto');
             $modificar_manifiesto->fecha=$request->input('fecha_manifiesto');
 
             if ($request->hasFile('file')) //Si recibimos el file que es de la imagen
@@ -108,7 +108,7 @@ class ControllerManifiesto extends Controller
                 $file = $request->file('file');
                 $nombre = $file->getClientOriginalName();
                 $modificar_manifiesto->imagen=$file->getClientOriginalName();
-                $path = public_path('imagenes/manifiestos/');
+                $path = public_path('imagenes/Manifiestos/');
                 $file->move($path, $nombre);
             }
 

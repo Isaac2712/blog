@@ -1,22 +1,23 @@
 function btnModificarManifiesto(){
-	var id_noticia = jQuery("[name=id_noticia]").val();
-	var titulo_noticia=jQuery("[name=titulo_noticia]").val();
-	var enlace_noticia=jQuery("[name=enlace_noticia]").val();
-	var fecha_noticia=jQuery("[name=fecha_noticia]").val();
+	var id_manifiesto=jQuery("[name=id_manifiesto]").val();
+	var titulo_manifiesto=jQuery("[name=titulo_manifiesto]").val();
+	var fecha_manifiesto=jQuery("[name=fecha_manifiesto]").val();
+	var texto_manifiesto=jQuery("[name=texto_manifiesto]").val();
+	var imagen_manifiesto=jQuery("[name=imagen_manifiesto]").val();
 	var _token = jQuery("[name=_token]").val();
 
 	var formData = new FormData();
 	formData.append('_token', _token);
-	formData.append('id_noticia', id_noticia);
-	formData.append('titulo_noticia', titulo_noticia);
-	formData.append('enlace_noticia', enlace_noticia);
-	formData.append('fecha_noticia', fecha_noticia);
+	formData.append('id_manifiesto', id_manifiesto);
+	formData.append('titulo_manifiesto', titulo_manifiesto);
+	formData.append('texto_manifiesto', texto_manifiesto);
+	formData.append('fecha_manifiesto', fecha_manifiesto);
 	var file = jQuery('.custom-file-input');
 	formData.append("file", file[0].files[0]);
 
 	$.ajax({
        	type: "POST",
-	    url: "/ajax/modificarNoticia",
+	    url: "/ajax/modificarManifiesto",
 	    data: formData,
 	    processData: false,
 	    contentType: false,
@@ -24,8 +25,8 @@ function btnModificarManifiesto(){
 	    //console.log(respuesta.ok);
         if(respuesta.ok == 1)
         {
-        	//$('#resultado_modificar_noticia').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_modificar_noticia'> Se ha modificado el noticia. </div>").show().delay(5000).fadeOut("fast");
-        	window.location.href = '/administrador/modificar_noticia'
+        	//$('#resultado_modificar_manifiesto').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_modificar_manifiesto'> Se ha modificado el manifiesto. </div>").show().delay(5000).fadeOut("fast");
+        	window.location.href = '/administrador/modificar_manifiesto'
         }
       },
       error: function() {

@@ -11,27 +11,7 @@
     </div>
 
     <div class="form-group">
-      <input type="text" class="form-control" id="localidad_manifiesto" name="localidad_manifiesto" placeholder="Localidad. Ej. Crevillente" value="{{ $manifiesto->localidad }}" required>
-    </div>
-
-    <div class="form-group">
       <textarea class="form-control" rows="5" name="texto_manifiesto" id="texto_manifiesto" placeholder="Texto del manifiesto" required>{{ $manifiesto->texto }}</textarea>
-    </div>
-
-    <div class="form-group">
-      <input type="text" class="form-control" id="lugar_manifiesto" name="lugar_manifiesto" placeholder="Lugar del manifiesto. Ej. Casa de cultura" value="{{ $manifiesto->lugar }}" required>
-    </div>
-
-    <div class="form-group">
-      <input type="text" class="form-control" id="direccion_manifiesto" name="direccion_manifiesto" placeholder="Direccion del manifiesto. Ej. C/ Blasco Ibañez nº2" value="{{ $manifiesto->direccion }}" required>
-    </div>
-
-    <div class="form-group">
-      <input type="tel" class="form-control" id="telefono_manifiesto" name="telefono_manifiesto" placeholder="Telefono. Ej. 617423859" value="{{ $manifiesto->telefono }}" required>
-    </div>
-
-    <div class="form-group">
-      <input type="text" class="form-control" id="horario_manifiesto" name="horario_manifiesto" placeholder="Horario. Ej. 16:00 a 20:00" value="{{ $manifiesto->horario }}" required>
     </div>
 
     <div class="form-group">
