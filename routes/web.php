@@ -152,3 +152,12 @@ Route::get('/administrador/modificar_usuario/{id}', 'Usuarios\ControllerUsuario@
 //Ruta para modificar el tipo de usuario
 Route::post('/ajax/modificar_tipo_usuario', 'Usuarios\ControllerUsuario@modificarTipoUsuario');
 
+//Ruta para la contraseña olvidada
+Route::get('/acceder/contraseña_olvidada', ['as' => 'contraseña_olvidada', 'uses' => 'Usuarios\ControllerUsuario@contraseñaOlvidada']);
+
+//Ruta para comprobar si existe el email y poder cambiar contraseña
+Route::post('/acceder/buscar_email', 'Usuarios\ControllerUsuario@buscarEmail');
+
+//Ruta para cambiar a nueva contraseña 
+
+Route::post('/ajax/cambiarContraseña', 'Usuarios\ControllerUsuario@cambiarContraseña');

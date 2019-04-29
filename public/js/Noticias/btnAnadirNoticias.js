@@ -79,6 +79,8 @@ function btnAnadirNoticia()
           }
           else if(respuesta.ok == 2)
           {
+            $('#titulo_noticia').removeClass("input-registro-ok");
+            $('#titulo_noticia').addClass("input-registro-vacio");
             $('#resultado_anadir_noticia').html("<br><div class='alert alert-danger mt-0 w-100 float-right' role='alert' id='resultado_anadir_evento'> No se ha podido añadir la noticia, ese titulo ya existe. </div>").show().delay(5000).fadeOut("fast");
           }
           else

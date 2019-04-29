@@ -32,7 +32,7 @@
 <header> <!-- sticky-top hace que el header vaya hacia abajo -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <a class="navbar-brand" href="{{ route('home') }}">
-          <img class='imagen-index' src="imagenes/LOGO.jpg" width="100px" height="50px" title="Inicio"/>
+          <img class='imagen-index' src="/imagenes/LOGO.jpg" width="100px" height="50px" title="Inicio"/>
           <span class="title-nav ml-3"> LGTB Crevillent </span>
       </a>
 
@@ -164,5 +164,8 @@
     }
   );
 </script>
+
+<!-- CAMBIAR CONTRASEÑA OLVIDADA -->
+<script type="text/javascript" src="{{ asset('js/Usuarios/btnCambiarContraseña.js') }}"></script>
 </body>
 </html>

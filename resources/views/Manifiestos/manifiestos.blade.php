@@ -14,19 +14,20 @@
     </header>
     <main class="container-fluid">
         <article>       
-            <?php 
-            	for ($i = 0; $i < count($manifiestos); $i++ ){ 
-            		$id_manifiesto = $manifiestos[$i]['id'];
-            		$titulo_manifiesto = $manifiestos[$i]['titulo'];
-            		$fecha_manifiesto = $manifiestos[$i]['fecha'];
-            ?>
-                <main class="col-12">                              
-                    <?php ?>
-                    <p class="card-text"> <a href="manifiesto/<?=$titulo_manifiesto?>" target="_blank"> <?= $titulo_manifiesto ?> </a> </p>
-                    <p class="card-text fecha-reivi">  <i> <?= "<i>".$fecha_manifiesto."</i>"; ?>  </i> </p>
-                </main>
         <?php 
-                }  
+        	for ($i = 0; $i < count($manifiestos); $i++ ){ 
+        		$id_manifiesto = $manifiestos[$i]['id'];
+        		$titulo_manifiesto = $manifiestos[$i]['titulo'];
+        		$fecha_manifiesto = $manifiestos[$i]['fecha'];
+        ?>
+            <main class="col-12 p-2">                              
+                <?php ?>
+                <span class="card-text mr-2">  <i> <?= "<i>".$fecha_manifiesto."</i>"; ?>  </i> </span>
+                <span class="card-text"> <a href="manifiesto/<?=$titulo_manifiesto?>" target="_blank"> <?= $titulo_manifiesto ?> </a> </span>
+                
+            </main>
+        <?php 
+            }  
         ?>
         </article>
     </main>

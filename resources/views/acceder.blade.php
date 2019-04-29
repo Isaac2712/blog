@@ -13,7 +13,7 @@
     <?php if(!isset($_SESSION['nick_usuario'])){ ?>
         <section id="app" class="col-md-7 col-lg-5 m-auto">
             <header class="mb-3">
-                <img class="card-img-top" src="imagenes/LOGO.jpg" title="Inicio"/>
+                <img class="card-img-top" src="/imagenes/LOGO.jpg" title="Inicio"/>
             </header>
             <main>
                 <form method="POST">
@@ -31,6 +31,9 @@
                     <button onclick="return btnAcceder()" name="acceder" class="btn btn-primary btn-block"> Acceder </button>
                     <div id="resultado"></div>
                     <button onclick="return btnRegistrarse()" name="registrarse" class="mt-3 btn btn-success btn-block"> Registrarse </button>
+                    <aside class="text-center mt-2 mb-2">
+                        <a href="{{ route('contraseña_olvidada') }}" class="text-primary"> He olvidado mi contraseña. </a>
+                    </aside>
                 </form> 
             </main> 
         
