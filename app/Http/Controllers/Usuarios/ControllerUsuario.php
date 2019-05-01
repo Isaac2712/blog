@@ -127,6 +127,7 @@ class ControllerUsuario extends Controller
             //Modificamos en la base de datos
             $modificar_tipo_usuario = ModelUsuario::find($request->input('id_usuario'));
             $modificar_tipo_usuario->tipo=$request->input('tipo_usuario');
+            $modificar_tipo_usuario->fecha_nacimiento=$request->input('fecha_nacimiento');
             $modificar_tipo_usuario->save();
             $devuelve['ok'] = 1; //Devuelve 1 cuando guarda en la bdd
         }

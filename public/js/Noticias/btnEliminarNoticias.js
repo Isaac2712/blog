@@ -8,7 +8,7 @@ function btnEliminarNoticia()
   console.log(id_noticia);
 
   //Comprobamos si se ha seleccionado algun noticia
-  if(id_noticia == "") //si el noticia esta vacio
+  if(id_noticia == "") //si la noticia esta vacio
   {
     //ocultamos el div 'cuidado' añadiendo la clase 'definitivo_eliminar'
     jQuery("#definitivo_eliminar").addClass('definitivo_eliminar');
@@ -19,7 +19,7 @@ function btnEliminarNoticia()
   {
     //quitamos el resto de div
     jQuery("resultado_eliminar_noticia").html('');
-    //si el noticia no esta vacio
+    //si la noticia no esta vacio
     //quitamos el div que dice 'selecciona algun noticia...'
     jQuery("#boton_eliminar").html('');
     //Quitamos la clase a este div para poder visualizar el div 'cuidado'
@@ -48,12 +48,12 @@ function btnSiEliminamosNoticia(){
         //console.log(respuesta);
         if(respuesta.ok == 1)
         {
-          $('#resultado_eliminar_noticia').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_eliminar_noticia'> ¡Has eliminado el noticia! </div>").show().delay(5000).fadeOut("fast");
+          $('#resultado_eliminar_noticia').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_eliminar_noticia'> ¡Has eliminado la noticia! </div>").show().delay(5000).fadeOut("fast");
           setTimeout("location.reload()", 5000);
         }
         else
         {
-          $('#resultado_eliminar_noticia').html("<br><div class='alert alert-danger mt-0 w-100' role='alert' id='resultado_eliminar_noticia'> No se ha podido eliminar el noticia, intentalo de nuevo. </div>").show().delay(5000).fadeOut("fast");
+          $('#resultado_eliminar_noticia').html("<br><div class='alert alert-danger mt-0 w-100' role='alert' id='resultado_eliminar_noticia'> No se ha podido eliminar la noticia, intentalo de nuevo. </div>").show().delay(5000).fadeOut("fast");
         }
       },
       error: function() {
@@ -64,5 +64,5 @@ function btnSiEliminamosNoticia(){
 
 function btnNoEliminamosNoticia(){
   jQuery("#definitivo_eliminar").addClass('definitivo_eliminar');
-  $('#resultado_eliminar_noticia').html("<br><div class='alert alert-secondary mt-0 w-100' role='alert' id='resultado_eliminar_noticia'> Has decidido no eliminar el noticia. </div>").show().delay(3000).fadeOut("fast");
+  $('#resultado_eliminar_noticia').html("<br><div class='alert alert-secondary mt-0 w-100' role='alert' id='resultado_eliminar_noticia'> Has decidido no eliminar la noticia. </div>").show().delay(3000).fadeOut("fast");
 }

@@ -2,11 +2,14 @@ function btnModificarTipoUsuario()
 {	
 	var id_usuario = jQuery("[name=id_usuario]").val();
 	var tipo_usuario = jQuery("[name=seleccionar_tipo_usuario]").val();
+	var fecha_nacimiento = jQuery("[name=fecha_nacimiento]").val();
+
 	var _token = jQuery("[name=_token]").val();
 
 	var datos = {
 				 'id_usuario':id_usuario,
 				 'tipo_usuario':tipo_usuario,
+				 'fecha_nacimiento':fecha_nacimiento,
 				 '_token':_token
 				}
 	
