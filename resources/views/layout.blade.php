@@ -87,19 +87,19 @@
         </aside>
         <aside class="col-md-5 col-lg-6 text-center text-md-right">
           <!-- Facebook -->
-          <a id="icono-redes-sociales-footer" class="p-2" href="https://es-es.facebook.com/LGTBCREVILLENT/" class="fb-ic">
+          <a id="icono-redes-sociales-footer" onmouseover="RedesSocialesFooterHover()" onmouseout="RedesSocialesFooterSinHover()"  class="p-2" href="https://es-es.facebook.com/LGTBCREVILLENT/" class="fb-ic">
             <i class="fab fa-facebook-f white-text mr-4"> </i>
           </a>
           <!-- Twitter -->
-          <a class="text-white icono-redes-sociales-footer" href="https://twitter.com/crevillentlgtb?lang=es" class="tw-ic">
+          <a id="icono-redes-sociales-footer" onmouseover="RedesSocialesFooterHover()" onmouseout="RedesSocialesFooterSinHover()" class="p-2" href="https://twitter.com/crevillentlgtb?lang=es">
             <i class="fab fa-twitter white-text mr-4"> </i>
           </a>
           <!-- Google +-->
-          <a class="text-white icono-redes-sociales-footer" href="https://plus.google.com/107742714242312412984" class="gplus-ic">
+          <a id="icono-redes-sociales-footer" onmouseover="RedesSocialesFooterHover()" onmouseout="RedesSocialesFooterSinHover()" class="p-2" href="https://plus.google.com/107742714242312412984">
             <i class="fab fa-google-plus-g white-text mr-4"> </i>
           </a>
           <!--Instagram-->
-          <a class="text-white icono-redes-sociales-footer" href="" class="ins-ic">
+          <a id="icono-redes-sociales-footer" onmouseover="RedesSocialesFooterHover()" onmouseout="RedesSocialesFooterSinHover()" class="p-2" href="">
             <i class="fab fa-instagram white-text"> </i>
           </a>
         </aside>
@@ -118,10 +118,9 @@
       <section class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
         <h6 class="text-uppercase font-weight-bold">Terminos legales</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-        <p><a href="{{ route('home') }}">Inicio</a></p>
-        <p><a href="{{ route('manifiestos') }}">Manifiestos</a></p>
-        <p><a href="{{ route('quienes_somos') }}">Quienes somos</a></p>
-        <p><a href="{{ route('contacto') }}">Contacto</a></p>
+        <p><a href="{{ route('aviso_legal') }}">Aviso Legal</a></p>
+        <p><a href="{{ route('politica_cookies') }}">Politica de Cookies</a></p>
+        <p><a href="{{ route('politica_privacidad') }}">Politica de privacidad</a></p>
       </section>
 
       <section class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -152,19 +151,8 @@
 </section>
 <!-- SCRIPT PAR APP -->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-<script>
-  $('#header-footer').addClass('header-footer'); //Header en lila
-
-  $("#icono-redes-sociales-footer").hover( //Si hacemos hover en un icono de redes sociales
-    function(){ // Mouse Over
-      $('#header-footer').removeClass("header-footer"); //quitamos clase header lila
-    },
-    function(){ // Mouse Out
-      $('#header-footer').addClass("header-footer"); //añadimos clase header lila (como al principio)
-    }
-  );
-</script>
-
+<!-- SCRIPT PARA HOVER SOBRE REDES SOCIALES FOOTER -->
+<script type="text/javascript" src="{{ asset('js/RedesSocialesFooter.js')}}"></script>
 <!-- CAMBIAR CONTRASEÑA OLVIDADA -->
 <script type="text/javascript" src="{{ asset('js/Usuarios/btnCambiarContraseña.js') }}"></script>
 </body>

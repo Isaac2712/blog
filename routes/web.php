@@ -161,5 +161,16 @@ Route::get('/acceder/contraseña_olvidada', ['as' => 'contraseña_olvidada', 'us
 Route::post('/acceder/buscar_email', 'Usuarios\ControllerUsuario@buscarEmail');
 
 //Ruta para cambiar a nueva contraseña 
-
 Route::post('/ajax/cambiarContraseña', 'Usuarios\ControllerUsuario@cambiarContraseña');
+
+/* ---------------- */
+/*  PIE DE PAGINA  */
+/* ---------------- */
+//Ruta aviso legal
+Route::get('/terminos_legales/aviso_legal', ['as' => 'aviso_legal', 'uses' => 'PagesController@RouteAvisoLegal']);
+
+//Ruta politica de cookies
+Route::get('/terminos_legales/politica_cookies', ['as' => 'politica_cookies', 'uses' => 'PagesController@RoutePoliticaCookies']);
+
+//Ruta politica de privacidad
+Route::get('/terminos_legales/politica_privacidad', ['as' => 'politica_privacidad', 'uses' => 'PagesController@RoutePoliticaPrivacidad']);

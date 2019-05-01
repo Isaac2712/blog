@@ -49,15 +49,6 @@ class PagesController extends Controller
         return view('main_admin');
     }
 
-    /*public function Form(Request $request){
-    	$this->validate($request, [
-    		'email_contacto' => 'required|email',
-    		'password_contacto' => 'required'
-    	]);
-
-    	return $request->all();
-    }*/
-
     public function RouteEnviarMensaje(Request $request){
         if(trim($request->input('nombre')) != '' && trim($request->input('apellidos')) != '' && trim($request->input('email')) != '' && trim($request->input('mensaje')) != '' )
         {
@@ -69,5 +60,17 @@ class PagesController extends Controller
             mail($to,$subject,$message, $headers);
         }
         return view('contacto');
+    }
+
+    public function RouteAvisoLegal(){
+        return view('Terminos legales\aviso_legal');
+    }
+
+    public function RoutePoliticaCookies(){
+        return view('Terminos legales\politica_cookies');
+    }
+
+    public function RoutePoliticaPrivacidad(){
+        return view('Terminos legales\politica_privacidad');
     }
 }
