@@ -30,7 +30,10 @@
         	<a href="{{ url('/administrador/modificar_usuario/'.$usuarios[$i]['id']) }}" class="btn btn-outline-primary btn-sm" role="button">editar</a> 
         </td>
         <td>
-        	<a href="{{ url('/administrador/eliminar_usuario/'.$usuarios[$i]['id']) }}" class="btn btn-outline-danger btn-sm" role="button">eliminar</a> 
+          <form action="{{ url('/administrador/eliminar_usuario/'.$usuarios[$i]['id']) }}" method="POST" name="form-eliminar-noticias">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        	  <button type="submit" class="btn btn-outline-danger btn-sm">eliminar</button> 
+          </form>
         </td>
       </tr>
       <?php

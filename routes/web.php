@@ -163,6 +163,9 @@ Route::post('/acceder/buscar_email', 'Usuarios\ControllerUsuario@buscarEmail');
 //Ruta para cambiar a nueva contraseña 
 Route::post('/ajax/cambiarContraseña', 'Usuarios\ControllerUsuario@cambiarContraseña');
 
+//Ruta para eliminar un usuario
+Route::get('/administrador/eliminar_usuario/{id}', 'Usuarios\ControllerUsuario@eliminarUsuario');
+
 /* ---------------- */
 /*  PIE DE PAGINA  */
 /* ---------------- */

@@ -160,5 +160,10 @@ class ControllerUsuario extends Controller
         }
         return $devuelve;
     }
+
+    public function eliminarUsuario()
+    {
+       return "ok";
+    }
 }
 
