@@ -49,7 +49,7 @@ function btnSiEliminamosManifiesto(){
         if(respuesta.ok == 1)
         {
           $('#resultado_eliminar_manifiesto').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_eliminar_manifiesto'> ¡Has eliminado el manifiesto! </div>").show().delay(5000).fadeOut("fast");
-          location.reload();
+          setTimeout("location.reload()", 5000);
         }
         else
         {

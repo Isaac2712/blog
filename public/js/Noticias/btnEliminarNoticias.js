@@ -49,7 +49,7 @@ function btnSiEliminamosNoticia(){
         if(respuesta.ok == 1)
         {
           $('#resultado_eliminar_noticia').html("<br><div class='alert alert-success mt-0 w-100' role='alert' id='resultado_eliminar_noticia'> ¡Has eliminado el noticia! </div>").show().delay(5000).fadeOut("fast");
-          location.reload();
+          setTimeout("location.reload()", 5000);
         }
         else
         {
