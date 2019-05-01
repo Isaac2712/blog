@@ -32,17 +32,19 @@ Route::post('/ajax/provincia', 'Usuarios\ControllerUsuario@Provincia');
 Route::post('/ajax/registrarse', 'Usuarios\ControllerUsuario@Registrarse');
 
 //Ruta del menu -> contacto
-Route::get('contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
-Route::POST('contacto', 'PagesController@Form');
+Route::get('/contacto', ['as' => 'contacto', 'uses' => 'PagesController@RouteContacto']);
+
+//Ruta para enviar correo desde la pagina contacto
+Route::post('/contacto/enviar_mensaje', 'PagesController@RouteEnviarMensaje');
 
 //Ruta del menu -> manifiestos
-Route::get('manifiestos', ['as' => 'manifiestos', 'uses' => 'Manifiestos\ControllerManifiesto@RouteManifiestos']);
+Route::get('/manifiestos', ['as' => 'manifiestos', 'uses' => 'Manifiestos\ControllerManifiesto@RouteManifiestos']);
 
 //Ruta al pdf de los manifiestos
-Route::get('manifiesto/{manifiesto}', 'Manifiestos\ControllerManifiesto@GenerarPDF');	
+Route::get('/manifiesto/{manifiesto}', 'Manifiestos\ControllerManifiesto@GenerarPDF');	
 
 //Ruta del menu -> quienes somos
-Route::get('quienesSomos', ['as' => 'quienes_somos', 'uses' => 'PagesController@RouteQuienesSomos']);
+Route::get('/quienesSomos', ['as' => 'quienes_somos', 'uses' => 'PagesController@RouteQuienesSomos']);
 
 //Ruta a error
 Route::get('/error', ['as' => 'error', 'uses' => 'PagesController@RouteError']);

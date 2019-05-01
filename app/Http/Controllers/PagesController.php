@@ -57,4 +57,17 @@ class PagesController extends Controller
 
     	return $request->all();
     }*/
+
+    public function RouteEnviarMensaje(Request $request){
+        if(trim($request->input('nombre')) != '' && trim($request->input('apellidos')) != '' && trim($request->input('email')) != '' && trim($request->input('mensaje')) != '' )
+        {
+            $from = $request->input('email');
+            $to = "isaac.marroc@gmail.com";
+            $subject = "Mensaje de ".$request->input('nombre');
+            $message = $request->input('mensaje');
+            $headers = "From:" . $from;
+            mail($to,$subject,$message, $headers);
+        }
+        return view('contacto');
+    }
 }

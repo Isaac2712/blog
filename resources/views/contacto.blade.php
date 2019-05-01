@@ -25,7 +25,7 @@
     </header>
     <main class="container mb-5">
         <section>
-            <form role="form" id="Formulario" action="contacto" method="POST">
+            <form role="form" id="Formulario" action="{{ url('/contacto/enviar_mensaje') }}" method="POST">
             	<input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
                     <label class="control-label" for="nombre">Nombre:</label>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">                
                     <input type="submit" class="btn btn-primary" value="Enviar">
-                    <input type="reset" class="btn btn-default" value="Limpiar">                
+                    <input type="reset" class="btn btn-outline-secondary" value="Limpiar">                
                 </div>
             </form>
         </section>   
