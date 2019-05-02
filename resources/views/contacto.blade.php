@@ -28,11 +28,11 @@
             <form role="form" id="Formulario" action="{{ url('/contacto/enviar_mensaje') }}" method="POST">
             	<input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
-                    <label class="control-label" for="nombre">Nombre:</label>
+                    <label class="control-label" for="nombre">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduzca su nombre" required autofocus value="" />
                 </div>   
                 <div class="form-group">
-                    <label class="control-label" for="apellidos">Apellidos:</label>
+                    <label class="control-label" for="apellidos">Apellidos</label>
                     <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Introduzca sus apellidos" required autofocus value="" />
                 </div>
                 <div class="form-group">

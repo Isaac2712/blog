@@ -141,7 +141,7 @@
         <h6 class="text-uppercase font-weight-bold">Contacto</h6>
         <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
         <p><i class="fas fa-home mr-3"></i> Plaça Dr. Mas Candela, 15, 03330 Crevillent, Alacant</p>
-        <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+        <p><i class="fas fa-envelope mr-3"></i> lgtbcrevillent@gmail.com </p>
         <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
         <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
       </section>
@@ -149,15 +149,25 @@
   </section>
 
   <aside class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://mdbootstrap.com/education/bootstrap/"> lgtbcrevillent.com </a>
+    <a href="https://lgtbcrevillent-2.000webhostapp.com/"> lgtbcrevillent.com </a>
   </aside>
 </footer>
-</section>
+<!-- SECCION PARA COOKIES -->
+  <section class="alert alert-dismissible text-center" id="section_cookies">
+    <span>Esta web utiliza cookies para obtener datos estadísticos de la navegación de sus usuarios. Si continúas navegando consideramos que aceptas su uso.</span>
+    <a href="{{ route('politica_privacidad') }}">Más información</a>
+    <button class="btn btn-light text-white" onclick="aceptar_cookies();" style="cursor:pointer;">Cerrar</button>
+  </section>
+<!-- /FIN SECCION PARA COOKIES -->
+</section> <!-- SECCION APP -->
 <!-- SCRIPT PAR APP -->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <!-- SCRIPT PARA HOVER SOBRE REDES SOCIALES FOOTER -->
 <script type="text/javascript" src="{{ asset('js/RedesSocialesFooter.js')}}"></script>
 <!-- CAMBIAR CONTRASEÑA OLVIDADA -->
 <script type="text/javascript" src="{{ asset('js/Usuarios/btnCambiarContraseña.js') }}"></script>
+<!-- SCRIPT PARA COOKIES -->
+<script type="text/javascript" src="{{ asset('js/cookies.js') }}"></script>
+
 </body>
 </html>

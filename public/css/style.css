@@ -6,17 +6,26 @@
 
 @font-face{
 	font-family: 'lobster';
-    src: url('lobster-regular-webfont.woff2') format('woff2'),
-         url('lobster-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+    src: url('../favicon/webfonts/Lato/Lato-Regular.ttf') format('ttf');
 }
 
 *{
 	box-sizing: border-box;
 	font-family: 'lobster';
 	font-size: 14px;
+}
+#section_cookies{
+	position: relative;
+	width: 100%;
+	margin: auto;
+	bottom: 1px;
+	z-index: 100;
+	border: 2px solid blue;
+}
+
+/* Boton de la seccion de cookies en lila */
+#section_cookies button{
+	background-color: #9E5CDC;
 }
 
 .link-menu-principal{

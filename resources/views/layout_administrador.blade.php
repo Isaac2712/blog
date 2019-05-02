@@ -84,6 +84,8 @@
 		</nav>
 		<aside class="bg-dark p-3">
 			<a class="text-white" href="{{ route('home') }}"> Volver a pagina </a>
+			<hr>
+			<a class="text-white" href="{{ route('administrador') }}"> Main administrador </a>
 		</aside>
 		</section>
 		<!-- SECCION PARA LOS FORMULARIOS -->
