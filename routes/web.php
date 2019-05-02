@@ -23,7 +23,7 @@ Route::get('/acceder', ['as' => 'acceder', 'uses' => 'Usuarios\ControllerUsuario
 Route::get('/registrarse', ['as' => 'registrarse', 'uses' => 'Usuarios\ControllerUsuario@RouteRegistrarse']);
 
 //Ajax acceder
-Route::post('/ajax/acceder', 'Usuarios\ControllerUsuario@Acceder');
+Route::match(['get','post'], '/ajax/acceder', 'Usuarios\ControllerUsuario@Acceder');
 
 //Ajax provincia
 Route::post('/ajax/provincia', 'Usuarios\ControllerUsuario@Provincia');
@@ -51,6 +51,9 @@ Route::get('/error', ['as' => 'error', 'uses' => 'PagesController@RouteError']);
 
 //Ruta a la parte ADMINISTRADOR de la web
 Route::get('/administrador', ['as' => 'administrador', 'uses' => 'PagesController@RouteAdministrador']);
+
+//Ruta del menu -> mi perfil
+Route::get('/mi_perfil/{nick}', 'Usuarios\ControllerUsuario@RouteMiPerfil');
 
 /* ---------- */
 /*   EVENTOS  */
@@ -164,7 +167,7 @@ Route::post('/acceder/buscar_email', 'Usuarios\ControllerUsuario@buscarEmail');
 Route::post('/ajax/cambiarContraseña', 'Usuarios\ControllerUsuario@cambiarContraseña');
 
 //Ruta para eliminar un usuario
-Route::get('/administrador/eliminar_usuario/{id}', 'Usuarios\ControllerUsuario@eliminarUsuario');
+Route::post('/administrador/eliminar_usuario/{id}', 'Usuarios\ControllerUsuario@eliminarUsuario');
 
 /* ---------------- */
 /*  PIE DE PAGINA  */

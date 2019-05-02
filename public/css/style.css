@@ -3,8 +3,20 @@
 	lila menos oscuro --> #380B61;
 	lila claro --> #9E5CDC;
 */
+
+@font-face{
+	font-family: 'lobster';
+    src: url('lobster-regular-webfont.woff2') format('woff2'),
+         url('lobster-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 *{
 	box-sizing: border-box;
+	font-family: 'lobster';
+	font-size: 14px;
 }
 
 .link-menu-principal{
@@ -95,7 +107,16 @@
 	color: #4B088A;
 }
 
+#formulario_nueva_contraseña, #formulario_nueva_contraseña input, #formulario_nueva_contraseña span, 
+#seccion_cambiar_contrasena, #seccion_cambiar_contrasena input, #seccion_cambiar_contrasena span,
+#span_cambiar_contrasena{
+	font-size: 12px;
+}
+
+/* -------------------- */
 /* Pagina Administrador */
+/* -------------------- */
+
 .hover-menu-administrador a:hover{
 	background-color: #4169E1;
 }
@@ -147,6 +168,12 @@ noticias, manifiestos y usuarios. */
 	/*Ocultamos el input que dice que tipo de usuario eres cuando la pantalla se hace mas pequeña*/
 	#input_tipo_usuario{
 		display: none;
+	}
+
+	#formulario_nueva_contraseña, #formulario_nueva_contraseña input, #formulario_nueva_contraseña span, 
+	#seccion_cambiar_contrasena, #seccion_cambiar_contrasena input, #seccion_cambiar_contrasena span,
+	#span_cambiar_contrasena{
+		font-size: 16px;
 	}
 }
 

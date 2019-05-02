@@ -88,8 +88,13 @@ function Registrarse()
 		$('#div_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade la contraseña al campo contraseña. </aside>").show().delay(9000).fadeOut("fast");
 		vacio = true;
 	} 
-	else
+	else if(!validar_pass) //contraseña no valida
 	{ 
+		$('#div_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> La contraseña no es valida. </aside>").show().delay(9000).fadeOut("fast");
+		vacio = true;
+	}
+	else
+	{
 		$('#pass').addClass("input-registro-ok"); 
 		$('#div_pass').html("");
 	}
@@ -102,6 +107,11 @@ function Registrarse()
 		$('#div_pass2').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade la contraseña al campo repetir contraseña. </aside>").show().delay(11000).fadeOut("fast");
 		vacio = true;
 	} 
+	else if(!validar_pass2) //contraseña no valida
+	{ 
+		$('#div_pass2').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> La contraseña no es valida. </aside>").show().delay(9000).fadeOut("fast");
+		vacio = true;
+	}
 	else
 	{ 
 		$('#pass2').addClass("input-registro-ok"); 
@@ -116,7 +126,7 @@ function Registrarse()
 		$('#pass2').removeClass("input-registro-ok"); 
 		$('#pass').addClass("input-registro-vacio");
 		$('#pass2').addClass("input-registro-vacio");
-		$('#div_comprobar_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Las contraseñas no son iguales </aside>").show().delay(13000).fadeOut("fast");
+		$('#div_comprobar_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Las contraseñas no son iguales </aside><br>").show().delay(13000).fadeOut("fast");
 		vacio = true;
 	} 
 	else

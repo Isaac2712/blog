@@ -31,12 +31,12 @@
             </div>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="pass"> Contraseña </label>
-                <input type="password"  value="" class="form-control" id="pass" name="pass" placeholder="Contraseña">
+                <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
                 <aside id="div_pass"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-6">
                 <label class="control-label" for="pass2"> Repetir contraseña </label>
-                <input type="password"  value="" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña">
+                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña">
                 <aside id="div_pass2"></aside>
             </div>
             <aside class="col-md-12" id="div_comprobar_pass"></aside>
@@ -44,15 +44,13 @@
                 <label class="control-label" for="prov"> Provincia </label>
                 <select onchange="return Provincia()" class='form-control' name='provincia' id='selectProvincia'>
                     <option  value="" disabled selected>Selecciona una provincia </option>
-                <?php for($i=0;$i<count($provincias);$i++)
-                        { 
-                            $idprov = $provincias[$i]['id'];
-                            $prov = $provincias[$i]['provincia'];
-                ?>
-                          <option value='<?= $idprov ?>'><?= $prov ?></option>
-                <?php 
-                        } 
-                ?>
+                    <?php for($i=0;$i<count($provincias);$i++)
+                            { 
+                                $idprov = $provincias[$i]['id'];
+                                $prov = $provincias[$i]['provincia'];
+                    ?>
+                                <option value='<?= $idprov ?>'><?= $prov ?></option>
+                    <?php   } ?>
                 </select>
                 <aside id="div_provincia"></aside>
             </div>

@@ -14,6 +14,12 @@ use App\Http\Models\Municipios\ModelMunicipio;
 
 class ControllerUsuario extends Controller
 {
+    public function RouteMiPerfil($nick)
+    {
+        $usuario = ModelUsuario::where('nick', $nick)->get();
+        return view('Usuarios/perfil_usuario', ['usuario' => $usuario]);
+    }
+
     public function RouteAcceder()
     {
     	$usuarios = ModelUsuario::all();
@@ -35,20 +41,26 @@ class ControllerUsuario extends Controller
 
     public function Acceder(Request $request)
     {
-    	$devuelve['ok']=0;
+    	$devuelve['ok']=0; //Devuelve 0 si la contraseña no es valida
     	//AQUI COMPROBAMOS DATOS INTRODUCIDOS EN ACCEDER
     	if (trim($request->input('nick')) != '' && trim($request->input('pass')) != '')
 		{
 			$usuario = ModelUsuario::Where('nick',$request->input('nick'))->Where('password',$request->input('pass'))->get();
-			if ($usuario->count()>0)
+            $nick_usuario = ModelUsuario::Where('nick',$request->input('nick'))->get();
+			if ($nick_usuario->count()>0) //comprobamos si existe el nick del usuario
 			{
-				$devuelve['ok']=1;
-		        $_SESSION['nick_usuario'] = $request->input('nick');
-		        $_SESSION['tipo_usuario'] = $usuario[0]['tipo'];
-			}
-			else
-				$devuelve['ok']=0;
-		}
+                if($usuario->count()>0)//comprobamos el usuario entero
+                {
+                    $devuelve['ok']=1;
+                    $_SESSION['nick_usuario'] = $request->input('nick');
+                    $_SESSION['tipo_usuario'] = $usuario[0]['tipo'];
+                } 
+            }
+            else
+            {
+               $devuelve['ok'] = 2; 
+            }
+        }
 		return $devuelve;
     }
 
@@ -161,9 +173,10 @@ class ControllerUsuario extends Controller
         return $devuelve;
     }
 
-    public function eliminarUsuario()
+    public function eliminarUsuario(Request $request, $id)
     {
-       return "ok";
+       ModelUsuario::where('id', $id)->delete();
+       return url(''); //PONER URL
     }
 }
 

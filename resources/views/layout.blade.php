@@ -43,16 +43,16 @@
       <section class="collapse navbar-collapse d-flex-lg justify-content-lg-end" id="navbarTogglerDemo01">
         <ul class="navbar-nav">
           <li class="nav-item li-menu-principal">
-            <a class="nav-link {{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
+            <a class="nav-link pl-2 {{ activeMenu('/') }}" href="{{ route('home') }}">INICIO</a>
           </li>
           <li class="nav-item li-menu-principal">
-            <a class="nav-link {{ activeMenu('manifiestos') }}" href="{{ route('manifiestos') }}">MANIFIESTOS</a>
+            <a class="nav-link pl-2  {{ activeMenu('manifiestos') }}" href="{{ route('manifiestos') }}">MANIFIESTOS</a>
           </li>
           <li class="nav-item li-menu-principal">
-            <a class="nav-link {{ activeMenu('quienesSomos') }}" href="{{ route('quienes_somos') }}">QUIENES SOMOS</a>
+            <a class="nav-link pl-2 {{ activeMenu('quienesSomos') }}" href="{{ route('quienes_somos') }}">QUIENES SOMOS</a>
           </li> 
           <li class="nav-item li-menu-principal">
-            <a class="nav-link {{ activeMenu('contacto') }}" href="{{ route('contacto') }}">CONTACTO</a>
+            <a class="nav-link pl-2 {{ activeMenu('contacto') }}" href="{{ route('contacto') }}">CONTACTO</a>
           </li>
           <?php if(!isset($_SESSION['nick_usuario'])){ ?> <!-- Si no hay session -->
                 <li class="nav-item">
@@ -61,13 +61,17 @@
           <?php } if(($tipo_usuario) && $tipo_usuario == 'Admin'){ ?> 
           <!-- Si la session es de tipo usuario -->
                 <li class="nav-item li-menu-principal">
-                    <a class="nav-link {{ activeMenu('administrador') }}" href="{{ route('administrador') }}">ADMINISTRADOR</a>
+                    <a class="nav-link pl-2 {{ activeMenu('administrador') }}" href="{{ route('administrador') }}">ADMINISTRADOR</a>
+                </li>
+          <?php } if(isset($_SESSION['nick_usuario']) && ($tipo_usuario) && $tipo_usuario == 'Estandar'){ ?>  <!-- Si hay session de un usuario estandar, añadimos opcion mi perfil -->
+                <li class="nav-item li-menu-principal">
+                    <a class="nav-link pl-2 mr-2 {{ activeMenu('mi_perfil') }}" href="{{ url('/mi_perfil/'.$_SESSION['nick_usuario']) }}">MI PERFIL</a>
                 </li>
           <?php } if(isset($_SESSION['nick_usuario'])){ ?> <!-- Si hay session -->
                 <form method='POST' action='{{ route('desconectar') }}' >
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <button class='btn btn-danger' name='desconectar' type="submit"> DESCONECTAR </button>
-                </form>
+                </form> 
           <?php } ?>
         </ul>
       </section> 
