@@ -176,7 +176,7 @@ class ControllerUsuario extends Controller
     public function eliminarUsuario(Request $request, $id)
     {
        ModelUsuario::where('id', $id)->delete();
-       return url(''); //PONER URL
+       return redirect('/administrador/tabla_usuarios');
     }
 }
 

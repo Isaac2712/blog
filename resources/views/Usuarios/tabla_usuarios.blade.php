@@ -29,11 +29,16 @@
         <td>
         	<a href="{{ url('/administrador/modificar_usuario/'.$usuarios[$i]['id']) }}" class="btn btn-outline-primary btn-sm" role="button">editar</a> 
         </td>
-        <td>
+        <?php if(($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 'Admin'){ ?>
+        <td class="w-25"> <!-- <td> cuando la sesion es de tipo Administrador  -->
+          <span> No se puede eliminar usuario Administrador </span>
+        <?php } else { ?>
+        <td> <!-- <td> cuando los usuarios son estandar  -->
           <form action="{{ url('/administrador/eliminar_usuario/'.$usuarios[$i]['id']) }}" method="POST" name="form-eliminar-noticias">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        	  <button type="submit" class="btn btn-outline-danger btn-sm">eliminar</button> 
+            <button type="submit" class="btn btn-outline-danger btn-sm">eliminar</button> 
           </form>
+        <?php } ?>
         </td>
       </tr>
       <?php
