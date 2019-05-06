@@ -5,7 +5,7 @@ function btnCambiarContraseña()
 	var contraseña = jQuery("[name=contraseña]").val();
 	var contraseña2 = jQuery("[name=contraseña2]").val();
 	var _token = jQuery("[name=_token]").val();
-    var regex_pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+    var regex_pass = /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g;
 	var validar_contraseña = regex_pass.test(contraseña) ? true : false;
 	var validar_contraseña2 = regex_pass.test(contraseña2) ? true : false;
 	var validar = false;
@@ -18,7 +18,7 @@ function btnCambiarContraseña()
 	}
 	else if(!validar_contraseña)
 	{
-		$('#div_contraseña').html("<aside style='font-size:12px;' class='mt-1 mb-0 alert alert-danger' role='alert'> La contraseña no es valida. </aside><br>");
+		$('#div_contraseña').html("<aside style='font-size:12px;' class='mt-1 mb-0 alert alert-success' role='alert'> La contraseña no es valida. Debe contener al menos una letra mayuscula, un numero, un simbolo y 8 caracteres. Ejemplo: Lgtbcrevi2. </aside>").show().delay(9000).fadeOut("fast");
 		validar = true;
 	}
 	else
@@ -31,11 +31,6 @@ function btnCambiarContraseña()
 		$('#contraseña_2').removeClass("input-registro-ok"); 
     	$('#contraseña_2').addClass("input-registro-vacio");
     	validar = true;
-	}
-	else if(!validar_contraseña2)
-	{
-		$('#div_contraseña2').html("<aside style='font-size:12px;' class='mt-1 mb-0 alert alert-danger' role='alert'> La contraseña no es valida. </aside><br>");
-		validar = true;
 	}
 	else
 	{

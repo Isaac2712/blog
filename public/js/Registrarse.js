@@ -28,9 +28,8 @@ function Registrarse()
 	var regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 	var validar_email = regex.test(email) ? true : false;
   	//Validamos contraseña
-    var regex_pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+    var regex_pass = /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/g;
 	var validar_pass = regex_pass.test(pass) ? true : false;
-	var validar_pass2 = regex_pass.test(pass2) ? true : false;
 
 	// NICK //
 	if(nick == ""){
@@ -90,7 +89,7 @@ function Registrarse()
 	} 
 	else if(!validar_pass) //contraseña no valida
 	{ 
-		$('#div_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> La contraseña no es valida. </aside>").show().delay(9000).fadeOut("fast");
+		$('#div_pass').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> La contraseña no es valida. Debe contener al menos una letra mayuscula, un numero, un simbolo y 8 caracteres. Ejemplo: Lgtbcrevi2. </aside>").show().delay(9000).fadeOut("fast");
 		vacio = true;
 	}
 	else
@@ -107,11 +106,6 @@ function Registrarse()
 		$('#div_pass2').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> Añade la contraseña al campo repetir contraseña. </aside>").show().delay(11000).fadeOut("fast");
 		vacio = true;
 	} 
-	else if(!validar_pass2) //contraseña no valida
-	{ 
-		$('#div_pass2').html("<aside class='mt-1 mb-0 alert alert-danger' role='alert'> La contraseña no es valida. </aside>").show().delay(9000).fadeOut("fast");
-		vacio = true;
-	}
 	else
 	{ 
 		$('#pass2').addClass("input-registro-ok"); 

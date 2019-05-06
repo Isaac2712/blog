@@ -29,7 +29,7 @@
         <td>
         	<a href="{{ url('/administrador/modificar_usuario/'.$usuarios[$i]['id']) }}" class="btn btn-outline-primary btn-sm" role="button">editar</a> 
         </td>
-        <?php if(($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] == 'Admin'){ ?>
+        <?php if($usuarios[$i]['tipo'] == 'Admin'){ ?>
         <td class="w-25"> <!-- <td> cuando la sesion es de tipo Administrador  -->
           <span> No se puede eliminar usuario Administrador </span>
         <?php } else { ?>
