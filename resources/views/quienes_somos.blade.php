@@ -9,9 +9,9 @@
             <hr class="hr-title">
         </aside>
     </main>
-    <hr class="mb-5">
+    <hr class="mb-4">
     </header>
-    <article class="articulo-quien-somos">
+    <article class="pr-3 pl-3">
         <p style="word-wrap: break-word;">
             Ayuntamiento y Asociación LGBT unen esfuerzos contra el SIDA. El Ayuntamiento de Crevillent a través de la Unidad de Prevención Comunitaria en Conductas Adictivas, UPCCA,  va a conmemorar del Día Mundial del SIDA a celebrar el próximo 1 de diciembre. Ayuntamiento y Asociación LGBT unen  esfuerzos contra el  SIDA. La concejal de Bienestar Social Juana Guirao indicaba que  esta conmemoración es  básicas para conseguir que se frenen los contagios porque en los últimos años el SIDA ha aumentado y cada año en España se diagnostican más de 3.000 nuevos contagios de VIH.
         </p>

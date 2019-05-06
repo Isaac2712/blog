@@ -87,7 +87,7 @@
     <section class="container">
       <article class="row py-4 d-flex align-items-center">
         <aside class="col-md-7 col-lg-6 text-center text-md-left mb-4 mb-md-0">
-          <h6 class="mb-0"> ¡Accede a nuestras redes sociales para saber más de nosotros!</h6>
+          <h6 class="mb-0 font-weight-bold"> ¡Accede a nuestras redes sociales para saber más de nosotros!</h6>
         </aside>
         <aside class="col-md-5 col-lg-6 text-center text-md-right">
           <!-- Facebook -->
@@ -149,7 +149,7 @@
   </section>
 
   <aside class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://lgtbcrevillent-2.000webhostapp.com/"> lgtbcrevillent.com </a>
+    <a href="{{ route('home') }}"> lgtbcrevillent.com </a>
   </aside>
 </footer>
 <!-- SECCION PARA COOKIES -->

@@ -1,6 +1,7 @@
 @extends('layout_administrador')
 @section('formularios')
 <section id="tabla_usuarios" class="table-responsive mt-4 text-center">
+    <h3 class="titulo-formulario pb-3"> Tabla de usuarios </h3>
     <table class="table">
       <caption>Lista de usuarios</caption>
       <thead class="table-secondary table-sm">

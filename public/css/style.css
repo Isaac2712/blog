@@ -2,6 +2,10 @@
 	lila oscuro --> #4B088A;
 	lila menos oscuro --> #380B61;
 	lila claro --> #9E5CDC;
+	amarillo claro --> #FFF1CC;
+	azul oscuro --> #4169E1; (links menu administrador y titulos pagina administrador)
+	gris claro --> #CAC8C8; (bordes arriba y abajo en gris para cuando hacemos :hover 
+							  en las redes sociales del pie de pagina)
 */
 
 @font-face{
@@ -14,13 +18,13 @@
 	font-family: 'lobster';
 	font-size: 14px;
 }
+
 #section_cookies{
 	position: relative;
 	width: 100%;
 	margin: auto;
 	bottom: 1px;
 	z-index: 100;
-	border: 2px solid blue;
 }
 
 /* Boton de la seccion de cookies en lila */
@@ -34,7 +38,7 @@
 	border-radius: 5px; /*Un borde redondo*/
 }
 
-/*Cuando pasamos por encima de los itemos del menu, se le añade este estilo*/
+/*Cuando pasamos por encima de los items del menu, se le añade este estilo*/
 .li-menu-principal:hover{
 	background-color: #380B61;
 	font-weight: bold;
@@ -106,6 +110,13 @@
 .header-footer{
 	background-color: #4B088A; 
 	color: white;
+}
+
+.header-footer-2{
+	background-color: #FFF1CC; 
+	color: black;
+	border-top: 1px solid #CAC8C8;
+	border-bottom: 1px solid #CAC8C8;
 }
 
 #icono-redes-sociales-footer{

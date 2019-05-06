@@ -10,7 +10,7 @@
                     <p class="pl-4"> En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos: la empresa titular de dominio web es <span class="font-weight-bold"> lgtbCrevillent </span>e (en adelante <span class="font-weight-bold"> lgtbCrevillent </span>), con domicilio a estos efectos en Plaça Dr. Mas Candela, 15, 03330 Crevillent, Alicante número de C.I.F: 74392843-X. Correo electrónico de contacto: LGTBCrevillent@hotmail.com. <p>
                     <p class="pl-4"> <span> USUARIOS: </span> El acceso y/o uso de este sitio web de <span class="font-weight-bold"> lgtbCrevillent </span> atribuye la condición de <span> USUARIO</span>, que acepta, desde dicho acceso y/o uso, los presentes términos de uso. </p>
 
-                    <p class="pl-4"> <span> USO DEL SITIO WEB: </span> <a href="https://lgtbcrevillent-2.000webhostapp.com/"> https://lgtbcrevillent-2.000webhostapp.com/ </a> proporciona el acceso a artículos, informaciones y datos (en adelante, "los contenidos") propiedad de <span class="font-weight-bold"> lgtbCrevillent </span>.<span> EL USUARIO </span> asume la responsabilidad del uso de la web. </p>
+                    <p class="pl-4"> <span> USO DEL SITIO WEB: </span> <a href="{{ route('home') }}"> https://lgtbcrevillent-2.000webhostapp.com/ </a> proporciona el acceso a artículos, informaciones y datos (en adelante, "los contenidos") propiedad de <span class="font-weight-bold"> lgtbCrevillent </span>.<span> EL USUARIO </span> asume la responsabilidad del uso de la web. </p>
 
                     <p class="pl-4"> <span> EL USUARIO </span> se compromete a hacer un uso adecuado de los contenidos que <span class="font-weight-bold"> lgtbCrevillent </span> ofrece a través de su web y con carácter enunciativo pero no limitativo, a no emplearlos para: </p>
                     <nav class="nav menu-aviso-legal pl-4">
@@ -40,7 +40,7 @@
                 <li class="nav-item item-aviso">
                     <h5 class="text-primary"> D. Política de enlaces externos </h5>
 
-                    <p class="pl-4"> En el caso de que en <a href="https://lgtbcrevillent-2.000webhostapp.com/">  https://lgtbcrevillent-2.000webhostapp.com </a> se dispusiesen enlaces o hipervínculos hacía otros sitios de Internet, <span class="font-weight-bold"> lgtbCrevillent </span> no ejercerá ningún tipo de control sobre dichos sitios y contenidos. </p>
+                    <p class="pl-4"> En el caso de que en <a href="{{ route('home') }}">  https://lgtbcrevillent-2.000webhostapp.com </a> se dispusiesen enlaces o hipervínculos hacía otros sitios de Internet, <span class="font-weight-bold"> lgtbCrevillent </span> no ejercerá ningún tipo de control sobre dichos sitios y contenidos. </p>
 
                     <p class="pl-4"> En ningún caso <span class="font-weight-bold"> lgtbCrevillent </span> asumirá responsabilidad alguna por los contenidos de algún enlace perteneciente a un sitio web ajeno, ni garantizará la disponibilidad técnica, calidad, fiabilidad, exactitud, amplitud, veracidad, validez y constitucionalidad de cualquier material o información contenida en ninguno de dichos hipervínculos u otros sitios de Internet. </p>
 
