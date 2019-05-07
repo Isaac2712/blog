@@ -15,15 +15,6 @@
     <main class="container-fluid">
         <article id="artEven" class="row">       
         <?php  
-        	$totalEventos = "";
-            if(isset($_GET['comienzo']))
-            {
-                $comienzo=$_GET['comienzo'];
-            }else
-            {
-                $comienzo=0;
-            }  
-            $num = 4;
             /* RECOGEMOS DATOS DE LA BASE DE DATOS PARA MOSTRARLOS EN LA PÁGINA */
             for($i = 0; $i < count($eventos); $i++){
                 $id_evento = $eventos[$i]['id'];
@@ -69,19 +60,6 @@
         </main>
         <?php 
             } /* FIN RECOGER DATOS DE LA BBDD*/  
-        ?>
-        </article>
-        <article class='paginado'>
-        <?php
-            /*
-            if($comienzo>0)
-            {
-                echo "<a class='badge badge-primary' href='".$_SERVER['PHP_SELF']."?comienzo=".($comienzo-$num)."'> ANTERIOR </a>";
-            }
-            if($comienzo+$num<count($totalLineas2)){
-                echo "<a class='badge badge-primary' href='".$_SERVER['PHP_SELF']."?comienzo=".($comienzo+$num)."'> SIGUIENTE </a>";
-            } 
-            */
         ?>
         </article>
     </main>

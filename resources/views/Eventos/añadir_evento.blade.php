@@ -36,7 +36,7 @@
     </div>
 
     <div class="form-group">
-      <input type="datetime" class="form-control" id="fecha_evento" name="fecha_evento" placeholder="Fecha" value="<?= date('Y/m/d H:i'); ?>" disabled>
+      <input type="date" class="form-control" id="fecha_evento" name="fecha_evento" placeholder="Fecha" value="">
     </div>
 
     <div id="imagen_evento">

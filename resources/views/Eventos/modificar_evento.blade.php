@@ -34,8 +34,11 @@
       <input type="text" class="form-control" id="horario_evento" name="horario_evento" placeholder="Horario. Ej. 16:00 a 20:00" value="{{ $evento->horario }}" required>
     </div>
 
-    <div class="form-group">
-      <input type="datetime" class="form-control" id="fecha_evento" name="fecha_evento" placeholder="Fecha" value="<?= date('Y/m/d H:i'); ?>" disabled>
+    <div class="input-group mb-3">
+      <input type="date" class="form-control" id="fecha_evento" name="fecha_evento" value="{{ $evento->fecha }}" aria-label="fecha_evento" aria-describedby="fecha_evento">
+      <div class="input-group-prepend">
+          <span class="input-group-text font-weight-bold" id="fecha_evento">Fecha {{ $evento->fecha }}</span>
+      </div>
     </div>
 
     <div id="imagen_evento">

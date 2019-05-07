@@ -12,38 +12,39 @@ class ControllerManifiesto extends Controller
 {
 	public function RouteManifiestos()
 	{
-        $manifiestos = ModelManifiesto::all();
+        /*Mostramos 50 manifiestos*/
+        $manifiestos = ModelManifiesto::take(50)->get();
         return view('Manifiestos\manifiestos', ['manifiestos' => $manifiestos]);
     }
 
 	public function GenerarPDF($titulo_manifiesto)
 	{
 		$manifiesto = ModelManifiesto::where('titulo', $titulo_manifiesto)->get();
-		$pdf = \PDF::loadView('Manifiestos\manifiesto_pdf', compact('manifiesto'));
+		$pdf = \PDF::loadView('Manifiestos/manifiesto_pdf', compact('manifiesto'));
 		return $pdf->stream(); 
 	}
 
 	public function RouteTablaManifiestos()
 	{
         $manifiestos = ModelManifiesto::all();
-        return view('Manifiestos\tabla_manifiesto', ['manifiestos' => $manifiestos]);
+        return view('Manifiestos/tabla_manifiesto', ['manifiestos' => $manifiestos]);
     }
 
 	public function RouteNuevoManifiesto()
 	{
-		return view('Manifiestos\añadir_manifiesto');
+		return view('Manifiestos/añadir_manifiesto');
 	}
 
 	public function RouteEliminarManifiesto()
 	{
 		$manifiestos = ModelManifiesto::all();
-        return view('Manifiestos\eliminar_manifiesto', ['manifiestos' => $manifiestos]);
+        return view('Manifiestos/eliminar_manifiesto', ['manifiestos' => $manifiestos]);
 	}
 
 	public function seleccionarManifiesto($id)
 	{
 		$manifiesto = ModelManifiesto::where('id', $id)->first();
-        return view('Manifiestos\modificar_manifiesto', ['manifiesto' => $manifiesto]);
+        return view('Manifiestos/modificar_manifiesto', ['manifiesto' => $manifiesto]);
 	}
 
 	public function anadirManifiesto(Request $request)

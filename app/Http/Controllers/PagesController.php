@@ -25,9 +25,12 @@ use App\Http\Models\Manifiestos\ModelManifiesto;
 class PagesController extends Controller
 {
     public function RouteHome(){
-        //Esta funcion manda los eventos y noticias a la pagina home (que es la principal)
-        $eventos = ModelEvento::all();
-        $noticias = ModelNoticia::all();
+        /*
+        Esta funcion manda los eventos y noticias a la pagina home (que es la principal)
+        Solo se mandaran los 12 primeros eventos y las 12 primeras noticias para que la página no tenga tantos eventos y tantas noticias
+        */
+        $eventos = ModelEvento::take(12)->get();
+        $noticias = ModelNoticia::take(12)->get();
         return view('home', ['eventos' => $eventos,
                              'noticias' => $noticias
                             ]);
