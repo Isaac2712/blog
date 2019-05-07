@@ -8,6 +8,7 @@
         <link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link href="{{ asset('favicon/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
     </head>
     <body class="container bg-dark text-white mt-3">
     <?php if(!isset($_SESSION['nick_usuario'])){ ?>
@@ -24,10 +25,18 @@
                         <div id="div_nick_vacio"></div>
                     </div>
                     <div class="form-group">
-                        <label> Contraseña </label>
-                        <input type="password" id="pass" name="pass" class="form-control">
+                        <label for="password">Contraseña</label>
+                        <div class="input-group">
+                            <input id="password" name="password" type="password" class="form-control" value="">
+                            <div class="input-group-append" placeholder="Contraseña">
+                                <button id="show_password" class="btn btn-primary" type="button" onclick="return mostrarContrasena()"> 
+                                    <span class="fa fa-eye-slash icon"></span> 
+                                </button>
+                            </div>
+                        </div>
                         <div id="div_pass_vacio"></div>
                     </div>
+
                     <button onclick="return btnAcceder()" name="acceder" class="btn btn-primary btn-block"> Acceder </button>
                     <div id="resultado"></div>
                     <button onclick="return btnRegistrarse()" name="registrarse" class="mt-3 btn btn-success btn-block"> Registrarse </button>
@@ -71,4 +80,5 @@
 <script type="text/javascript" src="{{ asset('js/btnAcceder.js') }}"></script>
 <!-- BOTON REGISTRARSE EN LA WEB -->
 <script type="text/javascript" src="{{ asset('js/btnRegistrarse.js') }}"></script>
-
+<!-- SCRIPT PAR MOSTRAR Y OCULTAR CONTRASEÑA CAMPO PASSWORD -->
+<script type="text/javascript" src="{{ asset('js/Usuarios/modificarInputPerfilUsuario.js') }}"></script>
