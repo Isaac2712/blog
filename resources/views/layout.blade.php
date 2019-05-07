@@ -168,6 +168,9 @@
 <script type="text/javascript" src="{{ asset('js/Usuarios/btnCambiarContraseña.js') }}"></script>
 <!-- SCRIPT PARA COOKIES -->
 <script type="text/javascript" src="{{ asset('js/cookies.js') }}"></script>
-
+<!-- SCRIPT PAR MOSTRAR Y OCULTAR CONTRASEÑA CAMPO PASSWORD -->
+<script type="text/javascript" src="{{ asset('js/Usuarios/modificarInputPerfilUsuario.js') }}"></script>
+<!-- MOSTRAR PROVINCIAS -->
+<script type="text/javascript" src="{{ asset('js/Provincias.js') }}"></script>
 </body>
 </html>

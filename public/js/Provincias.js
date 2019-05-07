@@ -2,7 +2,6 @@ function Provincia()
 {
     provincia = jQuery("[name=provincia]").val();
     var _token = jQuery("[name=_token]").val();
-    
     var datos = { 'provincia': provincia,  '_token':_token };
 
     $.ajax({

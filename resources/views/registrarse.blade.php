@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ asset('imagenes/LOGO.jpg') }}" type="image/gif" sizes="16x16">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="{{ asset('favicon/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
 </head>
 <body class="container bg-dark text-white mt-3">
     <section id="app" class="col-lg-10 m-auto">
@@ -30,13 +31,27 @@
                 <aside id="div_email"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-6">
-                <label class="control-label" for="pass"> Contraseña </label>
-                <input type="password" class="form-control" id="pass" name="pass" placeholder="Contraseña">
+                <label for="pass">Contraseña</label>
+                <div class="input-group">
+                    <input id="pass" name="pass" type="password" class="form-control" value="">
+                    <div class="input-group-append" placeholder="Contraseña">
+                        <button id="show_password" class="btn btn-primary" type="button" onclick="return mostrarContrasenaPass()"> 
+                            <span class="fa fa-eye-slash icon"></span> 
+                        </button>
+                    </div>
+                </div>
                 <aside id="div_pass"></aside>
             </div>
             <div class="form-group col-md-12 col-lg-6">
-                <label class="control-label" for="pass2"> Repetir contraseña </label>
-                <input type="password" class="form-control" id="pass2" name="pass2" placeholder="Repetir contraseña">
+                <label for="pass">Repetir contraseña</label>
+                <div class="input-group">
+                    <input id="pass2" name="pass2" type="password" class="form-control" value="">
+                    <div class="input-group-append" placeholder="Contraseña">
+                        <button id="show_password" class="btn btn-primary" type="button" onclick="return mostrarContrasenaPass2()"> 
+                            <span class="fa fa-eye-slash icon"></span> 
+                        </button>
+                    </div>
+                </div>
                 <aside id="div_pass2"></aside>
             </div>
             <aside class="col-md-12" id="div_comprobar_pass"></aside>
@@ -109,3 +124,5 @@
 <script type="text/javascript" src="{{ asset('js/Provincias.js') }}"></script>
 <!-- VALIDACION DE REGISTRO -->
 <script type="text/javascript" src="{{ asset('js/Registrarse.js') }}"></script>
+<!-- SCRIPT PAR MOSTRAR Y OCULTAR CONTRASEÑA CAMPO PASSWORD -->
+<script type="text/javascript" src="{{ asset('js/Usuarios/modificarInputPerfilUsuario.js') }}"></script>

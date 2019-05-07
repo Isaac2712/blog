@@ -169,6 +169,15 @@ Route::post('/ajax/cambiarContraseña', 'Usuarios\ControllerUsuario@cambiarContr
 //Ruta para eliminar un usuario
 Route::post('/administrador/eliminar_usuario/{id}', 'Usuarios\ControllerUsuario@eliminarUsuario');
 
+//Ruta para modificar el perfil de los usuarios
+Route::post('/mi_perfil/guardar_nuevos_datos', 'Usuarios\ControllerUsuario@GuardarNuevosDatosUsuario');
+
+//Ruta para guardar la nueva contraseña del usuario que ha modificado el desde mi perfil
+Route::post('/mi_perfil/guardar_nueva_contrasena', 'Usuarios\ControllerUsuario@GuardarNuevaContrasenaUsuario');
+
+//Ruta para guardar la provincia y el municipio modificado por el usuario en mi perfil
+Route::post('/mi_perfil/guardar_provincia_municipio', 'Usuarios\ControllerUsuario@GuardarProvinciaMunicipio');
+
 /* ---------------- */
 /*  PIE DE PAGINA  */
 /* ---------------- */

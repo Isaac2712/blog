@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">                
                     <input type="submit" class="btn btn-primary" value="Enviar">
-                    <input type="reset" class="btn btn-outline-secondary" value="Limpiar">                
+                    <input type="reset" class="btn btn-outline-secondary" value="Limpiar">           
                 </div>
             </form>
         </section>   

@@ -14,10 +14,103 @@ use App\Http\Models\Municipios\ModelMunicipio;
 
 class ControllerUsuario extends Controller
 {
+
+    public function GuardarProvinciaMunicipio(Request $request)
+    {
+        if(trim($request->input('id_usuario')) != '' && trim($request->input('provincia')) != '' && trim($request->input('municipio')) != '')
+        {
+            $modificar_contraseña = ModelUsuario::find($request->input('id_usuario'));
+            $modificar_contraseña->provincia=$request->input('provincia');
+            $modificar_contraseña->municipio=$request->input('municipios');
+            $modificar_contraseña->save();
+
+            $todas_provincias = ModelProvincia::all();
+            $usuario = ModelUsuario::where('id', $request->input('id_usuario'))->first();
+            $provincia = ModelProvincia::where('id', $usuario->provincia)->get();
+            $municipio = ModelMunicipio::where('id', $usuario->municipio)->where('provincia_id', $usuario->provincia)->get();
+            return view('Usuarios/perfil_usuario', [
+                                                'usuario' => $usuario,
+                                                'provincia' => $provincia,
+                                                'municipio' => $municipio,
+                                                'todas_provincias' => $todas_provincias
+                                                ]);
+        } 
+        else
+        {
+            return view('error');
+        }
+    }
+
+    public function GuardarNuevosDatosUsuario(Request $request)
+    {
+        if(trim($request->input('id_usuario')) != '' && trim($request->input('nick')) != '' &&
+            trim($request->input('nombre_completo')) != '' && trim($request->input('email')) != '' &&
+            trim($request->input('fecha_nacimiento')) != '' && trim($request->input('sexo')) != '')
+        {
+            $modificar_contraseña = ModelUsuario::find($request->input('id_usuario'));
+            $modificar_contraseña->nick=$request->input('nick');
+            $modificar_contraseña->nombre_completo=$request->input('nombre_completo');
+            $modificar_contraseña->email=$request->input('email');
+            $modificar_contraseña->fecha_nacimiento=$request->input('fecha_nacimiento');
+            $modificar_contraseña->sexo=$request->input('sexo');
+            $modificar_contraseña->save();
+
+            $todas_provincias = ModelProvincia::all();
+            $usuario = ModelUsuario::where('id', $request->input('id_usuario'))->first();
+            $provincia = ModelProvincia::where('id', $usuario->provincia)->get();
+            $municipio = ModelMunicipio::where('id', $usuario->municipio)->where('provincia_id', $usuario->provincia)->get();
+            return view('Usuarios/perfil_usuario', [
+                                                    'usuario' => $usuario,
+                                                    'provincia' => $provincia,
+                                                    'municipio' => $municipio,
+                                                    'todas_provincias' => $todas_provincias
+                                                    ]);
+
+        }
+        else
+        {
+            return view('error');
+        }
+    }
+
+    public function GuardarNuevaContrasenaUsuario(Request $request)
+    {
+        if(trim($request->input('id_usuario')) != '' && trim($request->input('password')) != '')
+        {
+            $modificar_contraseña = ModelUsuario::find($request->input('id_usuario'));
+            $modificar_contraseña->password=$request->input('password');
+            
+            $modificar_contraseña->save();
+
+            $todas_provincias = ModelProvincia::all();
+            $usuario = ModelUsuario::where('id', $request->input('id_usuario'))->first();
+            $provincia = ModelProvincia::where('id', $usuario->provincia)->get();
+            $municipio = ModelMunicipio::where('id', $usuario->municipio)->where('provincia_id', $usuario->provincia)->get();
+            return view('Usuarios/perfil_usuario', [
+                                                'usuario' => $usuario,
+                                                'provincia' => $provincia,
+                                                'municipio' => $municipio,
+                                                'todas_provincias' => $todas_provincias
+                                                ]);
+        } 
+        else
+        {
+            return view('error');
+        }
+    }
+
     public function RouteMiPerfil($nick)
     {
-        $usuario = ModelUsuario::where('nick', $nick)->get();
-        return view('Usuarios/perfil_usuario', ['usuario' => $usuario]);
+        $todas_provincias = ModelProvincia::all();
+        $usuario = ModelUsuario::where('nick', $nick)->first(); 
+        $provincia = ModelProvincia::where('id', $usuario->provincia)->get();
+        $municipio = ModelMunicipio::where('id', $usuario->municipio)->where('provincia_id', $usuario->provincia)->get();
+        return view('Usuarios/perfil_usuario', [
+                                                'usuario' => $usuario,
+                                                'provincia' => $provincia,
+                                                'municipio' => $municipio,
+                                                'todas_provincias' => $todas_provincias
+                                                ]);
     }
 
     public function RouteAcceder()
@@ -34,8 +127,12 @@ class ControllerUsuario extends Controller
 
     public function Provincia(Request $request)
     {
-    	$municipios = ModelMunicipio::where('provincia_id' , $request->input('provincia'))->get();
-    	$devuelve = $municipios;
+        $devuelve = 0;
+        if(trim($request->input('provincia') != ''))
+        {
+            $municipios = ModelMunicipio::where('provincia_id' , $request->input('provincia'))->get();
+            $devuelve = $municipios;
+        }
     	return $devuelve;
     }
 
