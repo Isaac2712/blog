@@ -154,9 +154,12 @@
 </footer>
 <!-- SECCION PARA COOKIES -->
   <section class="alert alert-dismissible text-center" id="section_cookies">
-    <span>Esta web utiliza cookies para obtener datos estadísticos de la navegación de sus usuarios. Si continúas navegando consideramos que aceptas su uso.</span>
-    <a href="{{ route('politica_privacidad') }}">Más información</a>
-    <button class="btn btn-light text-white" onclick="aceptar_cookies();" style="cursor:pointer;">Cerrar</button>
+    <aside id="info_cookies">
+      <span id="span_cookies">Esta web utiliza cookies para obtener datos estadísticos de la navegación de sus usuarios. Si continúas navegando consideramos que aceptas su uso.
+        <a href="{{ route('politica_privacidad') }}">Más información</a>
+        <button class="btn btn-light text-white" onclick="aceptar_cookies();" style="cursor:pointer;">Cerrar</button>
+      </span>
+    </aside>
   </section>
 <!-- /FIN SECCION PARA COOKIES -->
 </section> <!-- SECCION APP -->

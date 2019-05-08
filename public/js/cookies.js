@@ -1,5 +1,5 @@
 function GetCookie(name) {
-    var arg=name+"=";
+    var arg =name+"=";
     var alen=arg.length;
     var clen=document.cookie.length;
     var i=0;
@@ -17,28 +17,32 @@ function GetCookie(name) {
 }
         
 function aceptar_cookies(){
-    var expire=new Date();
-    expire=new Date(expire.getTime()+7776000000);
-    document.cookie="cookies=aceptada; expires="+expire;
+    var expira=new Date();
+    expira=new Date(expira.getTime()+7776000000);
+    document.cookie="cookies=aceptada; expires="+expira;
 
     var visit=GetCookie("cookies");
     if (visit==1){
-        popbox3();
+        popbox();
     }
 }
 
 $(function() {
-    var visit=GetCookie("cookies");
-    if (visit==1){
-	    $('#section_cookies').toggle();
-    } else {
-	    var expire=new Date();
-	    expire=new Date(expire.getTime()+7776000000);
-	    document.cookie="cookies=aceptada; expires="+expire;
+    var visita=GetCookie("cookies");
+    if (visita==1){ 
+	    popbox(); 
+    } else { 
+	    var expira=new Date(); 
+	    expira=new Date(expira.getTime()+7776000000);  
+	    document.cookie="cookies=aceptada; expires="+expira; 
 	}
 
 });
         
-function popbox3() {
-    $('#section_cookies').toggle();
+function popbox() {
+    $('#section_cookies').css({
+        'display': 'none',
+        'opacity': '0'
+    });
+    document.getElementById("span_cookies").innerHTML = '';
 }

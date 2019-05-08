@@ -18,13 +18,25 @@
 	font-family: 'lobster';
 	font-size: 14px;
 }
-
+/* --------- */
+/*  COOKIES */
+/* --------- */
 #section_cookies{
-	position: relative;
+	position: fixed;
+	bottom: -15px;
+	left: 0px;
 	width: 100%;
-	margin: auto;
-	bottom: 1px;
-	z-index: 100;
+	z-index: 999999;
+	display: block;
+	color: white;
+	background-color: #343A40;
+}
+
+#info_cookies{
+	padding: 2px ;
+	position: relative;
+	top: 0px;
+	width: 100%;
 }
 
 /* Boton de la seccion de cookies en lila */
