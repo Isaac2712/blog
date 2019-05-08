@@ -92,10 +92,13 @@
 
 /*Imagenes de los eventos en la pagina principal*/
 #imagenes-eventos{
-	max-width: 100%;
-	height: 150px;
-    max-height: 160px;
+	width: 70%;
+	height: 200px;
+}
 
+/*Imagenes de las noticias en la pagina principal*/
+#imagenes-noticias{
+   	width: 100%;
 }
 
 /*Input de la página registro cuando esta vacio*/
@@ -187,6 +190,17 @@ noticias, manifiestos y usuarios. */
 }
 
 @media (max-width: 765px){
+	*{
+		box-sizing: border-box;
+		font-family: 'lobster';
+		font-size: 20px;
+	}
+	/*imagenes de los eventos*/
+    #imagenes-eventos{
+    	width: 90%;
+    	height: 250px;
+    }
+
 	/*Boton del menu de la pagina administrador donde añadimos, eliminamos y modificamos eventos,
 	noticias, manifiestos y usuarios. */
 	#boton-menu-pag-admin{

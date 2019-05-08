@@ -109,7 +109,7 @@
                             { 
                         ?>
                             <a href="<?= $directory."/".$archivo?>" target="_blank">
-                            <img class="card-img-bottom" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>">
+                            <img id="imagenes-noticias"  class="img-responsive" src="<?php echo $directory."/".$archivo?>" title="<?= $archivo ?>">
                             </a>
                         <?php
                                 }
@@ -120,7 +120,7 @@
                     <section class="col-md-10">
                         <article class="card-body">
                             <p class="card-title"> <?= $titulo_noticia ?> </p>
-                            <a href="<?= $enlace_noticia ?>" class="stretched-link"> <?= $enlace_noticia ?> </a>
+                            <a target="_blank" href="<?= $enlace_noticia ?>" class="stretched-link"> <?= $enlace_noticia ?> </a>
                         </article>
                     </section>
                 </section>
